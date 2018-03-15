@@ -1,0 +1,1 @@
+{"nodes":[{"data":{"id":"T","color":"#fee4c6"}},{"data":{"id":"N","color":"#fee4c6"}},{"data":{"id":"C","color":"#fee4c6"}},{"data":{"id":"T","color":"#fee4c6"}}],"edges":[{"data":{"id":"T-N","source":"T","target":"N"}},{"data":{"id":"C-T","source":"C","target":"T"}}]}
