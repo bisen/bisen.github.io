@@ -6,7 +6,7 @@
   <style type="text/css" media="screen">
     #cy {
       position: absolute;
-      top: 0;
+      top: 50px;
       right: 0;
       bottom: 0;
       left: 0;
@@ -14,9 +14,34 @@
   </style>
 </head>
 <body>
+  <div id='navbar'>
+    <button type="button">Overview of the evidence base</button>
+
+    <form id="outcome-form">
+      <input type="radio" name="outcome-radio" id="contactChoice1"
+       name="contact" value="all">
+      <label for="contactChoice1">All</label>
+
+      <input type="radio" name="outcome-radio" id="contactChoice2"
+       name="contact" value="stress-ui">
+      <label for="contactChoice2">Stress UI</label>
+
+      <input type="radio" name="outcome-radio" id="contactChoice3"
+       name="contact" value="urge-ui">
+      <label for="contactChoice3">Urge UI</label>
+
+      <input type="radio" name="outcome-radio" id="contactChoice4"
+       name="contact" value="older-women">
+      <label for="contactChoice4">Older women</label>
+    </form>
+  </div>
   <div id='cy'></div>
 
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.2.9/cytoscape.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.9/jquery.csv.min.js" type="text/javascript" charset="utf-8"></script>
+
   <script src="index.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
