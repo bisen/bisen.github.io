@@ -44,7 +44,13 @@ var cy = cytoscape({
         'label': 'data(id)'
       }
     },
-
+    {
+      selector: 'node.highlight',
+      style: {
+        'border-color': '#DC143C',
+        'border-width': '5px'
+      }
+    },
     {
       selector: 'edge',
       style: {
@@ -67,14 +73,22 @@ var cy = cytoscape({
 });
 
 
-cy.on('tap', 'node, edge', function(e) {
-  var node = e.target;
-  var link = node.data('link');
-  var r = confirm('Follow the link to: ' + link + '?');
 
-  if (r == true) {
-    window.open(link);
+var prev_node;
+var node;
+var selected
+
+cy.on('tap', 'node', function(e) {
+  if( typeof prev_node !== 'undefined' ) {
+    prev_node.removeClass('highlight');
   }
+  prev_node = node;
+  node = e.target;
+  if( typeof node !== 'undefined' ) {
+    node.addClass('highlight');
+  }
+  console.log(node);
+  console.log(prev_node);
 });
 
 
@@ -99,13 +113,23 @@ $('#outcome-form input').on('change', function() {
     default:
       cy.add(element_json['all']);
   }
-  cy.nodes().positions( function( node, i ) { return { x: node_info[node.id()]["x"], y: node_info[node.id()]["y"] }; });
+  
+  //position nodes
+  cy.nodes().positions( function( node, i ) {
+    return { x: node_info[node.id()]["x"], y: node_info[node.id()]["y"] }; 
+  });
+
+  //lock node positions
   cy.autolock(true);
 });
 
-cy.nodes().positions( function( node, i ) { return { x: node_info[node.id()]["x"], y: node_info[node.id()]["y"] }; });
+//position nodes
+cy.nodes().positions( function( node, i ) {
+  return { x: node_info[node.id()]["x"], y: node_info[node.id()]["y"] }; 
+});
 
 //lock node positions
 cy.autolock(true);
 }
+
 request();
