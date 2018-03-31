@@ -74,21 +74,40 @@ var cy = cytoscape({
 
 
 
-var prev_node;
-var node;
-var selected
+var prev_node = null;
+var node = null;
 
 cy.on('tap', 'node', function(e) {
-  if( typeof prev_node !== 'undefined' ) {
+  if ( e.target == prev_node ) {
+    prev_node.removeClass('highlight');
+    prev_node = null;
+    console.log("node: ", node);
+    console.log("prev_node: ", prev_node);
+    return;
+  }
+
+  if ( e.target == node ) {
+    node.removeClass('highlight');
+    node = prev_node;
+    prev_node = null;
+    console.log("node: ", node);
+    console.log("prev_node: ", prev_node);
+    return;
+  }
+
+  if ( prev_node !== null ) {
     prev_node.removeClass('highlight');
   }
+
   prev_node = node;
   node = e.target;
-  if( typeof node !== 'undefined' ) {
+
+  if ( node !== null ) {
     node.addClass('highlight');
   }
-  console.log(node);
-  console.log(prev_node);
+
+  console.log("node: ", node);
+  console.log("prev_node: ", prev_node);
 });
 
 
@@ -113,7 +132,7 @@ $('#outcome-form input').on('change', function() {
     default:
       cy.add(element_json['all']);
   }
-  
+
   //position nodes
   cy.nodes().positions( function( node, i ) {
     return { x: node_info[node.id()]["x"], y: node_info[node.id()]["y"] }; 
