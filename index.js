@@ -173,6 +173,10 @@ const request = async () => {
     content += "<th> followup </th>";
     content += "<th> n1 </th>";
     content += "<th> n2 </th>";
+    content += "<th> granular_trt_code1 </th>";
+    content += "<th> granular_trt_code2 </th>";
+    content += "<th> coarse_trt_code1 </th>";
+    content += "<th> coarse_trt_code2 </th>";
     content += "<th> trt_description1 </th>";
     content += "<th> trt_description2 </th>";
     content += "<th> OR12 </th>";
@@ -202,6 +206,10 @@ const request = async () => {
       content += '<td>' + this['followup'] + '</td>';
       content += '<td>' + this['n1'] + '</td>';
       content += '<td>' + this['n2'] + '</td>';
+      content += '<td>' + this['granular_trt_code1'] + '</td>';
+      content += '<td>' + this['granular_trt_code2'] + '</td>';
+      content += '<td>' + this['coarse_trt_code1'] + '</td>';
+      content += '<td>' + this['coarse_trt_code2'] + '</td>';
       content += '<td>' + this['trt_description1'] + '</td>';
       content += '<td>' + this['trt_description2'] + '</td>';
       content += '<td>' + this['OR12'] + '</td>';
