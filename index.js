@@ -85,8 +85,13 @@ const request = async () => {
           console.log('study_node1', this['coarse_trt_code1']);
           console.log('study_node2', this['coarse_trt_code2']);
           console.log(this['PMID']);
+          pmid_list.push(this);
+          $('#cy').hide();
+          $('#navbar').hide();
+          $('#studies-modal').show();
       }
     });
+    return pmid_list;
   }
 
   var prev_node = null;
@@ -124,6 +129,7 @@ const request = async () => {
     console.log("node: ", node);
     console.log("prev_node: ", prev_node);
   });
+  reposition();
 
 
   $('#outcome-form input').on('change', function() {
@@ -152,9 +158,20 @@ const request = async () => {
 
   //button that pulls the studies for nodes
   $('#get-studies-button').on('click', function() {
-    get_studies(prev_node, node);
+    var pmid_list = get_studies(prev_node, node);
+    $('#studies-modal-content').empty();
+    content = "<table>"
+    jQuery.each(graph_data, function() {
+      content += '<tr><td>' + 'PMID: ' + this['PMID'] + '</td></tr>';
+    });
+    content += '</table>';
+    $('#studies-modal-content').append(content);
   });
-  reposition();
+  $('#close-studies-modal').on('click', function() {
+    $('#cy').show();
+    $('#navbar').show();
+    $('#studies-modal').hide();
+  });
 }
 
 request();
