@@ -21,12 +21,12 @@ header_row = ws[0]  # Array of column headers.
 lsof_headers = header_row.cells.map(&:value)
 
 #this stupid dict maps column titles to my preferred dictionary keys
-stupid_dict = { '' => :all, 'stress' => :stress, 'UI' => :urge}
+stupid_dict = { '' => nil, 'stress' => :stress, 'UI' => :urge}
 
 # Color dictionary to hold my node colors
-color_dict = { :all => '#0000FF', 
-               :stress =>  '#8A2BE2', 
-               :urge =>  '#7FFF00', 
+color_dict = { :all => '#0000FF',
+               :stress =>  '#8A2BE2',
+               :urge =>  '#7FFF00',
                :older_women =>  '#00FFFF' }
 
 # Iterate over data rows and build elements array
@@ -70,6 +70,11 @@ ws[1..-1].each do |row|
     element_dict[:older_women][:nodes] << { data: { id: source, color: color_dict[:older_women] } }
     element_dict[:older_women][:edges] << { data: { id: "#{source}-#{target}", source: source, target: target } }
   end
+
+  #all
+  element_dict[:all][:nodes] << { data: { id: target, color: color_dict[:all] } }
+  element_dict[:all][:nodes] << { data: { id: source, color: color_dict[:all] } }
+  element_dict[:all][:edges] << { data: { id: "#{source}-#{target}", source: source, target: target } }
 end
 
 #deduplicate edges and nodes

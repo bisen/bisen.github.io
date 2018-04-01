@@ -1,17 +1,1450 @@
 {
-  "H+N+T": {"x": -100, "y": -440, "color": "#e0dfe0"},
-  "H+T": {"x": -180, "y": -420, "color": "#fee4c6"},
-  "B": {"x": -20, "y": -400, "color": "#fedabb"},
-  "C": {"x": 200, "y": -320, "color": "#fff595"},
-  "C+T": {"x": 410, "y": -280, "color": "#ccb28d"},
-  "C+U": {"x": -300, "y": -300, "color": "#808000"},
-  "C+H": {"x": -360, "y": -360, "color": "#cdcdb5"},
-  "H": {"x": -280, "y": -300, "color": "#ffeb91"},
-  "A": {"x": -420, "y": 10, "color": "#cbf978"},
-  "P": {"x": 0, "y": 0, "color": "#fdaeba"},
-  "V": {"x": 420, "y": 10, "color": "#dca2dc"},
-  "N": {"x": -400, "y": 120, "color": "#9bfdfe"},
-  "U": {"x": 380, "y": 100, "color": "#dbd1d4"},
-  "T": {"x": -160, "y": 200, "color": "#d2eeee"},
-  "N+T": {"x": -360, "y": 28, "color": "#a5d4ec"}
+"all": {
+  "elements": {
+    "nodes": [
+      {
+        "data": {
+          "id": "N",
+          "color": "#9bfdfe"
+        },
+        "position": {
+          "x": -400,
+          "y": 120
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "T",
+          "color": "#d2eeee"
+        },
+        "position": {
+          "x": -160,
+          "y": 200
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "C",
+          "color": "#fff595"
+        },
+        "position": {
+          "x": 200,
+          "y": -320
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "B",
+          "color": "#fedabb"
+        },
+        "position": {
+          "x": -20,
+          "y": -400
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "P",
+          "color": "#fdaeba"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "H",
+          "color": "#ffeb91"
+        },
+        "position": {
+          "x": -280,
+          "y": -300
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "U",
+          "color": "#dbd1d4"
+        },
+        "position": {
+          "x": 380,
+          "y": 100
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "C+T",
+          "color": "#ccb28d"
+        },
+        "position": {
+          "x": 410,
+          "y": -280
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "N+T",
+          "color": "#a5d4ec"
+        },
+        "position": {
+          "x": -360,
+          "y": 28
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "A",
+          "color": "#cbf978"
+        },
+        "position": {
+          "x": -420,
+          "y": 10
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "C+H",
+          "color": "#cdcdb5"
+        },
+        "position": {
+          "x": -360,
+          "y": -360
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "V",
+          "color": "#dca2dc"
+        },
+        "position": {
+          "x": 420,
+          "y": 10
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "C+U",
+          "color": "#808000"
+        },
+        "position": {
+          "x": -300,
+          "y": -300
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      }
+    ],
+    "edges": [
+      {
+        "data": {
+          "id": "T-N",
+          "source": "T",
+          "target": "N"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "C-T",
+          "source": "C",
+          "target": "T"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "N-C",
+          "source": "N",
+          "target": "C"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "B-T",
+          "source": "B",
+          "target": "T"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "C-N",
+          "source": "C",
+          "target": "N"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "C-P",
+          "source": "C",
+          "target": "P"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "T-P",
+          "source": "T",
+          "target": "P"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "H-P",
+          "source": "H",
+          "target": "P"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "U-C",
+          "source": "U",
+          "target": "C"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "C-C+T",
+          "source": "C",
+          "target": "C+T"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "C+T-H",
+          "source": "C+T",
+          "target": "H"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "N+T-T",
+          "source": "N+T",
+          "target": "T"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "A-B",
+          "source": "A",
+          "target": "B"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "C+H-B",
+          "source": "C+H",
+          "target": "B"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "V-C+H",
+          "source": "V",
+          "target": "C+H"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "P-C",
+          "source": "P",
+          "target": "C"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "P-C+U",
+          "source": "P",
+          "target": "C+U"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "P-U",
+          "source": "P",
+          "target": "U"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "B-P",
+          "source": "B",
+          "target": "P"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "H-T",
+          "source": "H",
+          "target": "T"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      }
+    ]
+  },
+  "style": [
+    {
+      "selector": "node",
+      "style": {
+        "background-color": "data(color)",
+        "label": "data(id)"
+      }
+    },
+    {
+      "selector": "node.highlight",
+      "style": {
+        "border-color": "#DC143C",
+        "border-width": "5px"
+      }
+    },
+    {
+      "selector": "edge",
+      "style": {
+        "width": "1px",
+        "line-color": "black",
+        "target-arrow-color": "#ccc",
+        "target-arrow-shape": "none",
+        "curve-style": "unbundled-bezier",
+        "control-point-distances": "30",
+        "control-point-weights": "0.5"
+      }
+    }
+  ],
+  "zoomingEnabled": true,
+  "userZoomingEnabled": true,
+  "zoom": 0.8,
+  "minZoom": 1e-50,
+  "maxZoom": 1e+50,
+  "panningEnabled": true,
+  "userPanningEnabled": true,
+  "pan": {
+    "x": 400,
+    "y": 350
+  },
+  "boxSelectionEnabled": true,
+  "renderer": {
+    "name": "canvas"
+  }
+},
+  "stress":{
+  "elements": {
+    "nodes": [
+      {
+        "data": {
+          "id": "N",
+          "color": "#9bfdfe"
+        },
+        "position": {
+          "x": -400,
+          "y": 120
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "T",
+          "color": "#d2eeee"
+        },
+        "position": {
+          "x": -160,
+          "y": 200
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "P",
+          "color": "#fdaeba"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "H",
+          "color": "#ffeb91"
+        },
+        "position": {
+          "x": -280,
+          "y": -300
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "C+T",
+          "color": "#ccb28d"
+        },
+        "position": {
+          "x": 410,
+          "y": -280
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "C",
+          "color": "#fff595"
+        },
+        "position": {
+          "x": 200,
+          "y": -320
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "N+T",
+          "color": "#a5d4ec"
+        },
+        "position": {
+          "x": -360,
+          "y": 28
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "C+U",
+          "color": "#808000"
+        },
+        "position": {
+          "x": -300,
+          "y": -300
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      }
+    ],
+    "edges": [
+      {
+        "data": {
+          "id": "T-N",
+          "source": "T",
+          "target": "N"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "T-P",
+          "source": "T",
+          "target": "P"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "H-P",
+          "source": "H",
+          "target": "P"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "C-C+T",
+          "source": "C",
+          "target": "C+T"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "N+T-T",
+          "source": "N+T",
+          "target": "T"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "P-C",
+          "source": "P",
+          "target": "C"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "P-C+U",
+          "source": "P",
+          "target": "C+U"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      }
+    ]
+  },
+  "style": [
+    {
+      "selector": "node",
+      "style": {
+        "background-color": "data(color)",
+        "label": "data(id)"
+      }
+    },
+    {
+      "selector": "node.highlight",
+      "style": {
+        "border-color": "#DC143C",
+        "border-width": "5px"
+      }
+    },
+    {
+      "selector": "edge",
+      "style": {
+        "width": "1px",
+        "line-color": "black",
+        "target-arrow-color": "#ccc",
+        "target-arrow-shape": "none",
+        "curve-style": "unbundled-bezier",
+        "control-point-distances": "30",
+        "control-point-weights": "0.5"
+      }
+    }
+  ],
+  "zoomingEnabled": true,
+  "userZoomingEnabled": true,
+  "zoom": 0.8,
+  "minZoom": 1e-50,
+  "maxZoom": 1e+50,
+  "panningEnabled": true,
+  "userPanningEnabled": true,
+  "pan": {
+    "x": 400,
+    "y": 350
+  },
+  "boxSelectionEnabled": true,
+  "renderer": {
+    "name": "canvas"
+  }
+},
+  "urge":{
+  "elements": {
+    "nodes": [
+      {
+        "data": {
+          "id": "C",
+          "color": "#fff595"
+        },
+        "position": {
+          "x": 200,
+          "y": -320
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "N",
+          "color": "#9bfdfe"
+        },
+        "position": {
+          "x": -400,
+          "y": 120
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "T",
+          "color": "#d2eeee"
+        },
+        "position": {
+          "x": -160,
+          "y": 200
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "B",
+          "color": "#fedabb"
+        },
+        "position": {
+          "x": -20,
+          "y": -400
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "P",
+          "color": "#fdaeba"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "H",
+          "color": "#ffeb91"
+        },
+        "position": {
+          "x": -280,
+          "y": -300
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "C+T",
+          "color": "#ccb28d"
+        },
+        "position": {
+          "x": 410,
+          "y": -280
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "A",
+          "color": "#cbf978"
+        },
+        "position": {
+          "x": -420,
+          "y": 10
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "C+H",
+          "color": "#cdcdb5"
+        },
+        "position": {
+          "x": -360,
+          "y": -360
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      }
+    ],
+    "edges": [
+      {
+        "data": {
+          "id": "N-C",
+          "source": "N",
+          "target": "C"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "B-T",
+          "source": "B",
+          "target": "T"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "C-N",
+          "source": "C",
+          "target": "N"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "C-P",
+          "source": "C",
+          "target": "P"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "C+T-H",
+          "source": "C+T",
+          "target": "H"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "A-B",
+          "source": "A",
+          "target": "B"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "C+H-B",
+          "source": "C+H",
+          "target": "B"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      }
+    ]
+  },
+  "style": [
+    {
+      "selector": "node",
+      "style": {
+        "background-color": "data(color)",
+        "label": "data(id)"
+      }
+    },
+    {
+      "selector": "node.highlight",
+      "style": {
+        "border-color": "#DC143C",
+        "border-width": "5px"
+      }
+    },
+    {
+      "selector": "edge",
+      "style": {
+        "width": "1px",
+        "line-color": "black",
+        "target-arrow-color": "#ccc",
+        "target-arrow-shape": "none",
+        "curve-style": "unbundled-bezier",
+        "control-point-distances": "30",
+        "control-point-weights": "0.5"
+      }
+    }
+  ],
+  "zoomingEnabled": true,
+  "userZoomingEnabled": true,
+  "zoom": 0.8,
+  "minZoom": 1e-50,
+  "maxZoom": 1e+50,
+  "panningEnabled": true,
+  "userPanningEnabled": true,
+  "pan": {
+    "x": 400,
+    "y": 350
+  },
+  "boxSelectionEnabled": true,
+  "renderer": {
+    "name": "canvas"
+  }
+},
+  "older_women":{
+  "elements": {
+    "nodes": [
+      {
+        "data": {
+          "id": "N",
+          "color": "#9bfdfe"
+        },
+        "position": {
+          "x": -400,
+          "y": 120
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "T",
+          "color": "#d2eeee"
+        },
+        "position": {
+          "x": -160,
+          "y": 200
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "C",
+          "color": "#fff595"
+        },
+        "position": {
+          "x": 200,
+          "y": -320
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "P",
+          "color": "#fdaeba"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "U",
+          "color": "#dbd1d4"
+        },
+        "position": {
+          "x": 380,
+          "y": 100
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "C+T",
+          "color": "#ccb28d"
+        },
+        "position": {
+          "x": 410,
+          "y": -280
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "N+T",
+          "color": "#a5d4ec"
+        },
+        "position": {
+          "x": -360,
+          "y": 28
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      }
+    ],
+    "edges": [
+      {
+        "data": {
+          "id": "T-N",
+          "source": "T",
+          "target": "N"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "N-C",
+          "source": "N",
+          "target": "C"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "T-P",
+          "source": "T",
+          "target": "P"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "U-C",
+          "source": "U",
+          "target": "C"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "C-C+T",
+          "source": "C",
+          "target": "C+T"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "N+T-T",
+          "source": "N+T",
+          "target": "T"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "P-C",
+          "source": "P",
+          "target": "C"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      }
+    ]
+  },
+  "style": [
+    {
+      "selector": "node",
+      "style": {
+        "background-color": "data(color)",
+        "label": "data(id)"
+      }
+    },
+    {
+      "selector": "node.highlight",
+      "style": {
+        "border-color": "#DC143C",
+        "border-width": "5px"
+      }
+    },
+    {
+      "selector": "edge",
+      "style": {
+        "width": "1px",
+        "line-color": "black",
+        "target-arrow-color": "#ccc",
+        "target-arrow-shape": "none",
+        "curve-style": "unbundled-bezier",
+        "control-point-distances": "30",
+        "control-point-weights": "0.5"
+      }
+    }
+  ],
+  "zoomingEnabled": true,
+  "userZoomingEnabled": true,
+  "zoom": 0.8,
+  "minZoom": 1e-50,
+  "maxZoom": 1e+50,
+  "panningEnabled": true,
+  "userPanningEnabled": true,
+  "pan": {
+    "x": 400,
+    "y": 350
+  },
+  "boxSelectionEnabled": true,
+  "renderer": {
+    "name": "canvas"
+  }
+}
 }
