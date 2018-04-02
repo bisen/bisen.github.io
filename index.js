@@ -14,22 +14,37 @@ const request = async () => {
   });
   cy.json(node_info['all']);
 
-  const get_studies = ( node1, node2 ) => {
+  const get_studies_2 = ( node1, node2 ) => {
     node1_id = node1.id();
     node2_id = node2.id();
-    pmid_list = [];
+    var study_list = [];
     jQuery.each(graph_data, function() {
       if ( this['coarse_trt_code1'] == node1_id ||
         this['coarse_trt_code2'] == node1_id ||
         this['coarse_trt_code1'] == node2_id ||
         this['coarse_trt_code2'] == node2_id ) {
-          pmid_list.push(this);
-          $('#cy').hide();
-          $('#navbar').hide();
-          $('#studies-modal').show();
+          study_list.push(this);
       }
     });
-    return pmid_list;
+    $('#cy').hide();
+    $('#navbar').hide();
+    $('#studies-modal').show();
+    return study_list;
+  }
+  
+  const get_studies_1 = ( node ) => {
+    node_id = node.id();
+    var study_list = [];
+    jQuery.each(graph_data, function() {
+      if ( this['coarse_trt_code1'] == node_id ||
+        this['coarse_trt_code2'] == node_id ) {
+          study_list.push(this);
+      }
+    });
+    $('#cy').hide();
+    $('#navbar').hide();
+    $('#studies-modal').show();
+    return study_list;
   }
 
   var prev_node = null;
@@ -63,6 +78,9 @@ const request = async () => {
 
 
   $('#outcome-form input').on('change', function() {
+    node = null;
+    prev_node = null;
+
     cy.autolock(false);
     cy.elements().remove();
     switch($('input[name=outcome-radio]:checked', '#outcome-form').val()) {
@@ -85,7 +103,13 @@ const request = async () => {
 
   //button that pulls the studies for nodes
   $('#get-studies-button').on('click', function() {
-    var pmid_list = get_studies(prev_node, node);
+    var study_list
+    if (prev_node == null) {
+      study_list = get_studies_1(node); 
+    } else {
+      study_list = get_studies_2(prev_node, node);
+    }
+    
     $('#studies-modal-content').empty();
     content = "<table>"
     content += "<tr>";
@@ -120,7 +144,7 @@ const request = async () => {
     content += "<th> Compliance with interventions </th>";
     content += "<th> Other issues </th>";
     content += "</tr>";
-    jQuery.each(graph_data, function() {
+    jQuery.each(study_list, function() {
       content += '<tr>';
       content += '<td>' + this['PMID'] + '</td>';
       content += '<td>' + this['Study Author'] + '</td>';
