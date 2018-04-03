@@ -31,7 +31,7 @@ const request = async () => {
     $('#studies-modal').show();
     return study_list;
   }
-  
+
   const get_studies_1 = ( node ) => {
     node_id = node.id();
     var study_list = [];
@@ -81,7 +81,6 @@ const request = async () => {
     node = null;
     prev_node = null;
 
-    cy.autolock(false);
     cy.elements().remove();
     switch($('input[name=outcome-radio]:checked', '#outcome-form').val()) {
       case 'stress-ui':
