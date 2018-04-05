@@ -6,7 +6,7 @@
   <style type="text/css" media="screen">
     #cy {
       position: absolute;
-      top: 50px;
+      top: 100px;
       right: 0;
       bottom: 0;
       left: 0;
@@ -15,22 +15,32 @@
 </head>
 <body>
   <div id='navbar'>
+    <form id="type-form">
+      <input type="radio" name="type-radio" value="all" checked>
+      <label>All</label>
+
+      <input type="radio" name="type-radio" value="stress-ui">
+      <label>Stress UI</label>
+
+      <input type="radio" name="type-radio" value="urge-ui">
+      <label>Urge UI</label>
+    </form>
+    <form id="ow-form">
+      <input type="radio" name="ow-radio" value="all" checked>
+      <label>All</label>
+
+      <input type="radio" name="ow-radio" value="older-women">
+      <label>Older women</label>
+    </form>
     <form id="outcome-form">
-      <input type="radio" name="outcome-radio" id="contactChoice1"
-       name="contact" value="all">
-      <label for="contactChoice1">All</label>
+      <input type="checkbox" name="outcome-checkbox" value="cure" checked>
+      <label>Cure</label>
 
-      <input type="radio" name="outcome-radio" id="contactChoice2"
-       name="contact" value="stress-ui">
-      <label for="contactChoice2">Stress UI</label>
+      <input type="checkbox" name="outcome-checkbox" value="improvement" checked>
+      <label>Improvement</label>
 
-      <input type="radio" name="outcome-radio" id="contactChoice3"
-       name="contact" value="urge-ui">
-      <label for="contactChoice3">Urge UI</label>
-
-      <input type="radio" name="outcome-radio" id="contactChoice4"
-       name="contact" value="older-women">
-      <label for="contactChoice4">Older women</label>
+      <input type="checkbox" name="outcome-checkbox" value="satisfaction" checked>
+      <label>Satisfaction</label>
     </form>
     <button id='get-studies-button' type="button"> Get Studies </button>
   </div>

@@ -9,10 +9,36 @@ const request = async () => {
   const node_info_response = await fetch('./data/node_info.json');
   node_info = await node_info_response.json();
 
+  const elements_response = await fetch('./data/elements.json');
+  elements = await elements_response.json();
+
   var cy = cytoscape({
     container: document.getElementById('cy'), // container to render in
   });
+
+  //state variables
+  var prev_node = null;
+  var node = null;
+  var ow = [ '0', '1' ];
+  var type = 'all';
+  var outcome = [ 'cure', 'improvement', 'satisfaction' ];
+
+  const update_nodes = () => {
+    var new_nodes = [];
+    var new_edges = [];
+    console.log(type);
+    jQuery.each(outcome, function() {
+      var o = this;
+      jQuery.each(ow, function() {
+        var w = this;
+        new_nodes = new_nodes.concat(elements[type][w][o]['nodes']);
+        new_edges = new_edges.concat(elements[type][w][o]['edges']);
+      });
+    });
+    cy.json( { elements: { nodes: new_nodes, edges: new_edges }, style: elements['style'] } );
+  }
   cy.json(node_info['all']);
+  update_nodes();
 
   const get_studies_2 = ( node1, node2 ) => {
     node1_id = node1.id();
@@ -47,8 +73,7 @@ const request = async () => {
     return study_list;
   }
 
-  var prev_node = null;
-  var node = null;
+
 
   cy.on('tap', 'node', function(e) {
     if ( e.target == prev_node ) {
@@ -77,38 +102,63 @@ const request = async () => {
   });
 
 
-  $('#outcome-form input').on('change', function() {
+  $('#type-form input').on('change', function() {
     node = null;
     prev_node = null;
 
-    cy.elements().remove();
-    switch($('input[name=outcome-radio]:checked', '#outcome-form').val()) {
+    switch($('input[name=type-radio]:checked', '#type-form').val()) {
       case 'stress-ui':
-        cy.json(node_info['stress']);
+        type = 'stress';
       break;
 
       case 'urge-ui':
-        cy.json(node_info['urge']);
-      break;
-
-      case 'older-women':
-        cy.json(node_info['older_women']);
+        type = 'urge';
       break;
 
       default:
-        cy.json(node_info['all']);
+        type = 'all';
     }
+    update_nodes();
   });
+
+  $('#ow-form input').on('change', function() {
+    node = null;
+    prev_node = null;
+
+    switch($('input[name=ow-radio]:checked', '#ow-form').val()) {
+      case 'older-women':
+        ow = ['1'];
+      break;
+
+      default:
+        ow = ['0', '1'];
+    }
+    update_nodes();
+  });
+
+  const handleOutcome = ( value ) => {
+    console.log(value);
+  }
+
+  $('input[name=outcome-checkbox]').change(
+    function(){
+      if ($(this).is(':checked')) {
+        outcome.push($(this).val());
+      } else {
+        outcome.splice(outcome.indexOf($(this).val()),1);
+      }
+      update_nodes();
+    });
 
   //button that pulls the studies for nodes
   $('#get-studies-button').on('click', function() {
     var study_list
     if (prev_node == null) {
-      study_list = get_studies_1(node); 
+      study_list = get_studies_1(node);
     } else {
       study_list = get_studies_2(prev_node, node);
     }
-    
+
     $('#studies-modal-content').empty();
     content = "<table>"
     content += "<tr>";
