@@ -10,6 +10,31 @@
       right: 0;
       bottom: 0;
       left: 0;
+      max-width: 900px;
+    }
+
+    #navbar {
+      position: absolute;
+      top: 10px;
+      right: 0;
+      bottom: 0;
+      left: 10px;
+    }
+
+    #sidebar {
+      position: absolute;
+      top: 100px;
+      right: 0;
+      bottom: 0;
+      left: 950px;
+    }
+
+    #legend {
+      position: absolute;
+      top: 500px;
+      right: 0;
+      bottom: 0;
+      left: 700px;
     }
   </style>
 </head>
@@ -50,6 +75,103 @@
       <p>Some text in the Modal..</p>
     </div>
   </div>
+  <div id='legend'>
+    <span>A: alpha agonist</span><br>
+    <span>B: botulinum toxin A</span><br>
+    <span>C: anticholinergic</span><br>
+    <span>H: hormones</span><br>
+    <span>N: neuromodulation</span><br>
+    <span>T: behavioral therapy</span><br>
+    <span>U: periurethal bulking</span><br>
+    <span>V: intravesical pressure release</span><br>
+    <span>P: sham/no treatment/placebo</span><br>
+
+  </div>
+  <div id='sidebar'>
+    <button id='about-button'>About this project</button><br>
+    <button id='overview-button'>Overview of the Evidence Base</button><br>
+    <button id='key-messages-button'>Key Messages</button><br>
+    <br>
+
+    <span> LOYLOY </span>
+  </div>
+  <div id='key-messages' style="display: none;">
+    <span id="close-key-messages" class="close">&times;</span><br><br>
+    - Available nonpharmacological and pharmacological interventions generally result in better urinary incontinence outcomes than no treatment.<br><br>
+    - Behavioral therapy and neuromodulation, each alone or combined, and onabotulinum toxin A (BTX)  result in the highest rates of cure, improvement, and satisfaction. Other treatments were also effective.<br><br>
+    - Dry mouth is the most common side effect with several drugs, particularly anticholinergics.<br><br>
+    - Serious adverse events most commonly occurred with periurethral bulking agents, but were rare for other interventions. BTX was associated with risk of urinary tract infections and urinary retention. Duloxetine was associated with numerous constitutional adverse effects such as nausea, insomnia, and fatigue.<br><br>
+    - Nonpharmacological interventions generally have few adverse events.<br><br>
+  </div>
+  <div id='overview-dummy' style="display: none;">
+    <span id="close-overview" class="close">&times;</span><br><br>
+    <span style="color: red;"> NOT REAL DATA </span>
+    <br><br>
+    <table>
+      <tbody>
+        <tr>
+          <th align="left">Characteristic</th>
+          <th align="left">Description</th>
+          <th align="left">Number </th>
+        </tr>
+        <tr>
+          <th align="left">Trials (people)</th>
+          <td>Total number of trials (people) in the evidence-base </td>
+          <td>136 (13246)</td>
+        </tr>
+        <tr>
+          <th align="left">Publication year, median (range)</th>
+          <td>A proxy for the years patients were enrolled in the study</td>
+          <td>2008(1990-2017)</td>
+        </tr>
+        <tr>
+          <th align="left">Sample size, median (range)</th>
+          <td>A description of the size, proxy of information, per study </td>
+          <td>133(30-1133)</td>
+        </tr>
+        <tr><td><br></td></tr>
+        <tr>
+          <th align="left">All possible, n </th>
+          <td>Number of possible comparisons among the intervention categories</td>
+          <td>91</td>
+        </tr>
+        <tr>
+          <th align="left">With data, n (% of all)</th>
+          <td>Pairs of interventions categories compared in at least one trial</td>
+          <td>87  (88%)</td>
+        </tr>
+        <tr>
+          <th align="left">Trials, n (range)</th>
+          <td>Number of trials informing each comparison with data</td>
+          <td>136 (1, 10)</td>
+        </tr>
+        <tr>
+          <th align="left">Sample size, n (range)</th>
+          <td>Cumulative sample size of trials per comparison with data</td>
+          <td>13246 (18, 5539)</td>
+        </tr>
+        <tr><td><br></td></tr>
+        <tr>
+          <th align="left">Intervention categories</th>
+          <td>The categories in which interventions are organized according to clinically.</td>
+          <td>14</td>
+        </tr>
+        <tr>
+          <th align="left">Trials, n (range)</th>
+          <td>Number of trial arms per intervention category</td>
+          <td>136 (1, 17)</td>
+        </tr>
+        <tr>
+          <th align="left">Sample size, n (range)</th>
+          <td>Number of patients per intervention category</td>
+          <td>13246 (42, 4875)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+    
+  </div>
+
   <div id='cy'></div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>

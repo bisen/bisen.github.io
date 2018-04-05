@@ -102,16 +102,22 @@ ws[1..-1].each do |row|
     end
   end
 
+  if source > target
+    temp = target
+    target = source
+    source = temp
+  end
+
   if type != 0
     element_dict[type][older_women][outcome][:nodes] << { data: { id: target, color: color_dict[target] }, position: position_dict[target] }
     element_dict[type][older_women][outcome][:nodes] << { data: { id: source, color: color_dict[source] }, position: position_dict[source] }
-    element_dict[type][older_women][outcome][:edges] << { data: { id: "#{source}-#{target}", source: source, target: target } }
+    if target != source then element_dict[type][older_women][outcome][:edges] << { data: { id: "#{source}-#{target}", source: source, target: target } } end
   end
 
   #all
   element_dict['all'][older_women][outcome][:nodes] << { data: { id: target, color: color_dict[target] }, position: position_dict[target] }
   element_dict['all'][older_women][outcome][:nodes] << { data: { id: source, color: color_dict[source] }, position: position_dict[source] }
-  element_dict['all'][older_women][outcome][:edges] << { data: { id: "#{source}-#{target}", source: source, target: target } }
+  if target != source then element_dict['all'][older_women][outcome][:edges] << { data: { id: "#{source}-#{target}", source: source, target: target } } end
 end
 
 #deduplicate edges and nodes

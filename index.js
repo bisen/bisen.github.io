@@ -3,7 +3,7 @@ var graph_data = {};
 var node_info = {};
 
 const request = async () => {
-  const graph_data_response = await fetch('./data/dataset_shell.json');
+  const graph_data_response = await fetch('./data/studies.json');
   graph_data = await graph_data_response.json();
 
   const node_info_response = await fetch('./data/node_info.json');
@@ -52,9 +52,6 @@ const request = async () => {
           study_list.push(this);
       }
     });
-    $('#cy').hide();
-    $('#navbar').hide();
-    $('#studies-modal').show();
     return study_list;
   }
 
@@ -67,9 +64,6 @@ const request = async () => {
           study_list.push(this);
       }
     });
-    $('#cy').hide();
-    $('#navbar').hide();
-    $('#studies-modal').show();
     return study_list;
   }
 
@@ -152,7 +146,7 @@ const request = async () => {
 
   //button that pulls the studies for nodes
   $('#get-studies-button').on('click', function() {
-    var study_list
+    var study_list;
     if (prev_node == null) {
       study_list = get_studies_1(node);
     } else {
@@ -160,19 +154,19 @@ const request = async () => {
     }
 
     $('#studies-modal-content').empty();
-    content = "<table>"
+    content = "<table>";
     content += "<tr>";
     content += "<th> PMID </th>";
-    content += "<th> Study Author </th>";
+    content += "<th> Study_Author </th>";
     content += "<th> Year </th>";
     content += "<th> Age </th>";
-    content += "<th> Older women </th>";
-    content += "<th> UI type </th>";
-    content += "<th> dose1 </th>";
-    content += "<th> dose2 </th>";
+    content += "<th> Older_women </th>";
+    content += "<th> UI_type </th>";
     content += "<th> followup </th>";
     content += "<th> n1 </th>";
     content += "<th> n2 </th>";
+    content += "<th> N1 </th>";
+    content += "<th> N2 </th>";
     content += "<th> granular_trt_code1 </th>";
     content += "<th> granular_trt_code2 </th>";
     content += "<th> coarse_trt_code1 </th>";
@@ -182,30 +176,30 @@ const request = async () => {
     content += "<th> OR12 </th>";
     content += "<th> OR21 </th>";
     content += "<th> Outcome </th>";
-    content += "<th> Adequate generation of a randomized sequence </th>";
-    content += "<th> Allocation concealment </th>";
-    content += "<th> Blinding of patients </th>";
-    content += "<th> Blinding of outcome assessors (or \"double blind\") </th>";
-    content += "<th> Intention-to-treat-analysis </th>";
-    content += "<th> Incomplete results data (attrition bias) </th>";
-    content += "<th> Group similarity at baseline (selection bias) </th>";
-    content += "<th> Were interventions adequately described? </th>";
-    content += "<th> Compliance with interventions </th>";
-    content += "<th> Other issues </th>";
+    content += "<th> combined </th>";
+    content += "<th> Blinding_of_Patients </th>";
+    content += "<th> Blinding_of_Assessors </th>";
+    content += "<th> Intention_to_Treat </th>";
+    content += "<th> Attrition_Bias </th>";
+    content += "<th> Selection_Bias </th>";
+    content += "<th> Interventions_Described </th>";
+    content += "<th> Intervention_Compliance </th>";
+    content += "<th> Other_Issues </th>";
+    content += "<th> Allocation_Concealment </th>";
     content += "</tr>";
     jQuery.each(study_list, function() {
       content += '<tr>';
       content += '<td>' + this['PMID'] + '</td>';
-      content += '<td>' + this['Study Author'] + '</td>';
+      content += '<td>' + this['Study_Author'] + '</td>';
       content += '<td>' + this['Year'] + '</td>';
       content += '<td>' + this['Age'] + '</td>';
-      content += '<td>' + this['Older women'] + '</td>';
-      content += '<td>' + this['UI type'] + '</td>';
-      content += '<td>' + this['dose1'] + '</td>';
-      content += '<td>' + this['dose2'] + '</td>';
+      content += '<td>' + this['Older_women'] + '</td>';
+      content += '<td>' + this['UI_type'] + '</td>';
       content += '<td>' + this['followup'] + '</td>';
       content += '<td>' + this['n1'] + '</td>';
       content += '<td>' + this['n2'] + '</td>';
+      content += '<td>' + this['N1'] + '</td>';
+      content += '<td>' + this['N2'] + '</td>';
       content += '<td>' + this['granular_trt_code1'] + '</td>';
       content += '<td>' + this['granular_trt_code2'] + '</td>';
       content += '<td>' + this['coarse_trt_code1'] + '</td>';
@@ -215,25 +209,60 @@ const request = async () => {
       content += '<td>' + this['OR12'] + '</td>';
       content += '<td>' + this['OR21'] + '</td>';
       content += '<td>' + this['Outcome'] + '</td>';
-      content += '<td>' + this['Adequate generation of a randomized sequence'] + '</td>';
-      content += '<td>' + this['Allocation concealment'] + '</td>';
-      content += '<td>' + this['Blinding of patients'] + '</td>';
-      content += '<td>' + this['Blinding of outcome assessors (or \"double blind\"'] + '</td>';
-      content += '<td>' + this['Intention-to-treat-analysis'] + '</td>';
-      content += '<td>' + this['Incomplete results data (attrition bias)'] + '</td>';
-      content += '<td>' + this['Group similarity at baseline (selection bias)'] + '</td>';
-      content += '<td>' + this['Were interventions adequately described?'] + '</td>';
-      content += '<td>' + this['Compliance with interventions'] + '</td>';
-      content += '<td>' + this['Other issues'] + '</td>';
+      content += '<td>' + this['combined'] + '</td>';
+      content += '<td>' + this['Randomization_Sequence'] + '</td>';
+      content += '<td>' + this['Blinding_of_Assessors'] + '</td>';
+      content += '<td>' + this['Intention_to_Treat'] + '</td>';
+      content += '<td>' + this['Attrition_Bias'] + '</td>';
+      content += '<td>' + this['Selection_Bias'] + '</td>';
+      content += '<td>' + this['Interventions_Described'] + '</td>';
+      content += '<td>' + this['Intervention_Compliance'] + '</td>';
+      content += '<td>' + this['Other_Issues'] + '</td>';
+      content += '<td>' + this['Allocation_Concealment'] + '</td>';
       content += '</tr>';
     });
     content += '</table>';
     $('#studies-modal-content').append(content);
+    $('#cy').hide();
+    $('#navbar').hide();
+    $('#sidebar').hide();
+    $('#legend').hide();
+    $('#studies-modal').show();
   });
   $('#close-studies-modal').on('click', function() {
     $('#cy').show();
     $('#navbar').show();
+    $('#sidebar').show();
+    $('#legend').show();
     $('#studies-modal').hide();
+  });
+  $('#key-messages-button').on('click', function() {
+    $('#cy').hide();
+    $('#navbar').hide();
+    $('#sidebar').hide();
+    $('#legend').hide();
+    $('#key-messages').show();
+  });
+  $('#close-key-messages').on('click', function() {
+    $('#cy').show();
+    $('#navbar').show();
+    $('#sidebar').show();
+    $('#legend').show();
+    $('#key-messages').hide();
+  });
+  $('#overview-button').on('click', function() {
+    $('#cy').hide();
+    $('#navbar').hide();
+    $('#sidebar').hide();
+    $('#legend').hide();
+    $('#overview-dummy').show();
+  });
+  $('#close-overview').on('click', function() {
+    $('#cy').show();
+    $('#navbar').show();
+    $('#sidebar').show();
+    $('#legend').show();
+    $('#overview-dummy').hide();
   });
 }
 
