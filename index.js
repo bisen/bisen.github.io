@@ -141,6 +141,15 @@ const request = async () => {
       } else {
         outcome.splice(outcome.indexOf($(this).val()),1);
       }
+      if (outcome.length > 1) {
+        $('#summary-button').attr('disabled', true); 
+        $('#absolute-effects-button').attr('disabled', true); 
+        $('#relative-effects-button').attr('disabled', true); 
+      } else {
+        $('#summary-button').attr('disabled', false); 
+        $('#absolute-effects-button').attr('disabled', false); 
+        $('#relative-effects-button').attr('disabled', false); 
+      }
       update_nodes();
     });
 
