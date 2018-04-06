@@ -45,10 +45,10 @@ const request = async () => {
     node2_id = node2.id();
     var study_list = [];
     jQuery.each(graph_data, function() {
-      if ( this['coarse_trt_code1'] == node1_id ||
-        this['coarse_trt_code2'] == node1_id ||
-        this['coarse_trt_code1'] == node2_id ||
-        this['coarse_trt_code2'] == node2_id ) {
+      if ((this['coarse_trt_code1'] == node1_id &&
+        this['coarse_trt_code2'] == node2_id) ||
+        (this['coarse_trt_code1'] == node2_id &&
+        this['coarse_trt_code2'] == node1_id )) {
           study_list.push(this);
       }
     });

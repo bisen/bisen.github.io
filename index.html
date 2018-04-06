@@ -66,6 +66,12 @@
 
       <input type="checkbox" name="outcome-checkbox" value="satisfaction" checked>
       <label>Satisfaction</label>
+
+      <input type="checkbox" name="outcome-checkbox" value="qol" disabled>
+      <label>Quality of Life</label>
+
+      <input type="checkbox" name="outcome-checkbox" value="satisfaction" disabled>
+      <label>Adverse Effects</label>
     </form>
     <button id='get-studies-button' type="button"> Get Studies </button>
   </div>
@@ -89,11 +95,12 @@
   </div>
   <div id='sidebar'>
     <button id='about-button'>About this project</button><br>
-    <button id='overview-button'>Overview of the Evidence Base</button><br>
     <button id='key-messages-button'>Key Messages</button><br>
     <br>
+    <button id='overview-button'>Overview of the Evidence Base</button><br>
+    <br>
     <button id='summary-button' disabled>Summary</button><br>
-    <button id='absolute-effects-button' disabled>Absolute Effects</button><br>
+    <button id='absolute-effects-button' disabled>Predicted Outcome Rates (League Tables)</button><br>
     <button id='relative-effects-button' disabled>Relative Effects</button><br>
   </div>
   <div id='key-messages' style="display: none; max-width: 600px;">
