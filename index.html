@@ -77,7 +77,7 @@
   </div>
   <div id="studies-modal" class="modal" style="display: none;">
     <span id="close-studies-modal" class="close">&times;</span>
-    <div id="studies-modal-content" class="modal-content">
+    <div id="studies-modal-content" class="modal-content" style="width: 1200px; margin: 0 auto;">
       <p>Some text in the Modal..</p>
     </div>
   </div>
@@ -94,14 +94,14 @@
 
   </div>
   <div id='sidebar'>
-    <button id='about-button'>About this project</button><br>
+    <button id='about-button' disabled>About this project</button><br>
     <button id='key-messages-button'>Key Messages</button><br>
     <br>
     <button id='overview-button'>Overview of the Evidence Base</button><br>
     <br>
     <button id='summary-button' disabled>Summary</button><br>
-    <button id='absolute-effects-button' disabled>Predicted Outcome Rates (League Tables)</button><br>
-    <button id='relative-effects-button' disabled>Relative Effects</button><br>
+    <button id='league-button' disabled>Predicted Outcome Rates (League Tables)</button><br>
+    <button id='relative-button' disabled>Relative Effects</button><br>
   </div>
   <div id='key-messages' style="display: none; max-width: 600px;">
     <span id="close-key-messages" class="close">&times;</span><br><br>
@@ -179,14 +179,26 @@
       </tbody>
     </table>
   </div>
+
+  <div id="table-div" style='display: none;'>
+    <span id="close-table" class="close">&times;</span><br><br>
+    <div id="table-content"> </div>
+  </div>
+
     
   </div>
 
   <div id='cy'></div>
 
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.2.9/cytoscape.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.9/jquery.csv.min.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.colVis.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
 
   <script src="index.js" type="text/javascript" charset="utf-8"></script>
 </body>
