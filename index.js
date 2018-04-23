@@ -446,11 +446,28 @@ const request = async () => {
   });
 
   //guided tour via IntroJs
-  $('#guide-button').on('click', function() {
-    console.log('loyloy');
+  $('#welcome-button, #guide-button').on('click', function() {
+    $('#welcome-modal').hide();
     introJs().start();
   });
 
+  $('#welcome-checkbox').on('change', function() {
+    if ($('#welcome-checkbox').is(':checked')) {
+      document.cookie = "show-welcome=false";
+    } else {
+      document.cookie = "show-welcome=true";
+    }
+  });
+
+  $('#close-welcome-button').on('click', function() {
+    window.location.hash = '#index';
+    $('#welcome-modal').hide();
+  });
+
+  //First time check with cookie
+  if (document.cookie != "show-welcome=false") {
+    $('#welcome-modal').show();
+  }
 
   var hash = window.location.hash;
   setInterval(function(){
@@ -512,15 +529,6 @@ const request = async () => {
 
   window.location.hash = '#index';
 
-  // First time check with cookie
-  if (document.cookie != "first-time=true") {
-    document.cookie = "first-time=true";
-    $('#welcome-modal').show();
-
-  } else {
-    //make help modal visible
-    alert("I've seen you around here");
-  }
 }
 
 request();

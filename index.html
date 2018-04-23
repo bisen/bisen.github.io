@@ -40,62 +40,65 @@
     #welcome-modal {
       position: absolute;
       z-index: 999;
-      top: 0;
+      top: 30%;
       left: 50%;
-      width: 100%;
+      width: 30%;
       height: 200px;
       transform: translate(-50%, 0);
       background: rgba(220, 230, 240, 1);
       box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5), 0 0 40px 0 rgba(0, 0, 0, 0.8);
-
+      text-align: center;
     }
 
   </style>
 </head>
 <body>
   <div id='navbar'>
-    <b> UI Type: </b>
-    <form id="type-form" style="display: inline;">
-      <input type="radio" name="type-radio" value="all" checked>
-      <label>All</label>
+    <div data-step="2" data-intro="Use this panel filter the graph by UI type, population or outcome.">
+      <b> UI Type: </b>
+      <form id="type-form" style="display: inline;">
+        <input type="radio" name="type-radio" value="all" checked>
+        <label>All</label>
 
-      <input type="radio" name="type-radio" value="stress-ui">
-      <label>Stress UI</label>
+        <input type="radio" name="type-radio" value="stress-ui">
+        <label>Stress UI</label>
 
-      <input type="radio" name="type-radio" value="urge-ui">
-      <label>Urge UI</label>
-    </form>
-    <br>
-    <b> Population: </b>
-    <form id="ow-form" style="display: inline;">
-      <input type="radio" name="ow-radio" value="all" checked>
-      <label>All</label>
+        <input type="radio" name="type-radio" value="urge-ui">
+        <label>Urge UI</label>
+      </form>
+      <br>
+      <b> Population: </b>
+      <form id="ow-form" style="display: inline;">
+        <input type="radio" name="ow-radio" value="all" checked>
+        <label>All</label>
 
-      <input type="radio" name="ow-radio" value="older-women">
-      <label>Older women</label>
-    </form>
-    <br>
-    <b> Outcome: </b>
-    <form id="outcome-form" style="display: inline;">
-      <input type="checkbox" name="outcome-checkbox" value="cure" checked>
-      <label>Cure</label>
+        <input type="radio" name="ow-radio" value="older-women">
+        <label>Older women</label>
+      </form>
+      <br>
+      <b> Outcome: </b>
+      <form id="outcome-form" style="display: inline;">
+        <input type="checkbox" name="outcome-checkbox" value="cure" checked>
+        <label>Cure</label>
 
-      <input type="checkbox" name="outcome-checkbox" value="improvement" checked>
-      <label>Improvement</label>
+        <input type="checkbox" name="outcome-checkbox" value="improvement" checked>
+        <label>Improvement</label>
 
-      <input type="checkbox" name="outcome-checkbox" value="satisfaction" checked>
-      <label>Satisfaction</label>
+        <input type="checkbox" name="outcome-checkbox" value="satisfaction" checked>
+        <label>Satisfaction</label>
 
-      <input type="checkbox" name="outcome-checkbox" value="qol" disabled>
-      <label>Quality of Life</label>
+        <input type="checkbox" name="outcome-checkbox" value="qol" disabled>
+        <label>Quality of Life</label>
 
-      <input type="checkbox" name="outcome-checkbox" value="satisfaction" disabled>
-      <label>Adverse Events</label>
-    </form>
-    <br>
-    <button id='get-studies-button' type="button"> Get Studies </button>
+        <input type="checkbox" name="outcome-checkbox" value="satisfaction" disabled>
+        <label>Adverse Events</label>
+      </form>
+      <br>
+      <button id='get-studies-button' type="button" data-step='3' data-intro='Click here to get a list of studies based on the current filters and selected nodes.'> Get Studies </button>
+    </div>
   </div>
   <div id="studies-modal" class="modal" style="display: none;">
+    
     <span id="close-studies-modal" class="close">&times;</span>
     <div id="studies-modal-content" class="modal-content" style="width: 1200px; margin: 0 auto;">
       <p>Some text in the Modal..</p>
@@ -114,16 +117,18 @@
 
   </div>
   <div id='sidebar'>
-    <button id='guide-button'> Guided Tour! </button><br>
+    <button id='guide-button' data-step='5' data-intro='Click here to retake the tour.'> Guided Tour! </button><br>
     <br>
-    <button id='about-button' disabled>About this project</button><br>
-    <button id='key-messages-button'>Key Messages</button><br>
-    <br>
-    <button id='overview-button'>Overview of the Evidence Base</button><br>
-    <br>
-    <button id='summary-button' disabled>Summary</button><br>
-    <button id='league-button' disabled>Predicted Outcome Rates (League Tables)</button><br>
-    <button id='relative-button' disabled>Relative Effects</button><br>
+    <div data-step='4' data-intro='Use this panel to access tables and additional infromation related to the systematic review.'> 
+      <button id='about-button' disabled>About this project</button><br>
+      <button id='key-messages-button'>Key Messages</button><br>
+      <br>
+      <button id='overview-button'>Overview of the Evidence Base</button><br>
+      <br>
+      <button id='summary-button' disabled>Summary</button><br>
+      <button id='league-button' disabled>Predicted Outcome Rates (League Tables)</button><br>
+      <button id='relative-button' disabled>Relative Effects</button><br>
+    </div>
   </div>
   <div id='key-messages' style="display: none; max-width: 600px;">
     <span id="close-key-messages" class="close">&times;</span><br><br>
@@ -207,11 +212,17 @@
     <div id="table-content"> </div>
   </div>
 
-  <div id="welcome-modal" style='display: none;'> Loyloy </div>
+  <div id="welcome-modal" style='display: none;'>
+    <h4>An Overview of Non Surgical Treatments for Urinary Incontinence in Adult Women</h4>
+    <button id="welcome-button"> Start Tutorial </button>
+    <button id="close-welcome-button"> No thanks </button>
+    <br><br>
+    <input id="welcome-checkbox" type="checkbox"> Do not show this again </input>
+  </div>
 
   </div>
 
-  <div id='cy' data-intro='Hello step one!'></div>
+  <div id='cy' data-step='1' data-intro='This is a graph representation of the evidence base. Each node represents a different intervention and each edge means there is at least one study directly comparing the two interventions.'></div>
 
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css">
