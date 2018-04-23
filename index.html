@@ -36,11 +36,26 @@
       bottom: 0;
       left: 700px;
     }
+
+    #welcome-modal {
+      position: absolute;
+      z-index: 999;
+      top: 0;
+      left: 50%;
+      width: 100%;
+      height: 200px;
+      transform: translate(-50%, 0);
+      background: rgba(220, 230, 240, 1);
+      box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5), 0 0 40px 0 rgba(0, 0, 0, 0.8);
+
+    }
+
   </style>
 </head>
 <body>
   <div id='navbar'>
-    <form id="type-form">
+    <b> UI Type: </b>
+    <form id="type-form" style="display: inline;">
       <input type="radio" name="type-radio" value="all" checked>
       <label>All</label>
 
@@ -50,14 +65,18 @@
       <input type="radio" name="type-radio" value="urge-ui">
       <label>Urge UI</label>
     </form>
-    <form id="ow-form">
+    <br>
+    <b> Population: </b>
+    <form id="ow-form" style="display: inline;">
       <input type="radio" name="ow-radio" value="all" checked>
       <label>All</label>
 
       <input type="radio" name="ow-radio" value="older-women">
       <label>Older women</label>
     </form>
-    <form id="outcome-form">
+    <br>
+    <b> Outcome: </b>
+    <form id="outcome-form" style="display: inline;">
       <input type="checkbox" name="outcome-checkbox" value="cure" checked>
       <label>Cure</label>
 
@@ -71,8 +90,9 @@
       <label>Quality of Life</label>
 
       <input type="checkbox" name="outcome-checkbox" value="satisfaction" disabled>
-      <label>Adverse Effects</label>
+      <label>Adverse Events</label>
     </form>
+    <br>
     <button id='get-studies-button' type="button"> Get Studies </button>
   </div>
   <div id="studies-modal" class="modal" style="display: none;">
@@ -94,6 +114,8 @@
 
   </div>
   <div id='sidebar'>
+    <button id='guide-button'> Guided Tour! </button><br>
+    <br>
     <button id='about-button' disabled>About this project</button><br>
     <button id='key-messages-button'>Key Messages</button><br>
     <br>
@@ -185,13 +207,15 @@
     <div id="table-content"> </div>
   </div>
 
-    
+  <div id="welcome-modal" style='display: none;'> Loyloy </div>
+
   </div>
 
-  <div id='cy'></div>
+  <div id='cy' data-intro='Hello step one!'></div>
 
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.7.0/introjs.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.2.9/cytoscape.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.9/jquery.csv.min.js" type="text/javascript" charset="utf-8"></script>
@@ -199,6 +223,7 @@
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.colVis.min.js"></script>
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.7.0/intro.js"></script>
 
   <script src="index.js" type="text/javascript" charset="utf-8"></script>
 </body>

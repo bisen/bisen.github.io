@@ -5,7 +5,6 @@ var relative_effectiveness_dict = { 'all': {}, 'stress': {}, 'urge': {}, 'ow': {
 var league_dict = { 'all': {}, 'stress': {}, 'urge': {}, 'ow': {} };
 
 const request = async () => {
-  
   var response = await fetch('./data/studies.json');
   graph_data = await response.json();
 
@@ -24,7 +23,7 @@ const request = async () => {
 
   response = await fetch('./data/tables/relative-satisfaction.html');
   relative_effectiveness_dict['all']['satisfaction'] = await response.text();
- 
+
   response = await fetch('./data/tables/relative-cure-stress.html');
   relative_effectiveness_dict['stress']['cure'] = await response.text();
 
@@ -33,7 +32,7 @@ const request = async () => {
 
   response = await fetch('./data/tables/relative-cure-ow.html');
   relative_effectiveness_dict['ow']['cure'] = await response.text();
- 
+
   response = await fetch('./data/tables/relative-improvement-stress.html');
   relative_effectiveness_dict['stress']['improvement'] = await response.text();
 
@@ -51,7 +50,7 @@ const request = async () => {
 
   response = await fetch('./data/tables/relative-satisfaction-ow.html');
   relative_effectiveness_dict['ow']['satisfaction'] = await response.text();
- 
+
   //get league tables
   response = await fetch('./data/tables/league-cure.html');
   league_dict['all']['cure'] = await response.text();
@@ -61,7 +60,7 @@ const request = async () => {
 
   response = await fetch('./data/tables/league-satisfaction.html');
   league_dict['all']['satisfaction'] = await response.text();
- 
+
   response = await fetch('./data/tables/league-cure-stress.html');
   league_dict['stress']['cure'] = await response.text();
 
@@ -70,7 +69,7 @@ const request = async () => {
 
   response = await fetch('./data/tables/league-cure-ow.html');
   league_dict['ow']['cure'] = await response.text();
- 
+
   response = await fetch('./data/tables/league-improvement-stress.html');
   league_dict['stress']['improvement'] = await response.text();
 
@@ -100,7 +99,7 @@ const request = async () => {
   var type = 'all';
   var outcome = [ 'cure', 'improvement', 'satisfaction' ];
 
-  //update cy elements from the elements dictionary 
+  //update cy elements from the elements dictionary
   const update_nodes = () => {
     var new_nodes = [];
     var new_edges = [];
@@ -127,8 +126,8 @@ const request = async () => {
       if ((this['coarse_trt_code1'] == node1_id &&
         this['coarse_trt_code2'] == node2_id) ||
         (this['coarse_trt_code1'] == node2_id &&
-        this['coarse_trt_code2'] == node1_id) && 
-        ( a_dict[type].indexOf(this['ui_type'].toString()) >= 0 ) && 
+        this['coarse_trt_code2'] == node1_id) &&
+        ( a_dict[type].indexOf(this['ui_type'].toString()) >= 0 ) &&
         ( ow.indexOf(this['older_women'].toString()) >= 0 ) &&
         ( outcome.indexOf(this['outcome'].toString()) >= 0 )) {
           study_list.push(this);
@@ -144,8 +143,8 @@ const request = async () => {
     var study_list = [];
     jQuery.each(graph_data, function() {
       if (( this['coarse_trt_code1'] == node_id ||
-        this['coarse_trt_code2'] == node_id ) && 
-        ( a_dict[type].indexOf(this['ui_type'].toString()) >= 0 ) && 
+        this['coarse_trt_code2'] == node_id ) &&
+        ( a_dict[type].indexOf(this['ui_type'].toString()) >= 0 ) &&
         ( ow.indexOf(this['older_women'].toString()) >= 0 ) &&
         ( outcome.indexOf(this['outcome'].toString()) >= 0 )) {
           study_list.push(this);
@@ -158,7 +157,7 @@ const request = async () => {
     a_dict = { "stress": ["sui"], "urge": ["uui"], "all": ["sui","uui","0"] }
     var study_list = [];
     jQuery.each(graph_data, function() {
-      if (( a_dict[type].indexOf(this['ui_type'].toString()) >= 0 ) && 
+      if (( a_dict[type].indexOf(this['ui_type'].toString()) >= 0 ) &&
         ( ow.indexOf(this['older_women'].toString()) >= 0 ) &&
         ( outcome.indexOf(this['outcome'].toString()) >= 0 )) {
           study_list.push(this);
@@ -201,17 +200,24 @@ const request = async () => {
 
   //update the cy elements array when filtering settings are changed
   $('#type-form input').on('change', function() {
+    if (prev_node != null) {
+      prev_node.removeClass('highlight');
+    }
+    if (node != null) {
+      node.removeClass('highlight');
+    }
+
     node = null;
     prev_node = null;
 
     switch($('input[name=type-radio]:checked', '#type-form').val()) {
       case 'stress-ui':
         type = 'stress';
-      break;
+        break;
 
       case 'urge-ui':
         type = 'urge';
-      break;
+        break;
 
       default:
         type = 'all';
@@ -221,14 +227,20 @@ const request = async () => {
 
   //update the cy elements array when filtering settings are changed
   $('#ow-form input').on('change', function() {
+    if (prev_node != null) {
+      prev_node.removeClass('highlight');
+    }
+    if (node != null) {
+      node.removeClass('highlight');
+    }
+
     node = null;
     prev_node = null;
 
     switch($('input[name=ow-radio]:checked', '#ow-form').val()) {
       case 'older-women':
         ow = ['1'];
-      break;
-
+        break;
       default:
         ow = ['0', '1'];
     }
@@ -239,8 +251,15 @@ const request = async () => {
     console.log(value);
   }
 
-  $('input[name=outcome-checkbox]').change(
+  $('input[name="outcome-checkbox"]').change(
     function(){
+      if (prev_node != null) {
+        prev_node.removeClass('highlight');
+      }
+      if (node != null) {
+        node.removeClass('highlight');
+      }
+
       node = null;
       prev_node = null;
 
@@ -249,20 +268,26 @@ const request = async () => {
       } else {
         outcome.splice(outcome.indexOf($(this).val()),1);
       }
-      if (outcome.length == 1) {
-        //$('#summary-button').attr('disabled', false); 
-        $('#league-button').attr('disabled', false); 
-        $('#relative-button').attr('disabled', false); 
-      } else {
-        $('#summary-button').attr('disabled', true); 
-        $('#league-button').attr('disabled', true); 
-        $('#relative-button').attr('disabled', true); 
-      }
       update_nodes();
     });
 
+  //disable buttons for filters without corresponding tables
+  $('input[name=outcome-checkbox], input[name=type-radio], input[name=ow-radio]').change(
+    function(){
+      if (!( ow.length == 1 && type != 'all' ) && (outcome.length == 1)){
+        $('#summary-button').attr('disabled', true);
+        $('#league-button').attr('disabled', false);
+        $('#relative-button').attr('disabled', false);
+      } else {
+        $('#summary-button').attr('disabled', true);
+        $('#league-button').attr('disabled', true);
+        $('#relative-button').attr('disabled', true);
+      }
+  });
+
   //button that pulls the studies for nodes
   $('#get-studies-button').on('click', function() {
+    window.location.hash = '#studies';
     var study_list;
     if (node == null) {
       study_list = get_studies_0();
@@ -345,7 +370,10 @@ const request = async () => {
         buttons: [ 'colvis' ]
       });
   });
+
+  // button events
   $('#close-studies-modal').on('click', function() {
+    window.location.hash = '#index';
     $('#cy').show();
     $('#navbar').show();
     $('#sidebar').show();
@@ -353,6 +381,7 @@ const request = async () => {
     $('#studies-modal').hide();
   });
   $('#key-messages-button').on('click', function() {
+    window.location.hash = '#key-messages';
     $('#cy').hide();
     $('#navbar').hide();
     $('#sidebar').hide();
@@ -360,6 +389,7 @@ const request = async () => {
     $('#key-messages').show();
   });
   $('#close-key-messages').on('click', function() {
+    window.location.hash = '#index';
     $('#cy').show();
     $('#navbar').show();
     $('#sidebar').show();
@@ -367,6 +397,7 @@ const request = async () => {
     $('#key-messages').hide();
   });
   $('#overview-button').on('click', function() {
+    window.location.hash = '#overview';
     $('#cy').hide();
     $('#navbar').hide();
     $('#sidebar').hide();
@@ -374,6 +405,7 @@ const request = async () => {
     $('#overview-dummy').show();
   });
   $('#close-overview').on('click', function() {
+    window.location.hash = '#index';
     $('#cy').show();
     $('#navbar').show();
     $('#sidebar').show();
@@ -381,6 +413,7 @@ const request = async () => {
     $('#overview-dummy').hide();
   });
   $('#close-table').on('click', function() {
+    window.location.hash = '#index';
     $('#cy').show();
     $('#navbar').show();
     $('#sidebar').show();
@@ -388,8 +421,8 @@ const request = async () => {
     $('#table-div').hide();
   });
   $('#league-button').on('click', function() {
+    window.location.hash = '#table';
     $('#table-content').html(league_dict[type][outcome[0]]);
-    
     $('#cy').hide();
     $('#navbar').hide();
     $('#sidebar').hide();
@@ -398,9 +431,10 @@ const request = async () => {
   });
 
   $('#relative-button').on('click', function() {
+    window.location.hash = '#table';
     if ( ow == ['1'] && type == 'all' && outcome == ['all'] ){
-      $('#table-content').html(relative_effectiveness_dict['ow']['all']); 
-    } else { 
+      $('#table-content').html(relative_effectiveness_dict['ow']['all']);
+    } else {
       $('#table-content').html(relative_effectiveness_dict[type][outcome[0]]);
     }
 
@@ -411,6 +445,82 @@ const request = async () => {
     $('#table-div').show();
   });
 
+  //guided tour via IntroJs
+  $('#guide-button').on('click', function() {
+    console.log('loyloy');
+    introJs().start();
+  });
+
+
+  var hash = window.location.hash;
+  setInterval(function(){
+    if (window.location.hash != hash) {
+      hash = window.location.hash;
+      switch (hash) {
+        case '#studies':
+          $('#cy').hide();
+          $('#navbar').hide();
+          $('#sidebar').hide();
+          $('#legend').hide();
+          $('#studies-modal').show();
+          $('#key-messages').hide();
+          $('#table-div').hide();
+          $('#overview-dummy').hide();
+          break;
+        case '#key-messages':
+          $('#cy').hide();
+          $('#navbar').hide();
+          $('#sidebar').hide();
+          $('#legend').hide();
+          $('#studies-modal').hide();
+          $('#key-messages').show();
+          $('#table-div').hide();
+          $('#overview-dummy').hide();
+          break;
+        case '#table':
+          $('#cy').hide();
+          $('#navbar').hide();
+          $('#sidebar').hide();
+          $('#legend').hide();
+          $('#studies-modal').hide();
+          $('#key-messages').hide();
+          $('#table-div').show();
+          $('#overview-dummy').hide();
+          break;
+        case '#overview':
+          $('#cy').hide();
+          $('#navbar').hide();
+          $('#sidebar').hide();
+          $('#legend').hide();
+          $('#studies-modal').hide();
+          $('#key-messages').hide();
+          $('#table-div').hide();
+          $('#overview-dummy').show();
+          break;
+        default:
+          $('#cy').show();
+          $('#navbar').show();
+          $('#sidebar').show();
+          $('#legend').show();
+          $('#studies-modal').hide();
+          $('#key-messages').hide();
+          $('#table-div').hide();
+          $('#overview-dummy').hide();
+      }
+    }
+  }, 100);
+
+  window.location.hash = '#index';
+
+  // First time check with cookie
+  if (document.cookie != "first-time=true") {
+    document.cookie = "first-time=true";
+    $('#welcome-modal').show();
+
+  } else {
+    //make help modal visible
+    alert("I've seen you around here");
+  }
 }
 
 request();
