@@ -1,0 +1,53 @@
+{
+  "elements": {
+    "nodes": [
+    ],
+    "edges": [
+    ]
+  },
+  "style": [
+    {
+      "selector": "node",
+      "style": {
+        "background-color": "data(color)",
+        "label": "data(id)"
+      }
+    },
+    {
+      "selector": "node.highlight",
+      "style": {
+        "border-color": "#DC143C",
+        "border-width": "5px"
+      }
+    },
+    {
+      "selector": "edge",
+      "style": {
+        "width": "1px",
+        "line-color": "black",
+        "target-arrow-color": "#ccc",
+        "target-arrow-shape": "none",
+        "curve-style": "unbundled-bezier",
+        "control-point-distances": "30",
+        "control-point-weights": "0.5"
+      }
+    }
+  ],
+  "autolock": true,
+  "autoungrabify": true,
+  "zoomingEnabled": true,
+  "userZoomingEnabled": false,
+  "zoom": 0.8,
+  "minZoom": 1e-50,
+  "maxZoom": 1e+50,
+  "panningEnabled": true,
+  "userPanningEnabled": false,
+  "pan": {
+    "x": 400,
+    "y": 350
+  },
+  "boxSelectionEnabled": false,
+  "renderer": {
+    "name": "canvas"
+  }
+}
