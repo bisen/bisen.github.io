@@ -3,6 +3,8 @@ var graph_data = {};
 var node_info = {};
 var relative_effectiveness_dict = { 'all': {}, 'stress': {}, 'urge': {}, 'ow': {} };
 var league_dict = { 'all': {}, 'stress': {}, 'urge': {}, 'ow': {} };
+var guide_page_3;
+var guide_page_4;
 
 const request = async () => {
   var response = await fetch('./data/studies.json');
@@ -88,6 +90,14 @@ const request = async () => {
   response = await fetch('./data/tables/league-satisfaction-ow.html');
   league_dict['ow']['satisfaction'] = await response.text();
 
+  // tables forguide pages
+  response = await fetch('./data/tables/TO1-guide-page-3.html');
+  guide_page_3 = await response.text();
+
+  response = await fetch('./data/tables/TO1-guide-page-4.html');
+  guide_page_4 = await response.text();
+  
+
   var cy = cytoscape({
     container: document.getElementById('cy'), // container to render in
   });
@@ -169,6 +179,56 @@ const request = async () => {
     return study_list;
   }
 
+  //get guide working
+  const guide_1 = () => {
+    $('#cy').hide();
+    $('#navbar').hide();
+    $('#sidebar').hide();
+    $('#legend').hide();
+    $('#guide-page-1').show();
+    $('#guide-page-2').hide();
+    $('#guide-page-3').hide();
+    $('#guide-page-4').hide();
+    $('#guide-modal').show();
+  }
+
+  const guide_2 = () => {
+    $('#guide-page-1').hide();
+    $('#guide-page-2').show();
+  }
+
+  const guide_3 = () => {
+    $('#guide-page-2').hide();
+    $('#guide-page-3-table').html(guide_page_3);
+    $('#guide-page-3').show();
+  }
+
+  const guide_4 = () => {
+    $('#guide-page-3').hide();
+    $('#guide-page-4-table').html(guide_page_4);
+    $('#guide-page-4').show();
+  }
+
+  $('#guide-button-1').on('click', function() {
+    guide_2();
+  });
+
+  $('#guide-button-2').on('click', function() {
+    guide_3();
+  });
+
+  $('#guide-button-3').on('click', function() {
+    guide_4();
+  });
+
+  $('#guide-button-4').on('click', function() {
+    $('#guide-modal').hide();
+    $('#cy').show();
+    $('#navbar').show();
+    $('#sidebar').show();
+    $('#legend').show();
+    introJs().start();
+  });
 
   //when a node is clicked on, update the current and previous nodes
   cy.on('tap', 'node', function(e) {
@@ -448,7 +508,7 @@ const request = async () => {
   //guided tour via IntroJs
   $('#welcome-button, #guide-button').on('click', function() {
     $('#welcome-modal').hide();
-    introJs().start();
+    guide_1();
   });
 
   $('#welcome-checkbox').on('change', function() {

@@ -42,8 +42,8 @@
       z-index: 999;
       top: 30%;
       left: 50%;
-      width: 30%;
-      height: 200px;
+      width: 400px;
+      height: 300px;
       transform: translate(-50%, 0);
       background: rgba(220, 230, 240, 1);
       box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5), 0 0 40px 0 rgba(0, 0, 0, 0.8);
@@ -218,13 +218,63 @@
 
   <div id="welcome-modal" style='display: none;'>
     <h4>An Overview of Non Surgical Treatments for Urinary Incontinence in Adult Women</h4>
+    <span> This tool is an alternative way to present  the evidence of a systematic review. It does not reanalyze the evidence and, thus, has the same limitations presented in the report. In its current form, the tool is not intended to aid decision making, nor does it provide or allow for additional analyses not included in the original report. </span>
+    <br><br>
     <button id="welcome-button"> Start Tutorial </button>
     <button id="close-welcome-button"> No thanks </button>
     <br><br>
     <input id="welcome-checkbox" type="checkbox"> Do not show this again </input>
   </div>
 
+  <div id="guide-modal" style="display: none;">
+    <div id="guide-page-1">
+      <h4>Purpose of Review</h4>
+      <span>Compare nonpharmacological and pharmacological interventions in adult women with urinary incontinence.</span>
+      <h4>Key Messages</h4>
+      <ul>
+        <li>Available nonpharmacological and pharmacological interventions generally result in better urinary incontinence outcomes than no treatment.</li><br>
+        <li>Behavioral therapy and neuromodulation, each alone or combined, and onabotulinum toxin A (BTX)  result in the highest rates of cure, improvement, and satisfaction. Other treatments were also effective.</li><br>
+        <li>Dry mouth is the most common side effect with several drugs, particularly anticholinergics.</li><br>
+        <li>Serious adverse events most commonly occurred with periurethral bulking agents, but were rare for other interventions. BTX was associated with risk of urinary tract infections and urinary retention. Duloxetine was associated with numerous constitutional adverse effects such as nausea, insomnia, and fatigue.</li><br>
+        <li>Nonpharmacological interventions generally have few adverse events.</li>
+      </ul>
+      <button id="guide-button-1">Next</button>
+    </div>
+    <div id="guide-page-2" style="display: none;">
+      <h4>Background</h4>
+      <ul>
+        <li>Urinary incontinence (UI) is the involuntary loss of urine. </li>
+        <li>About 17 percent of nonpregnant, adult women are estimated to have UI.</li>
+        <li>The prevalence of UI increases with age, particularly after menopause.</li>
+        <li>UI can affect a woman’s physical, psychological, and social well-being and can impose substantial lifestyle restrictions. The effects of UI range from slightly bothersome to debilitating.</li>
+        <li>Up-to-date data on the economic impact of UI in adult women are lacking, but the American College of Physicians estimated the costs of UI care in the United States at $19.5 billion in 2004 in their 2014 Clinical Practice Guideline, and other estimates are even higher.</li>
+        <li>The most common types of UI that affect adult women include stress, urgency, and mixed.</li>
+        <li>
+          <ul>
+            <li>Stress UI is associated with an inability to retain urine during coughing, sneezing, or other activities that increase intraabdominal pressure.</li>
+            <li>Urgency UI is defined as the involuntary loss of urine associated with the sensation of a sudden, compelling urge to void that is difficult to defer.</li>
+            <li>Mixed UI occurs when both stress and urgency UI are present.</li>
+          </ul>
+        </li>
+        <li>Some causes of UI are amenable to surgical interventions, but we focus only on nonsurgical interventions. Nonpharmacological interventions mostly aim to strengthen the pelvic floor and change behaviors that influence bladder function, whereas pharmacological interventions mostly address bladder and sphincter function.</li>
+      </ul>
+      <button id="guide-button-2">Next</button>
+    </div>
+    <div id="guide-page-3" style="display: none;">
+      <h4>Table A. Summary of the eligibility criteria</h4>
+      <span>* In the literature on UI treatments, cure is defined as complete resolution of symptoms, even if the “cure” is not permanent or requires continued treatment to be maintained. It does not imply permanent resolution requiring no further treatment.
+Abbreviations: N = sample size; NRCS = nonrandomized comparative study; PICOTS = populations, interventions, comparators, outcomes, timing, and setting; RCT = randomized controlled trial; QoL = quality of life; UI = urinary incontinence.</span>
+      <div id='guide-page-3-table'></div>
+      <button id="guide-button-3">Next</button>
+    </div>
+    <div id="guide-page-4" style="display: none;">
+      <h4>Table B. Interventions evaluated by eligible studies</h4>
+      <span>Abbreviations: AE = adverse events, Imp = improvement, MBSR = mindfulness-based stress reduction, PFMT = pelvic floor muscle therapy, QoL = quality of life, Sat = satisfaction, TENS = transcutaneous electrical nerve stimulation (including transvaginal, surface, and related electric stimulation).</span>
+      <div id='guide-page-4-table'></div>
+      <button id="guide-button-4">Next</button>
+    </div>
   </div>
+
 
   <div id='cy' data-step='1' data-intro='This is a graph representation of the evidence base. Each node represents a different intervention and each edge means there is at least one study directly comparing the two interventions.'></div>
 
