@@ -181,6 +181,7 @@ const request = async () => {
 
   //get guide working
   const guide_1 = () => {
+    window.location.hash = '#guide';
     $('#cy').hide();
     $('#navbar').hide();
     $('#sidebar').hide();
@@ -222,12 +223,21 @@ const request = async () => {
   });
 
   $('#guide-button-4').on('click', function() {
+    window.location.hash = '#index';
     $('#guide-modal').hide();
     $('#cy').show();
     $('#navbar').show();
     $('#sidebar').show();
     $('#legend').show();
     introJs().start();
+  });
+  $('#close-guide').on('click', function() {
+    window.location.hash = '#index';
+    $('#guide-modal').hide();
+    $('#cy').show();
+    $('#navbar').show();
+    $('#sidebar').show();
+    $('#legend').show();
   });
 
   //when a node is clicked on, update the current and previous nodes
@@ -535,6 +545,7 @@ const request = async () => {
       hash = window.location.hash;
       switch (hash) {
         case '#studies':
+          introJs().exit();
           $('#cy').hide();
           $('#navbar').hide();
           $('#sidebar').hide();
@@ -542,9 +553,11 @@ const request = async () => {
           $('#studies-modal').show();
           $('#key-messages').hide();
           $('#table-div').hide();
+          $('#guide-modal').hide();
           $('#overview-dummy').hide();
           break;
         case '#key-messages':
+          introJs().exit();
           $('#cy').hide();
           $('#navbar').hide();
           $('#sidebar').hide();
@@ -552,9 +565,11 @@ const request = async () => {
           $('#studies-modal').hide();
           $('#key-messages').show();
           $('#table-div').hide();
+          $('#guide-modal').hide();
           $('#overview-dummy').hide();
           break;
         case '#table':
+          introJs().exit();
           $('#cy').hide();
           $('#navbar').hide();
           $('#sidebar').hide();
@@ -562,9 +577,11 @@ const request = async () => {
           $('#studies-modal').hide();
           $('#key-messages').hide();
           $('#table-div').show();
+          $('#guide-modal').hide();
           $('#overview-dummy').hide();
           break;
         case '#overview':
+          introJs().exit();
           $('#cy').hide();
           $('#navbar').hide();
           $('#sidebar').hide();
@@ -572,7 +589,20 @@ const request = async () => {
           $('#studies-modal').hide();
           $('#key-messages').hide();
           $('#table-div').hide();
+          $('#guide-modal').hide();
           $('#overview-dummy').show();
+          break;
+        case '#guide':
+          introJs().exit();
+          $('#cy').hide();
+          $('#navbar').hide();
+          $('#sidebar').hide();
+          $('#legend').hide();
+          $('#studies-modal').hide();
+          $('#key-messages').hide();
+          $('#table-div').hide();
+          $('#guide-modal').show();
+          $('#overview-dummy').hide();
           break;
         default:
           $('#cy').show();
@@ -582,6 +612,7 @@ const request = async () => {
           $('#studies-modal').hide();
           $('#key-messages').hide();
           $('#table-div').hide();
+          $('#guide-modal').hide();
           $('#overview-dummy').hide();
       }
     }
