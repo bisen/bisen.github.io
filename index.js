@@ -222,16 +222,7 @@ const request = async () => {
     guide_4();
   });
 
-  $('#guide-button-4').on('click', function() {
-    window.location.hash = '#index';
-    $('#guide-modal').hide();
-    $('#cy').show();
-    $('#navbar').show();
-    $('#sidebar').show();
-    $('#legend').show();
-    introJs().start();
-  });
-  $('#close-guide').on('click', function() {
+  $('#close-guide, #guide-button-4').on('click', function() {
     window.location.hash = '#index';
     $('#guide-modal').hide();
     $('#cy').show();
@@ -518,6 +509,11 @@ const request = async () => {
   //guided tour via IntroJs
   $('#welcome-button, #guide-button').on('click', function() {
     $('#welcome-modal').hide();
+    introJs().start();
+  });
+
+  //guided tour via IntroJs
+  $('#about-button').on('click', function() {
     guide_1();
   });
 
