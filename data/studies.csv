@@ -1,0 +1,306 @@
+row,study_author,pmid,year,age,older_women,ui_type,followup,n1,n2,N1,N2,granular_trt_code1,granular_trt_code2,coarse_trt_code1,coarse_trt_code2,trt_description1,trt_description2,outcome,combined,randomization_sequence,blinding_of_patients,blinding_of_assessors,intention_to_treat,attrition_bias,selection_bias,interventions_described,intervention_compliance,other_issues,allocation_concealment,to_flip,or_string,counts_string,coarse_comparison_string,granular_comparison_string
+1,Golmakani,24498480,2014,45.5,0,sui,3,2,3,26,25,T1,T4+T9,T,T,bladder training,"pfmt (pelvic floor muscle therapy), weights",ui,Golmakani 2014 24498480,Low,High,Low,High,High,Low,Yes,High,No,High,0,"0.61 (0.09, 4.01)",2/26 vs 3/25,H vs H,H1 vs H4+H9
+2,Amundsen,27701661,2016,63,0,uui,6,64,68,190,174,B1,N2,B,N,botox,interstim,ui,Amundsen 2016 27701661,Low,High,High,Low,Low,Low,Yes,Low,No,Low,0,"0.79 (0.52, 1.21)",64/190 vs 68/174,B vs G,B1 vs G2
+3,Amundsen,27701661,2016,63,0,uui,6,113,89,190,174,B1,N2,B,N,botox,interstim,satisfaction,Amundsen 2016 27701661,Low,High,High,Low,Low,Low,Yes,Low,No,Low,0,"1.40 (0.93, 2.12)",113/190 vs 89/174,B vs G,B1 vs G2
+4,Amundsen,27701661,2016,63,0,uui,6,26,2,127,99,B1,N2,B,N,botox,interstim,cure,Amundsen 2016 27701661,Low,High,High,Low,Low,Low,Yes,Low,No,Low,0,"12.49 (2.89, 54.03)",26/127 vs 2/99,B vs G,B1 vs G2
+5,Amundsen,27701661,2016,63,0,uui,6,63,27,127,99,B1,N2,B,N,botox,interstim,improvement,Amundsen 2016 27701661,Low,High,High,Low,Low,Low,Yes,Low,No,Low,0,"2.62 (1.50, 4.61)",63/127 vs 27/99,B vs G,B1 vs G2
+6,Kafri,23160873,2013,56.7,0,uui,48,6,11,24,35,C3,T1,C,T,tolterodine,bladder training,cure,Kafri 2013 23160873,Low,High,Low,Low,High,Low,Yes,High,No,Low,0,"0.73 (0.23, 2.34)",6/24 vs 11/35,A vs H,A3 vs H1
+7,Kafri,23160873,2013,56.7,0,uui,48,6,24,24,59,C3,T4,C,T,tolterodine,pfmt (pelvic floor muscle therapy),cure,Kafri 2013 23160873,Low,High,Low,Low,High,Low,Yes,High,No,Low,0,"0.49 (0.17, 1.40)",6/24 vs 24/59,A vs H,A3 vs H4
+8,Kafri,23160873,2013,56.7,0,uui,48,11,24,35,59,T1,T4,T,T,bladder training,pfmt (pelvic floor muscle therapy),cure,Kafri 2013 23160873,Low,High,Low,Low,High,Low,Yes,High,No,Low,0,"0.67 (0.28, 1.62)",11/35 vs 24/59,H vs H,H1 vs H4
+9,Visco,23036134,2012,58,0,uui,6,13,26,119,112,C2,B1,C,B,solifenacin,botox,cure,Visco 2012 23036134,Low,Low,Low,Low,Low,Low,Yes,Low,No,Unclear,0,"0.41 (0.20, 0.84)",13/119 vs 26/112,A vs B,A2 vs B1
+10,Visco,23036134,2012,58,0,uui,6,48,61,119,112,C2,B1,C,B,solifenacin,botox,improvement,Visco 2012 23036134,Low,Low,Low,Low,Low,Low,Yes,Low,No,Unclear,0,"0.57 (0.34, 0.95)",48/119 vs 61/112,A vs B,A2 vs B1
+11,Gittelman,24231837,2014,57,0,0,3,24,15,96,112,C1,P1,C,P,oxybutynin,control,cure,Gittelman 2014 24231837,Low,Low,Low,Low,Low,Low,Yes,Low,No,Low,0,"2.16 (1.06, 4.40)",24/96 vs 15/112,A vs K,A1 vs K1
+12,Sokol,24704117,2014,58.5,0,0,12,105,48,229,116,U1,U2,U,U,bulkamide,contigen,improvement,Sokol 2014 24704117,Low,Low,Unclear,Low,Low,Low,Yes,Low,No,Unclear,0,"1.20 (0.76, 1.88)",105/229 vs 48/116,I vs I,I1 vs I2
+13,Sokol,24704117,2014,58.5,0,0,12,44,22,183,90,U1,U2,U,U,bulkamide,contigen,cure,Sokol 2014 24704117,Low,Low,Unclear,Low,Low,Low,Yes,Low,No,Unclear,0,"0.98 (0.54, 1.76)",44/183 vs 22/90,I vs I,I1 vs I2
+14,Wiegersma,25533442,2014,64.25,1,0,3,70,10,115,124,T4,P1,T,P,pfmt (pelvic floor muscle therapy),control,improvement,Wiegersma 2014 25533442,Low,Low,Unclear,Low,High,Low,Yes,Low,No,Low,0,"17.73 (8.40, 37.43)",70/115 vs 10/124,H vs K,H4 vs K1
+15,Capobianco,21706345,2012,57.8,1,sui,6,93,22,103,103,H1,H1+N4+T4,H,H+N+T,vaginal estrogen,"vaginal estrogen, pfmt, tens",ui,Capobianco 2012 21706345,Low,High,High,Low,Low,Low,Yes,Low,No,Low,0,"34.24 (15.31, 76.56)",93/103 vs 22/103,C vs C+G+H,C1 vs C1+G4+H4
+16,Capobianco,21706345,2012,57.8,1,sui,6,10,61,103,83,H1,H1+N4+T4,H,H+N+T,vaginal estrogen,"vaginal estrogen, pfmt, tens",improvement,Capobianco 2012 21706345,Low,High,High,Low,Low,Low,Yes,Low,No,Low,0,"0.04 (0.02, 0.09)",10/103 vs 61/83,C vs C+G+H,C1 vs C1+G4+H4
+17,Rovner,23796570,2013,52.6,0,sui,6,43,15,66,49,V1,P1,V,P,intravessical pressure release,control,improvement,Rovner 2013 23796570,Low,Low,Low,High,High,Low,Yes,Low,No,Low,0,"4.24 (1.92, 9.35)",43/66 vs 15/49,J vs K,J1 vs K1
+18,Rovner,23796570,2013,52.6,0,sui,6,22,8,66,49,V1,P1,V,P,intravessical pressure release,control,cure,Rovner 2013 23796570,Low,Low,Low,High,High,Low,Yes,Low,No,Low,0,"2.56 (1.03, 6.39)",22/66 vs 8/49,J vs K,J1 vs K1
+19,Kim,21545385,2011,76,1,0,3,1,12,34,35,T2,T4,T,T,education,pfmt (pelvic floor muscle therapy),cure,Kim 2011 21545385,Low,Low,High,High,Low,Low,Yes,Low,No,Low,0,"0.06 (0.01, 0.48)",1/34 vs 12/35,H vs H,H2 vs H4
+20,Kim,21545385,2011,76,1,0,3,1,19,34,37,T2,T3+T4,T,T,education,"heat therapy, pfmt",cure,Kim 2011 21545385,Low,Low,High,High,Low,Low,Yes,Low,No,Low,0,"0.03 (0.00, 0.23)",1/34 vs 19/37,H vs H,H2 vs H3+H4
+21,Kim,21545385,2011,76,1,0,3,1,8,34,37,T2,T3,T,T,education,heat therapy,cure,Kim 2011 21545385,Low,Low,High,High,Low,Low,Yes,Low,No,Low,0,"0.11 (0.01, 0.93)",1/34 vs 8/37,H vs H,H2 vs H3
+22,Kim,21545385,2011,76,1,0,3,19,12,37,35,T3+T4,T4,T,T,"heat therapy, pfmt",pfmt (pelvic floor muscle therapy),cure,Kim 2011 21545385,Low,Low,High,High,Low,Low,Yes,Low,No,Low,0,"2.02 (0.78, 5.23)",19/37 vs 12/35,H vs H,H3+H4 vs H4
+23,Kim,21545385,2011,76,1,0,3,8,12,37,35,T3,T4,T,T,heat therapy,pfmt (pelvic floor muscle therapy),cure,Kim 2011 21545385,Low,Low,High,High,Low,Low,Yes,Low,No,Low,0,"0.53 (0.19, 1.51)",8/37 vs 12/35,H vs H,H3 vs H4
+24,Kim,21545385,2011,76,1,0,3,8,19,37,37,T3,T3+T4,T,T,heat therapy,"heat therapy, pfmt",cure,Kim 2011 21545385,Low,Low,High,High,Low,Low,Yes,Low,No,Low,0,"0.26 (0.09, 0.72)",8/37 vs 19/37,H vs H,H3 vs H3+H4
+25,Oldham,23023996,2013,48.1,0,0,3,40,32,46,49,N4+T4,T4,N+T,T,"tens, pfmt",pfmt (pelvic floor muscle therapy),improvement,Oldham 2013 23023996,Low,High,Low,Unclear,High,Low,Yes,Low,No,Unclear,0,"3.54 (1.25, 10.02)",40/46 vs 32/49,G+H vs H,G4+H4 vs H4
+26,Kaya,25266357,2015,48.7,0,0,1.5,40,33,56,52,T1,T1+T4,T,T,bladder training,"bladder training, pfmt",improvement,Kaya 2015 25266357,Low,High,High,Low,High,Low,Yes,Low,No,High,0,"1.44 (0.64, 3.23)",40/56 vs 33/52,H vs H,H1 vs H1+H4
+27,Kaya,25266357,2015,48.7,0,0,1.5,3,23,56,52,T1,T1+T4,T,T,bladder training,"bladder training, pfmt",cure,Kaya 2015 25266357,Low,High,High,Low,High,Low,Yes,Low,No,High,0,"0.07 (0.02, 0.26)",3/56 vs 23/52,H vs H,H1 vs H1+H4
+28,Lim,27871927,2017,45.6,0,sui,2,19,3,60,60,N3,P1,N,P,magnetic stimulation,control,cure,Lim 2017 27871927,Low,Low,Unclear,Low,Low,Unclear,Yes,Low,No,Unclear,0,"8.80 (2.44, 31.73)",19/60 vs 3/60,G vs K,G3 vs K1
+29,Lim,27871927,2017,45.6,0,sui,2,47,27,57,58,N3,P1,N,P,magnetic stimulation,control,satisfaction,Lim 2017 27871927,Low,Low,Unclear,Low,Low,Unclear,Yes,Low,No,Unclear,0,"5.40 (2.29, 12.70)",47/57 vs 27/58,G vs K,G3 vs K1
+30,Lim,27871927,2017,45.6,0,sui,2,45,13,60,60,N3,P1,N,P,magnetic stimulation,control,improvement,Lim 2017 27871927,Low,Low,Unclear,Low,Low,Unclear,Yes,Low,No,Unclear,0,"10.85 (4.65, 25.32)",45/60 vs 13/60,G vs K,G3 vs K1
+31,Rovner,21351127,2011,58.8,0,uui,3,27,7,53,44,B1,P1,B,P,botox,control,cure,Rovner 2011 21351127,Low,Low,Low,Low,Low,Low,Yes,Low,No,Low,0,"5.49 (2.08, 14.49)",27/53 vs 7/44,B vs K,B1 vs K1
+32,McMichael,no pmid,2013,54.4,0,uui,1,21,20,34,33,C3,P1,C,P,tolterodine,control,improvement,McMichael 2013 no pmid,Low,Low,Low,Low,Low,Unclear,No,Unclear,No,Unclear,0,"1.05 (0.39, 2.81)",21/34 vs 20/33,A vs K,A3 vs K1
+33,Dede,23086134,2013,51.83,0,0,1.5,2,3,30,30,C1,C4,C,C,oxybutynin,trospium,cure,Dede 2013 23086134,Low,Unclear,Low,Low,Low,Low,Yes,Low,No,Low,0,"0.64 (0.10, 4.15)",2/30 vs 3/30,A vs A,A1 vs A4
+34,Dede,23086134,2013,51.83,0,0,1.5,7,3,30,30,C3,C4,C,C,tolterodine,trospium,cure,Dede 2013 23086134,Low,Unclear,Low,Low,Low,Low,Yes,Low,No,Low,0,"2.74 (0.63, 11.82)",7/30 vs 3/30,A vs A,A3 vs A4
+35,Dede,23086134,2013,51.83,0,0,1.5,2,7,30,30,C1,C3,C,C,oxybutynin,tolterodine,cure,Dede 2013 23086134,Low,Unclear,Low,Low,Low,Low,Yes,Low,No,Low,0,"0.23 (0.04, 1.24)",2/30 vs 7/30,A vs A,A1 vs A3
+36,Dede,23086134,2013,51.83,0,0,1.5,22,17,30,30,C1,C4,C,C,oxybutynin,trospium,improvement,Dede 2013 23086134,Low,Unclear,Low,Low,Low,Low,Yes,Low,No,Low,0,"2.10 (0.71, 6.22)",22/30 vs 17/30,A vs A,A1 vs A4
+37,Dede,23086134,2013,51.83,0,0,1.5,19,17,30,30,C3,C4,C,C,tolterodine,trospium,improvement,Dede 2013 23086134,Low,Unclear,Low,Low,Low,Low,Yes,Low,No,Low,0,"1.32 (0.47, 3.72)",19/30 vs 17/30,A vs A,A3 vs A4
+38,Dede,23086134,2013,51.83,0,0,1.5,22,19,30,30,C1,C3,C,C,oxybutynin,tolterodine,improvement,Dede 2013 23086134,Low,Unclear,Low,Low,Low,Low,Yes,Low,No,Low,0,"1.59 (0.53, 4.77)",22/30 vs 19/30,A vs A,A1 vs A3
+39,Samuelsson,no pmid,2017,44.7,0,sui,3,56,12,62,61,T4,P1,T,P,pfmt (pelvic floor muscle therapy),control,improvement,Samuelsson 2017 no pmid,Low,High,High,Low,Low,Low,Yes,Unclear,No,Unclear,0,"38.11 (13.31, 109.16)",56/62 vs 12/61,H vs K,H4 vs K1
+40,Jabs,23343798,2013,63.4,0,uui,6,6,0,11,10,B1,P1,B,P,botox,control,cure,Jabs 2013 23343798,Low,Low,Low,Low,Low,Low,Yes,Low,No,Low,0,"24.82 (1.17, 527.12)",6/11 vs 0/10,B vs K,B1 vs K1
+41,Wang,28153510,2017,NA,0,uui,0.75,34,1,80,40,N1,N4,N,N,electroacupuncture,tens (transcutaneous electrical nerve stimulation),cure,Wang 2017 28153510,Low,High,Unclear,Low,Low,Low,Yes,Low,No,Low,0,"28.83 (3.77, 220.33)",34/80 vs 1/40,G vs G,G1 vs G4
+42,Wang,28153510,2017,NA,0,uui,0.75,56,18,80,40,N1,N4,N,N,electroacupuncture,tens (transcutaneous electrical nerve stimulation),improvement,Wang 2017 28153510,Low,High,Unclear,Low,Low,Low,Yes,Low,No,Low,0,"2.85 (1.30, 6.25)",56/80 vs 18/40,G vs G,G1 vs G4
+43,Xu,26960195,2016,58.5,0,sui,1.5,39,23,40,40,N1,P1,N,P,electroacupuncture,control,satisfaction,Xu 2016 26960195,Low,Low,Low,Low,Low,Low,Yes,Low,No,Low,0,"28.83 (3.60, 231.10)",39/40 vs 23/40,G vs K,G1 vs K1
+44,Sherburn,21284022,2011,71.8,1,sui,5,6,14,35,41,T1,T4,T,T,bladder training,pfmt (pelvic floor muscle therapy),improvement,Sherburn 2011 21284022,Low,High,Low,High,Low,Low,Yes,Low,No,Low,0,"0.40 (0.13, 1.19)",6/35 vs 14/41,H vs H,H1 vs H4
+45,Sherburn,21284022,2011,71.8,1,sui,5,15,26,35,43,T1,T4,T,T,bladder training,pfmt (pelvic floor muscle therapy),satisfaction,Sherburn 2011 21284022,Low,High,Low,High,Low,Low,Yes,Low,No,Low,0,"0.49 (0.20, 1.21)",15/35 vs 26/43,H vs H,H1 vs H4
+46,Abdulaziz,no pmid,2012,43.8,0,sui,3,26,5,29,27,T4,P1,T,P,pfmt (pelvic floor muscle therapy),control,cure,Abdulaziz 2012 no pmid,Low,High,High,Low,Low,Unclear,Yes,),No,Unclear,0,"38.13 (8.18, 177.85)",26/29 vs 5/27,H vs K,H4 vs K1
+47,Abdulaziz,no pmid,2012,43.8,0,sui,3,0,0,29,27,T4,P1,T,P,pfmt (pelvic floor muscle therapy),control,ui,Abdulaziz 2012 no pmid,Low,High,High,Low,Low,Unclear,Yes,),No,Unclear,0,"0.93 (0.02, 48.62)",0/29 vs 0/27,H vs K,H4 vs K1
+48,Ozlu,28345778,2017,42.4,0,sui,2,8,28,17,34,T4,T4+T6,T,T,pfmt (pelvic floor muscle therapy),"pfmt (pelvic floor muscle therapy), biofeedback",improvement,Ozlu 2017 28345778,Low,High,Low,Low,Low,Low,Yes,Low,No,Unclear,0,"0.19 (0.05, 0.70)",8/17 vs 28/34,H vs H,H4 vs H4+H6
+49,Ozlu,28345778,2017,42.4,0,sui,2,7,28,17,34,T4,T4+T6,T,T,pfmt (pelvic floor muscle therapy),"pfmt (pelvic floor muscle therapy), biofeedback",satisfaction,Ozlu 2017 28345778,Low,High,Low,Low,Low,Low,Yes,Low,No,Unclear,0,"0.15 (0.04, 0.55)",7/17 vs 28/34,H vs H,H4 vs H4+H6
+50,Terlikowski,23443345,2013,46.9,0,sui,4,29,2,64,29,N4+T6,P1,N+T,P,"tens (transcutaneous electrical nerve stimulation), biofeedback",control,cure,Terlikowski 2013 23443345,Low,Low,Low,Low,Low,Low,Yes,Low,No,Low,0,"11.19 (2.45, 51.06)",29/64 vs 2/29,G+H vs K,G4+H6 vs K1
+51,Terlikowski,23443345,2013,46.9,0,sui,4,12,4,64,29,N4+T6,P1,N+T,P,"tens (transcutaneous electrical nerve stimulation), biofeedback",control,improvement,Terlikowski 2013 23443345,Low,Low,Low,Low,Low,Low,Yes,Low,No,Low,0,"1.44 (0.42, 4.92)",12/64 vs 4/29,G+H vs K,G4+H6 vs K1
+52,Porta-Roda,25130167,2015,NA,0,0,6,21,32,30,35,T4,T4+T9,T,T,pfmt (pelvic floor muscle therapy),"pfmt (pelvic floor muscle therapy), weights",improvement,Porta-Roda 2015 25130167,Low,High,High,Low,Low,Low,Yes,High,No,Low,0,"0.22 (0.05, 0.90)",21/30 vs 32/35,H vs H,H4 vs H4+H9
+53,Ong,26142713,2015,51.9,0,sui,4,10,12,16,21,T4,T4+T6,T,T,pfmt (pelvic floor muscle therapy),"pfmt (pelvic floor muscle therapy), biofeedback",cure,Ong 2015 26142713,Low,High,Unclear,High,Low,Low,Yes,Low,"Yes (Potentially a typo, but results for certain outcomes report more dropouts than participant flow)",Unclear,0,"1.25 (0.33, 4.73)",10/16 vs 12/21,H vs H,H4 vs H4+H6
+54,Ong,26142713,2015,51.9,0,sui,4,13,13,16,16,T4,T4+T6,T,T,pfmt (pelvic floor muscle therapy),"pfmt (pelvic floor muscle therapy), biofeedback",improvement,Ong 2015 26142713,Low,High,Unclear,High,Low,Low,Yes,Low,"Yes (Potentially a typo, but results for certain outcomes report more dropouts than participant flow)",Unclear,0,"1.00 (0.17, 5.90)",13/16 vs 13/16,H vs H,H4 vs H4+H6
+55,Lian,26054138,2015,51.5,0,sui,NA,10,15,45,45,A2,N4,A,N,midodrine,tens (transcutaneous electrical nerve stimulation),cure,Lian 2015 26054138,Unclear,High,Unclear,Unclear,Low,Unclear,Yes,Unclear,No,Unclear,0,"0.57 (0.22, 1.46)",10/45 vs 15/45,D vs G,D2 vs G4
+56,Lian,26054138,2015,51.5,0,sui,NA,21,24,45,45,A2,N4,A,N,midodrine,tens (transcutaneous electrical nerve stimulation),improvement,Lian 2015 26054138,Unclear,High,Unclear,Unclear,Low,Unclear,Yes,Unclear,No,Unclear,0,"0.77 (0.33, 1.75)",21/45 vs 24/45,D vs G,D2 vs G4
+57,Rutledge,24183730,2014,57,0,0,3,16,8,20,20,T4,P1,T,P,pfmt (pelvic floor muscle therapy),control,improvement,Rutledge 2014 24183730,Low,High,High,Low,Low,Low,Yes,Low,No,Low,0,"6.00 (1.46, 24.69)",16/20 vs 8/20,H vs K,H4 vs K1
+58,Wang,26921645,2016,56.9,0,sui,4,11,3,21,21,N1,N4+T4,N,N+T,electroacupuncture,"tens, pfmt",cure,Wang 2016 26921645,Unclear,High,Unclear,Low,Low,Low,Yes,Low,No,Unclear,0,"6.60 (1.48, 29.36)",11/21 vs 3/21,G vs G+H,G1 vs G4+H4
+59,Wang,26921645,2016,56.9,0,sui,4,5,2,21,21,N1,N4+T4,N,N+T,electroacupuncture,"tens, pfmt",improvement,Wang 2016 26921645,Unclear,High,Unclear,Low,Low,Low,Yes,Low,No,Unclear,0,"2.97 (0.51, 17.42)",5/21 vs 2/21,G vs G+H,G1 vs G4+H4
+60,Tannenbaum,24334159,2013,71.6,1,0,3,111,7,195,64,T2,P1,T,P,education,control,improvement,Tannenbaum 2013 24334159,Low,High,High,Low,Low,Low,Yes,Low,No,Unclear,0,"10.76 (4.67, 24.79)",111/195 vs 7/64,H vs K,H2 vs K1
+61,Lopès,25444700,2014,51.24,0,sui,6,63,58,76,85,N4,P1,N,P,tens (transcutaneous electrical nerve stimulation),control,improvement,Lopès 2014 25444700,Low,Low,Unclear,Low,Low,High,Yes,Unclear,No,Unclear,0,"2.26 (1.06, 4.78)",63/76 vs 58/85,G vs K,G4 vs K1
+62,Baker,24763155,2014,58,0,uui,2,6,0,13,11,T7,T8,T,T,mbsr (mindfulness based stress reduction),yoga,improvement,Baker 2014 24763155,Low,High,Low,Low,Unclear,Low,Yes,Unclear,No,Low,0,"19.93 (0.97, 408.44)",6/13 vs 0/11,H vs H,H7 vs H8
+63,Hirakawa,23306768,2013,56.8,0,sui,3,17,16,23,23,T4,T4+T6,T,T,pfmt (pelvic floor muscle therapy),"pfmt (pelvic floor muscle therapy), biofeedback",improvement,Hirakawa 2013 23306768,Low,High,High,Low,Low,Low,Yes,High,No,Low,0,"1.24 (0.34, 4.49)",17/23 vs 16/23,H vs H,H4 vs H4+H6
+64,Liu,28655016,2017,55.4,0,sui,1.5,159,52,246,240,N1,P1,N,P,electroacupuncture,control,improvement,Liu 2017 28655016,Low,Low,Low,Low,Low,Low,yes,Low,,Low,0,"6.61 (4.41, 9.89)",159/246 vs 52/240,G vs K,G1 vs K1
+65,Liu,28655016,2017,55.4,0,sui,1.5,210,75,252,252,N1,P1,N,P,electroacupuncture,control,satisfaction,Liu 2017 28655016,Low,Low,Low,Low,Low,Low,yes,Low,,Low,0,"11.80 (7.70, 18.09)",210/252 vs 75/252,G vs K,G1 vs K1
+66,Huang,24763156,2014,61.4,0,0,1.5,9,0,9,9,T8,P1,T,P,yoga,control,satisfaction,Huang 2014 24763156,Low,High,Low,High,Low,Low,Yes,Low,No,High,0,"361.00 (6.47, 20143.55)",9/9 vs 0/9,H vs K,H8 vs K1
+67,Manonai,25920290,2015,47.8,0,sui,4,25,20,32,29,T4,T4+T6,T,T,pfmt (pelvic floor muscle therapy),"pfmt (pelvic floor muscle therapy), biofeedback",improvement,Manonai 2015 25920290,Low,High,Low,Low,Low,Low,Yes,Low,No,Low,0,"1.61 (0.51, 5.07)",25/32 vs 20/29,H vs H,H4 vs H4+H6
+68,Oreskovic,22816227,2012,56.9,0,uui,3,71,68,77,80,C2,P1,C,P,solifenacin,control,improvement,Oreskovic 2012 22816227,Low,Low,High,Low,Low,Low,Yes,Low,No,Low,0,"2.09 (0.74, 5.88)",71/77 vs 68/80,A vs K,A2 vs K1
+69,Talley,2824818,2017,84.9,1,0,3,13,3,23,19,T1+T2+T4,P1,T,P,"pmft (pelvic floor muscle therapy), bladder training,  education",control,improvement,Talley 2017 2824818,Low,High,Low,Low,Low,Low,Yes,Low,No,Low,0,"6.93 (1.57, 30.56)",13/23 vs 3/19,H vs K,H1+H2+H4 vs K1
+70,Talley,2824818,2017,84.9,1,0,3,19,7,23,19,T1+T2+T4,P1,T,P,"pmft (pelvic floor muscle therapy), bladder training,  education",control,satisfaction,Talley 2017 2824818,Low,High,Low,Low,Low,Low,Yes,Low,No,Low,0,"8.14 (1.96, 33.87)",19/23 vs 7/19,H vs K,H1+H2+H4 vs K1
+71,Lovatsis,27438055,2017,51,0,sui,NA,12,4,18,18,T1,P1,T,P,bladder training,control,improvement,Lovatsis 2017 27438055,Low,Low,Low,Low,Low,Low,Yes,Low,No,Low,0,"7.00 (1.59, 30.80)",12/18 vs 4/18,H vs K,H1 vs K1
+72,Lovatsis,27438055,2017,51,0,sui,NA,9,2,14,17,T1,P1,T,P,bladder training,control,cure,Lovatsis 2017 27438055,Low,Low,Low,Low,Low,Low,Yes,Low,No,Low,0,"13.50 (2.15, 84.69)",9/14 vs 2/17,H vs K,H1 vs K1
+73,Hahn,10.1002/nau.1930100604,1991,47.2,0,sui,NA,1,1,10,10,N4,T4,N,T,tens,pfmt,cure,Hahn 1991 10.1002/nau.1930100604,Unclear,Unclear,Unclear,Low,Low,Low,yes,Low,,Unclear,0,"1.00 (0.05, 18.57)",1/10 vs 1/10,G vs H,G4 vs H4
+74,Hahn,10.1002/nau.1930100604,1991,47.2,0,sui,NA,3,4,10,10,N4,T4,N,T,tens,pfmt,improvement,Hahn 1991 10.1002/nau.1930100604,Unclear,Unclear,Unclear,Low,Low,Low,yes,Low,,Unclear,0,"0.64 (0.10, 4.10)",3/10 vs 4/10,G vs H,G4 vs H4
+75,Bo,10024253,1999,49.5,0,sui,6,3,1,32,32,N4,P1,N,P,tens,control,cure,Bo 1999 10024253,Low,High,Low,Low,Low,Low,yes,Low,,Low,0,"3.21 (0.32, 32.60)",3/32 vs 1/32,G vs K,G4 vs K1
+76,Bo,10024253,1999,49.5,0,sui,6,2,1,29,32,T4+T6,P1,T,P,pfmt & biofeedback,control,cure,Bo 1999 10024253,Low,High,Low,Low,Low,Low,yes,Low,,Low,0,"2.30 (0.20, 26.75)",2/29 vs 1/32,H vs K,H4+H6 vs K1
+77,Bo,10024253,1999,49.5,0,sui,6,3,2,32,29,N4,T4+T6,N,T,tens,pfmt & biofeedback,cure,Bo 1999 10024253,Low,High,Low,Low,Low,Low,yes,Low,,Low,0,"1.40 (0.22, 9.01)",3/32 vs 2/29,G vs H,G4 vs H4+H6
+78,Jackson,10428529,1999,63,0,sui,6,0,0,26,23,H2,P1,H,P,po estrogen,control,improvement,Jackson 1999 10428529,Low,Low,Low,Low,Low,Low,yes,Low,,Low,0,"0.89 (0.02, 46.48)",0/26 vs 0/23,C vs K,C2 vs K1
+79,Lose,10955437,2000,66,0,0,NA,42,41,134,117,H1,H1+T5,H,H+T,vaginal estrogen,vaginal estrogen & bladder support,cure,Lose 2000 10955437,Adequate,Open-label,,,,,,,,Unclear,0,"0.85 (0.50, 1.43)",42/134 vs 41/117,C vs C+H,C1 vs C1+H5
+80,Fujishiro,10992380,2000,58,0,sui,NA,4,1,31,31,N3,P1,N,P,magnetic stimulation,control,cure,Fujishiro 2000 10992380,Low,Low,Low,Low,Low,Unclear,yes,Low,,Unclear,0,"4.44 (0.47, 42.26)",4/31 vs 1/31,G vs K,G3 vs K1
+81,Fujishiro,10992380,2000,58,0,sui,NA,23,10,31,31,N3,P1,N,P,magnetic stimulation,control,improvement,Fujishiro 2000 10992380,Low,Low,Low,Low,Low,Unclear,yes,Low,,Unclear,0,"6.04 (2.01, 18.17)",23/31 vs 10/31,G vs K,G3 vs K1
+82,McFall,11010699,2000,75,1,0,NA,25,15,72,73,T1+T4,P1,T,P,bladder training & pfmt,control,cure,McFall 2000 11010699,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,"2.06 (0.97, 4.34)",25/72 vs 15/73,H vs K,H1+H4 vs K1
+83,McFall,11067699,2000,75,1,0,NA,39,56,72,73,T1+T4,P1,T,P,bladder training & pfmt,control,ui,McFall 2000 11067699,Unclear,Unclear,Unclear,High,High,Low,yes,Low,,Unclear,0,"0.36 (0.18, 0.73)",39/72 vs 56/73,H vs K,H1+H4 vs K1
+84,Lee,11125386,2001,57,0,sui,12,6,6,35,33,U3,P1,U,P,autologous fat,control,cure,Lee 2001 11125386,Low,Low,High,Low,Low,Low,yes,Low,,Unclear,0,"0.93 (0.27, 3.24)",6/35 vs 6/33,I vs K,I3 vs K1
+85,Kim,11251875,2001,53.5,0,0,3,6,2,16,17,T4,P1,T,P,pfmt,control,cure,Kim 2001 11251875,Unclear,Unclear,Unclear,Low,Low,Low,yes,High,,Unclear,0,"4.50 (0.75, 26.93)",6/16 vs 2/17,H vs K,H4 vs K1
+86,Ishiko,11304861,2001,NA,1,sui,NA,25,23,32,34,H1+T4,T4,H+T,T,vaginal estrogen & pfmt,pfmt,cure,Ishiko 2001 11304861,Low,High,High,Low,Low,Low,yes,Low,,Unclear,0,"1.71 (0.57, 5.15)",25/32 vs 23/34,C+H vs H,C1+H4 vs H4
+87,Pages,11421517,2001,51.1,0,sui,NA,20,9,27,13,T4,T4+T6,T,T,pfmt,pfmt & biofeedback,improvement,Pages 2001 11421517,Low,Unclear,Unclear,Low,Low,Unclear,yes,Low,,Unclear,0,"1.27 (0.30, 5.46)",20/27 vs 9/13,H vs H,H4 vs H4+H6
+88,Pages,11421517,2001,51.1,0,sui,NA,6,4,27,13,T4,T4+T6,T,T,pfmt,pfmt & biofeedback,cure,Pages 2001 11421517,Low,Unclear,Unclear,Low,Low,Unclear,yes,Low,,Unclear,0,"0.64 (0.15, 2.84)",6/27 vs 4/13,H vs H,H4 vs H4+H6
+89,Lightner,11445471,2001,57.4,0,sui,12,79,76,188,176,U2,U4,U,U,contigen,durasphere,improvement,Lightner 2001 11445471,Unclear,Low,Low,Unclear,High,Unclear,yes,Unclear,,Unclear,0,"0.95 (0.63, 1.45)",79/188 vs 76/176,I vs I,I2 vs I4
+90,Arvonen,11574936,2001,48,0,sui,4,11,7,19,18,T4,T4+T9,T,T,pfmt,pfmt & weights,improvement,Arvonen 2001 11574936,Unclear,Unclear,Unclear,Low,Low,Low,yes,Low,,Unclear,0,"2.16 (0.58, 8.04)",11/19 vs 7/18,H vs H,H4 vs H4+H9
+91,Arvonen,11574936,2001,48,0,sui,4,5,9,19,18,T4,T4+T9,T,T,pfmt,pfmt & weights,cure,Arvonen 2001 11574936,Unclear,Unclear,Unclear,Low,Low,Low,yes,Low,,Unclear,0,"0.36 (0.09, 1.42)",5/19 vs 9/18,H vs H,H4 vs H4+H9
+92,Subak,12100806,2002,69.3,1,0,NA,39,11,77,75,T4,P1,T,P,pfmt,control,improvement,Subak 2002 12100806,Low,Unclear,High,High,Low,Low,yes,Low,,Low,0,"5.97 (2.74, 13.03)",39/77 vs 11/75,H vs K,H4 vs K1
+93,Norton,12114886,2002,51,0,sui,NA,123,132,140,138,A1,P1,A,P,duloxetine,control,cure,Norton 2002 12114886,Low,Low,Low,Low,Low,Low,yes,High,,Low,0,"0.33 (0.13, 0.86)",123/140 vs 132/138,D vs K,D1 vs K1
+94,Morkved,12383542,2002,46.4,0,sui,NA,21,28,46,48,T4,T4+T6,T,T,pfmt,pfmt & biofeedback,cure,Morkved 2002 12383542,Low,High,Low,Low,Low,Low,yes,Low,,Low,0,"0.60 (0.27, 1.36)",21/46 vs 28/48,H vs H,H4 vs H4+H6
+95,Burgio,12425706,2002,65.4,1,uui,2,15,11,74,75,T4,T4,T,T,pfmt,pfmt,cure,Burgio 2002 12425706,Low,Unclear,Unclear,Low,Low,Low,yes,Low,,Unclear,0,"1.48 (0.63, 3.48)",15/74 vs 11/75,H vs H,H4 vs H4
+96,Burgio,12425706,2002,65.4,1,uui,2,11,15,75,73,T4,T4+T6,T,T,pfmt,pfmt & biofeedback,cure,Burgio 2002 12425706,Low,Unclear,Unclear,Low,Low,Low,yes,Low,,Unclear,0,"0.66 (0.28, 1.56)",11/75 vs 15/73,H vs H,H4 vs H4+H6
+97,Burgio,12425706,2002,65.4,1,uui,2,15,15,74,73,T4,T4+T6,T,T,pfmt,pfmt & biofeedback,cure,Burgio 2002 12425706,Low,Unclear,Unclear,Low,Low,Low,yes,Low,,Unclear,0,"0.98 (0.44, 2.19)",15/74 vs 15/73,H vs H,H4 vs H4+H6
+98,Burgio,12425706,2002,65.4,1,uui,2,36,20,74,75,T4,T4,T,T,pfmt,pfmt,improvement,Burgio 2002 12425706,Low,Unclear,Unclear,Low,Low,Low,yes,Low,,Unclear,0,"2.61 (1.31, 5.17)",36/74 vs 20/75,H vs H,H4 vs H4
+99,Burgio,12425706,2002,65.4,1,uui,2,20,33,75,73,T4,T4+T6,T,T,pfmt,pfmt & biofeedback,improvement,Burgio 2002 12425706,Low,Unclear,Unclear,Low,Low,Low,yes,Low,,Unclear,0,"0.44 (0.22, 0.88)",20/75 vs 33/73,H vs H,H4 vs H4+H6
+100,Burgio,12425706,2002,65.4,1,uui,2,36,33,74,73,T4,T4+T6,T,T,pfmt,pfmt & biofeedback,improvement,Burgio 2002 12425706,Low,Unclear,Unclear,Low,Low,Low,yes,Low,,Unclear,0,"1.15 (0.60, 2.20)",36/74 vs 33/73,H vs H,H4 vs H4+H6
+101,But,12639647,2003,55.8,0,0,NA,7,1,30,22,N3,P1,N,P,magnetic stimulation,control,improvement,But 2003 12639647,Low,Low,Low,Low,Low,Low,yes,Low,,Low,0,"6.39 (0.72, 56.38)",7/30 vs 1/22,G vs K,G3 vs K1
+102,But,12639647,2003,55.8,0,0,NA,12,0,30,22,N3,P1,N,P,magnetic stimulation,control,cure,But 2003 12639647,Low,Low,Low,Low,Low,Low,yes,Low,,Low,0,"30.41 (1.69, 548.66)",12/30 vs 0/22,G vs K,G3 vs K1
+103,Alewijnse,12808702,2003,55.6,0,0,NA,21,17,51,52,T1+T4,T4,T,T,bladder training & pfmt,pfmt,cure,Alewijnse 2003 12808702,Unclear,Unclear,High,Low,Low,High,yes,Low,,Unclear,0,"1.44 (0.64, 3.22)",21/51 vs 17/52,H vs H,H1+H4 vs H4
+104,Moore,12842055,2003,60,0,0,3,37,27,74,71,T1,T1+T4,T,T,bladder training,bladder training & pfmt,cure,Moore 2003 12842055,Low,Low,Low,Low,High,Low,yes,Low,,Low,0,"1.63 (0.84, 3.16)",37/74 vs 27/71,H vs H,H1 vs H1+H4
+105,Goode,12865375,2003,56.2,0,0,NA,10,11,67,66,T2,T4+T6,T,T,education,pfmt & biofeedback,cure,Goode 2003 12865375,Low,Unclear,Unclear,Low,High,Low,yes,Unclear,,Unclear,0,"0.88 (0.34, 2.23)",10/67 vs 11/66,H vs H,H2 vs H4+H6
+106,Goode,12865375,2003,56.2,0,0,NA,10,10,67,67,N4+T4+T6,T2,N+T,T,tens & pfmt & biofeedback,education,cure,Goode 2003 12865375,Low,Unclear,Unclear,Low,High,Low,yes,Unclear,,Unclear,0,"1.00 (0.39, 2.59)",10/67 vs 10/67,G+H vs H,G4+H4+H6 vs H2
+107,Goode,12865375,2003,56.2,0,0,NA,10,11,67,66,N4+T4+T6,T4+T6,N+T,T,tens & pfmt & biofeedback,pfmt & biofeedback,cure,Goode 2003 12865375,Low,Unclear,Unclear,Low,High,Low,yes,Unclear,,Unclear,0,"0.88 (0.34, 2.23)",10/67 vs 11/66,G+H vs H,G4+H4+H6 vs H4+H6
+108,Goode,12865375,2003,56.2,0,0,NA,38,53,67,66,T2,T4+T6,T,T,education,pfmt & biofeedback,improvement,Goode 2003 12865375,Low,Unclear,Unclear,Low,High,Low,yes,Unclear,,Unclear,0,"0.32 (0.15, 0.70)",38/67 vs 53/66,H vs H,H2 vs H4+H6
+109,Goode,12865375,2003,56.2,0,0,NA,58,38,67,67,N4+T4+T6,T2,N+T,T,tens & pfmt & biofeedback,education,improvement,Goode 2003 12865375,Low,Unclear,Unclear,Low,High,Low,yes,Unclear,,Unclear,0,"4.92 (2.10, 11.53)",58/67 vs 38/67,G+H vs H,G4+H4+H6 vs H2
+110,Goode,12865375,2003,56.2,0,0,NA,58,53,67,66,N4+T4+T6,T4+T6,N+T,T,tens & pfmt & biofeedback,pfmt & biofeedback,improvement,Goode 2003 12865375,Low,Unclear,Unclear,Low,High,Low,yes,Unclear,,Unclear,0,"1.58 (0.62, 4.00)",58/67 vs 53/66,G+H vs H,G4+H4+H6 vs H4+H6
+111,Aksac,12867764,2003,NA,0,sui,2,16,0,20,10,T4+T6,P1,T,P,pfmt & biofeedback,control,cure,Aksac 2003 12867764,Adequate,Unclear,,,,,,,,Not adequate,0,"77.00 (3.75, 1581.71)",16/20 vs 0/10,H vs K,H4+H6 vs K1
+112,Aksac,12867764,2003,NA,0,sui,2,15,0,20,10,T4,P1,T,P,pfmt,control,cure,Aksac 2003 12867764,Adequate,Unclear,,,,,,,,Not adequate,0,"59.18 (2.95, 1187.72)",15/20 vs 0/10,H vs K,H4 vs K1
+113,Aksac,12867764,2003,NA,0,sui,2,15,16,20,20,T4,T4+T6,T,T,pfmt,pfmt & biofeedback,cure,Aksac 2003 12867764,Adequate,Unclear,,,,,,,,Not adequate,0,"0.75 (0.17, 3.33)",15/20 vs 16/20,H vs H,H4 vs H4+H6
+114,Aksac,12867764,2003,NA,0,sui,2,4,2,20,10,T4+T6,P1,T,P,pfmt & biofeedback,control,improvement,Aksac 2003 12867764,Adequate,Unclear,,,,,,,,Not adequate,0,"1.00 (0.15, 6.67)",4/20 vs 2/10,H vs K,H4+H6 vs K1
+115,Aksac,12867764,2003,NA,0,sui,2,5,2,20,10,T4,P1,T,P,pfmt,control,improvement,Aksac 2003 12867764,Adequate,Unclear,,,,,,,,Not adequate,0,"1.33 (0.21, 8.49)",5/20 vs 2/10,H vs K,H4 vs K1
+116,Aksac,12867764,2003,NA,0,sui,2,5,4,20,20,T4,T4+T6,T,T,pfmt,pfmt & biofeedback,improvement,Aksac 2003 12867764,Adequate,Unclear,,,,,,,,Not adequate,0,"1.33 (0.30, 5.93)",5/20 vs 4/20,H vs H,H4 vs H4+H6
+117,Diokno,12934777,2003,60,1,0,NA,90,67,391,399,C1,C3,C,C,oxybutynin,tolterodine,cure,Diokno 2003 12934777,Unclear,Low,Low,Low,Low,Low,yes,Low,,Unclear,0,"1.48 (1.04, 2.11)",90/391 vs 67/399,A vs A,A1 vs A3
+118,Lagro-Janssen,1459383,1992,43.4,0,0,NA,40,2,54,56,T1+T4,P1,T,P,bladder training & pfmt,control,improvement,Lagro-Janssen 1992 1459383,Unclear,Unclear,Unclear,Low,Low,Low,yes,Low,,Unclear,0,"77.14 (16.59, 358.75)",40/54 vs 2/56,H vs K,H1+H4 vs K1
+119,Lagro-Janssen,1459383,1992,43.4,0,0,NA,10,1,54,56,T1+T4,P1,T,P,bladder training & pfmt,control,cure,Lagro-Janssen 1992 1459383,Unclear,Unclear,Unclear,Low,Low,Low,yes,Low,,Unclear,0,"12.50 (1.54, 101.42)",10/54 vs 1/56,H vs K,H1+H4 vs K1
+120,Spruijt,14616279,2003,NA,1,0,NA,7,4,25,12,N4,T4,N,T,tens,pfmt,improvement,Spruijt 2003 14616279,Low,Unclear,Unclear,Low,Low,Low,yes,Low,,Unclear,0,"0.78 (0.18, 3.43)",7/25 vs 4/12,G vs H,G4 vs H4
+121,Wang,14751349,2004,52.7,0,uui,NA,12,15,40,38,T4,T4+T6,T,T,pfmt,pfmt & biofeedback,cure,Wang 2004 14751349,Low,Unclear,Low,Low,Low,Low,yes,Low,,Low,0,"0.66 (0.26, 1.68)",12/40 vs 15/38,H vs H,H4 vs H4+H6
+122,Wang,14751349,2004,52.7,0,uui,NA,17,12,42,40,N4,T4,N,T,tens,pfmt,cure,Wang 2004 14751349,Low,Unclear,Low,Low,Low,Low,yes,Low,,Low,0,"1.59 (0.64, 3.96)",17/42 vs 12/40,G vs H,G4 vs H4
+123,Wang,14751349,2004,52.7,0,uui,NA,17,15,42,38,N4,T4+T6,N,T,tens,pfmt & biofeedback,cure,Wang 2004 14751349,Low,Unclear,Low,Low,Low,Low,yes,Low,,Low,0,"1.04 (0.43, 2.55)",17/42 vs 15/38,G vs H,G4 vs H4+H6
+124,Millard,14764128,2004,53,0,sui,NA,16,14,227,231,A1,P1,A,P,duloxetine,control,cure,Millard 2004 14764128,Low,Low,Low,Low,High,High,yes,High,,Low,0,"1.18 (0.56, 2.47)",16/227 vs 14/231,D vs K,D1 vs K1
+125,Millard,14764128,2004,53,0,sui,NA,167,148,227,231,A1,P1,A,P,duloxetine,control,improvement,Millard 2004 14764128,Low,Low,Low,Low,High,High,yes,High,,Low,0,"1.56 (1.05, 2.33)",167/227 vs 148/231,D vs K,D1 vs K1
+126,Diokno,14767293,2004,NA,1,0,NA,61,55,164,195,T1+T4,P1,T,P,bladder training & pfmt,control,cure,Diokno 2004 14767293,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,"1.51 (0.97, 2.35)",61/164 vs 55/195,H vs K,H1+H4 vs K1
+127,Diokno,14767293,2004,NA,1,0,NA,92,80,164,195,T1+T4,P1,T,P,bladder training & pfmt,control,improvement,Diokno 2004 14767293,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,"1.84 (1.21, 2.80)",92/164 vs 80/195,H vs K,H1+H4 vs K1
+128,Kerrebroeck,14961887,2004,53,0,sui,NA,93,76,179,226,A1,P1,A,P,duloxetine,control,improvement,Kerrebroeck 2004 14961887,Unclear,Unclear,Unclear,Low,Low,Low,yes,High,,Unclear,0,"2.13 (1.43, 3.19)",93/179 vs 76/226,D vs K,D1 vs K1
+129,Khullar,15302476,2004,58.2,0,0,NA,318,116,521,253,C3,P1,C,P,tolterodine,control,improvement,Khullar 2004 15302476,Low,Low,Low,Low,Low,Low,yes,Low,,Low,0,"1.85 (1.37, 2.51)",318/521 vs 116/253,A vs K,A3 vs K1
+130,Khullar,15302476,2004,58.2,0,0,NA,396,139,521,253,C3,P1,C,P,tolterodine,control,satisfaction,Khullar 2004 15302476,Low,Low,Low,Low,Low,Low,yes,Low,,Low,0,"2.60 (1.89, 3.57)",396/521 vs 139/253,A vs K,A3 vs K1
+131,Cardozo,15339761,2004,53,0,sui,NA,17,4,55,54,A1,P1,A,P,duloxetine,control,improvement,Cardozo 2004 15339761,Low,Low,Low,Low,Low,Low,yes,Low,,Low,0,"5.59 (1.74, 17.98)",17/55 vs 4/54,D vs K,D1 vs K1
+132,Bano,15378234,2005,61,0,sui,6,9,15,25,25,U5,U6,U,U,macroplastique,permacol,cure,Bano 2005 15378234,Unclear,Unclear,Unclear,Low,Low,Unclear,yes,Low,,Unclear,0,"0.38 (0.12, 1.18)",9/25 vs 15/25,I vs I,I5 vs I6
+133,Amaro,15647885,2005,NA,0,0,NA,3,6,20,20,N4,P1,N,P,tens,control,ui,Amaro 2005 15647885,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,"0.41 (0.09, 1.95)",3/20 vs 6/20,G vs K,G4 vs K1
+134,Kinchen,15662490,2005,53,0,sui,3,98,94,140,186,A1,P1,A,P,duloxetine,control,improvement,Kinchen 2005 15662490,Low,Low,Low,Low,High,Low,yes,Low,,Unclear,0,"2.28 (1.44, 3.62)",98/140 vs 94/186,D vs K,D1 vs K1
+135,But,15821527,2005,54,0,0,NA,11,3,26,13,N3,P1,N,P,magnetic stimulation,control,improvement,But 2005 15821527,Low,Low,Low,Low,Low,High,yes,Low,,Low,0,"2.44 (0.54, 11.03)",11/26 vs 3/13,G vs K,G3 vs K1
+136,Subak,15947625,2005,52,0,0,NA,14,4,24,24,T2,P1,T,P,education,control,improvement,Subak 2005 15947625,Low,High,Low,Low,Low,Low,yes,Low,,Low,0,"7.00 (1.82, 26.89)",14/24 vs 4/24,H vs K,H2 vs K1
+137,Waetjen,16260511,2005,NA,0,0,24,52,74,208,209,H4,P1,H,P,transdermal estrogen,control,improvement,Waetjen 2005 16260511,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,"0.61 (0.40, 0.93)",52/208 vs 74/209,C vs K,C4 vs K1
+138,Long,16412747,2006,55.3,0,0,3,12,3,36,37,H1,H2,H,H,vaginal estrogen,po estrogen,ui,Long 2006 16412747,Unclear,Open-label,,,,,,,,Unclear,0,"5.67 (1.44, 22.27)",12/36 vs 3/37,C vs C,C1 vs C2
+139,Yalcin,16750246,2006,51.1,0,sui,NA,198,152,433,425,A1,P1,A,P,duloxetine,control,improvement,Yalcin 2006 16750246,Low,Low,Low,Low,Low,Low,yes,Low,,Unclear,0,"1.51 (1.15, 1.99)",198/433 vs 152/425,D vs K,D1 vs K1
+140,Amaro,16752244,2006,48,0,0,NA,17,14,20,20,N4,P1,N,P,tens,control,improvement,Amaro 2006 16752244,Low,Low,Low,Unclear,Low,Unclear,yes,Low,,Unclear,0,"2.43 (0.51, 11.51)",17/20 vs 14/20,G vs K,G4 vs K1
+141,Amaro,16752244,2006,48,0,0,NA,3,6,20,20,N4,P1,N,P,tens,control,ui,Amaro 2006 16752244,Low,Low,Low,Unclear,Low,Unclear,yes,Low,,Unclear,0,"0.41 (0.09, 1.95)",3/20 vs 6/20,G vs K,G4 vs K1
+142,Williams,17034605,2006,56.9,0,0,NA,4,6,80,79,T4,P1,T,P,pfmt,control,cure,Williams 2006 17034605,Low,Unclear,Unclear,Low,Low,Low,yes,Low,,Low,0,"0.64 (0.17, 2.36)",4/80 vs 6/79,H vs K,H4 vs K1
+143,Andersen,17051030,2002,NA,0,sui,NA,3,10,21,25,U2,U4,U,U,contigen,durasphere,cure,Andersen 2002 17051030,Unclear,Low,Low,Low,Low,Unclear,yes,Low,,Unclear,0,"0.25 (0.06, 1.08)",3/21 vs 10/25,I vs I,I2 vs I4
+144,Andersen,17051030,2002,NA,0,sui,NA,13,20,21,25,U2,U4,U,U,contigen,durasphere,improvement,Andersen 2002 17051030,Unclear,Low,Low,Low,Low,Unclear,yes,Low,,Unclear,0,"0.41 (0.11, 1.52)",13/21 vs 20/25,I vs I,I2 vs I4
+145,Steers,17511767,2007,54.6,0,0,NA,5,1,153,153,A1,P1,A,P,duloxetine,control,improvement,Steers 2007 17511767,Low,Low,Low,Low,High,Low,yes,Low,,Unclear,0,"5.14 (0.59, 44.48)",5/153 vs 1/153,D vs K,D1 vs K1
+146,Bent,17580357,2008,53.7,0,0,NA,103,74,234,272,A1,P1,A,P,duloxetine,control,improvement,Bent 2008 17580357,Low,Low,High,Low,High,Low,yes,Low,,Unclear,0,"2.10 (1.45, 3.05)",103/234 vs 74/272,D vs K,D1 vs K1
+147,Kim,17944890,2007,76.6,1,0,NA,18,3,33,32,T4,P1,T,P,pfmt,control,cure,Kim 2007 17944890,Low,Unclear,Unclear,Low,Low,Low,yes,Low,,Unclear,0,"11.60 (2.94, 45.74)",18/33 vs 3/32,H vs K,H4 vs K1
+148,Lagro-Janssen,1807303,1991,45,0,sui,3,7,1,33,33,T4,P1,T,P,pfmt,control,cure,Lagro-Janssen 1991 1807303,Unclear,Unclear,Unclear,Low,Low,Low,yes,High,,Unclear,0,"8.62 (1.00, 74.57)",7/33 vs 1/33,H vs K,H4 vs K1
+149,Lin,18221532,2008,54.4,0,sui,NA,42,28,60,61,A1,P1,A,P,duloxetine,control,improvement,Lin 2008 18221532,Low,Low,Low,Low,High,High,yes,High,,Low,0,"2.75 (1.30, 5.81)",42/60 vs 28/61,D vs K,D1 vs K1
+150,Brubaker,18499184,2008,0,0,0,NA,18,0,28,15,B1,P1,B,P,botox,control,improvement,Brubaker 2008 18499184,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,"54.62 (2.96, 1008.87)",18/28 vs 0/15,B vs K,B1 vs K1
+151,Schagen van Leeuwena,18547757,2008,71,1,0,NA,18,14,131,134,A1,P1,A,P,duloxetine,control,improvement,Schagen van Leeuwena 2008 18547757,Low,Low,Low,Low,Low,Low,yes,Low,,Unclear,0,"1.37 (0.65, 2.87)",18/131 vs 14/134,D vs K,D1 vs K1
+152,Burgio,18678843,2008,56.9,0,uui,NA,31,51,153,154,C3,C3+T1+T4,C,C+T,tolterodine,tolterodine & pfmt & bladder training,satisfaction,Burgio 2008 18678843,Low,High,High,Low,Low,Low,yes,High,,Low,0,"0.51 (0.31, 0.86)",31/153 vs 51/154,A vs A+H,A3 vs A3+H1+H4
+153,Burgio,18678843,2008,56.9,0,uui,NA,66,106,153,154,C3,C3+T1+T4,C,C+T,tolterodine,tolterodine & pfmt & bladder training,improvement,Burgio 2008 18678843,Low,High,High,Low,Low,Low,yes,High,,Low,0,"0.34 (0.22, 0.55)",66/153 vs 106/154,A vs A+H,A3 vs A3+H1+H4
+154,Burgio,18678843,2008,56.9,0,uui,NA,26,32,153,154,C3,C3+T1+T4,C,C+T,tolterodine,tolterodine & pfmt & bladder training,cure,Burgio 2008 18678843,Low,High,High,Low,Low,Low,yes,High,,Low,0,"0.78 (0.44, 1.39)",26/153 vs 32/154,A vs A+H,A3 vs A3+H1+H4
+155,Rogers,18685795,2008,48,0,uui,NA,115,89,202,211,C3,P1,C,P,tolterodine,control,cure,Rogers 2008 18685795,Low,Double-blind,Low,Low,Low,Low,yes,Low,,Unclear,0,"1.81 (1.23, 2.68)",115/202 vs 89/211,A vs K,A3 vs K1
+156,Castro,18719756,2008,54.2,0,sui,NA,13,12,30,31,N4,T4,N,T,tens,pfmt,cure,Castro 2008 18719756,Low,High,Low,High,Low,Low,yes,Low,,Unclear,0,"1.21 (0.44, 3.36)",13/30 vs 12/31,G vs H,G4 vs H4
+157,Castro,18719756,2008,54.2,0,sui,NA,12,3,31,30,T4,P1,T,P,pfmt,control,cure,Castro 2008 18719756,Low,High,Low,High,Low,Low,yes,Low,,Unclear,0,"5.68 (1.41, 22.93)",12/31 vs 3/30,H vs K,H4 vs K1
+158,Castro,18719756,2008,54.2,0,sui,NA,13,3,30,30,N4,P1,N,P,tens,control,cure,Castro 2008 18719756,Low,High,Low,High,Low,Low,yes,Low,,Unclear,0,"6.88 (1.71, 27.75)",13/30 vs 3/30,G vs K,G4 vs K1
+159,Castro,18719756,2008,54.2,0,sui,NA,15,15,30,31,N4,T4,N,T,tens,pfmt,satisfaction,Castro 2008 18719756,Low,High,Low,High,Low,Low,yes,Low,,Unclear,0,"1.07 (0.39, 2.91)",15/30 vs 15/31,G vs H,G4 vs H4
+160,Castro,18719756,2008,54.2,0,sui,NA,15,5,31,30,T4,P1,T,P,pfmt,control,satisfaction,Castro 2008 18719756,Low,High,Low,High,Low,Low,yes,Low,,Unclear,0,"4.69 (1.42, 15.42)",15/31 vs 5/30,H vs K,H4 vs K1
+161,Castro,18719756,2008,54.2,0,sui,NA,15,5,30,30,N4,P1,N,P,tens,control,satisfaction,Castro 2008 18719756,Low,High,Low,High,Low,Low,yes,Low,,Unclear,0,"5.00 (1.51, 16.56)",15/30 vs 5/30,G vs K,G4 vs K1
+162,Kumari,18755458,2008,44.7,0,0,NA,41,11,78,86,T1+T4,P1,T,P,bladder training & pfmt,control,ui,Kumari 2008 18755458,Low,High,High,High,High,Low,yes,Unclear,,Low,0,"7.56 (3.49, 16.37)",41/78 vs 11/86,H vs K,H1+H4 vs K1
+163,Ghoniem,19013613,2009,61,0,sui,NA,34,25,102,94,U5,P1,U,P,macroplastique,control,cure,Ghoniem 2009 19013613,Low,Low,Low,Low,High,Low,yes,Low,,Low,0,"1.38 (0.75, 2.55)",34/102 vs 25/94,I vs K,I5 vs K1
+164,Ghoniem,19013613,2009,61,0,sui,NA,75,60,122,125,U5,P1,U,P,macroplastique,control,improvement,Ghoniem 2009 19013613,Low,Low,Low,Low,High,Low,yes,Low,,Low,0,"1.73 (1.04, 2.87)",75/122 vs 60/125,I vs K,I5 vs K1
+165,Rogers,19601704,2009,48,0,0,NA,143,101,202,211,C3,P1,C,P,tolterodine,control,satisfaction,Rogers 2009 19601704,Unclear,Low,Low,Low,Unclear,Low,yes,Unclear,,Unclear,0,"2.64 (1.76, 3.96)",143/202 vs 101/211,A vs K,A3 vs K1
+166,Peters,19616802,2009,58,0,uui,NA,23,35,42,44,C3,N1,C,N,tolterodine,electroacupuncture,cure,Peters 2009 19616802,Low,Open-label,Low,Unclear,Low,Low,yes,Low,,Unclear,0,"0.31 (0.12, 0.81)",23/42 vs 35/44,A vs G,A3 vs G1
+167,Peters,19616802,2009,58,0,uui,NA,21,34,42,44,C3,N1,C,N,tolterodine,electroacupuncture,improvement,Peters 2009 19616802,Low,Open-label,Low,Unclear,Low,Low,yes,Low,,Unclear,0,"0.29 (0.12, 0.74)",21/42 vs 34/44,A vs G,A3 vs G1
+168,Peters,19616802,2009,58,0,uui,NA,27,24,37,30,C3,N1,C,N,tolterodine,electroacupuncture,ui,Peters 2009 19616802,Low,Open-label,Low,Unclear,Low,Low,yes,Low,,Unclear,0,"0.68 (0.21, 2.14)",27/37 vs 24/30,A vs G,A3 vs G1
+169,Lightner,19660800,2009,56.1,0,sui,NA,74,93,88,143,U2,U7,U,U,contigen,zuidex,improvement,Lightner 2009 19660800,Unclear,Unclear,Unclear,Low,High,Low,yes,High,,Unclear,0,"2.84 (1.46, 5.54)",74/88 vs 93/143,I vs I,I2 vs I7
+170,Sand,19727537,2009,58,0,0,NA,163,103,484,505,C4,P1,C,P,trospium,control,cure,Sand 2009 19727537,Low,Low,Low,Low,Low,Low,yes,Low,,Unclear,0,"1.98 (1.49, 2.64)",163/484 vs 103/505,A vs K,A4 vs K1
+171,Lamb,19751517,2009,51.3,0,0,NA,66,47,111,63,T1+T4,T5+T4,T,T,bladder training & pfmt,bladder support & pfmt,improvement,Lamb 2009 19751517,Low,Unclear,Low,Low,Low,Low,yes,Low,,High,0,"0.50 (0.25, 0.99)",66/111 vs 47/63,H vs H,H1+H4 vs H5+H4
+172,Fantl,1987410,1991,67,0,0,1.5,49,16,65,66,T1,P1,T,P,bladder training,control,improvement,Fantl 1991 1987410,Low,Unclear,Unclear,Low,Low,Low,yes,Low,,Unclear,0,"9.57 (4.31, 21.24)",49/65 vs 16/66,H vs K,H1 vs K1
+173,Fantl,1987410,1991,67,0,0,1.5,8,2,65,66,T1,P1,T,P,bladder training,control,cure,Fantl 1991 1987410,Low,Unclear,Unclear,Low,Low,Low,yes,Low,,Unclear,0,"4.49 (0.92, 22.03)",8/65 vs 2/66,H vs K,H1 vs K1
+174,Cardozo,19929591,2010,55,0,sui,NA,876,669,1378,1380,A1,P1,A,P,duloxetine,control,improvement,Cardozo 2010 19929591,Low,Low,Low,Low,Low,Low,yes,Low,,Low,0,"1.85 (1.59, 2.16)",876/1378 vs 669/1380,D vs K,D1 vs K1
+175,Thüroff,2005707,1991,50,0,uui,NA,35,20,126,104,C1,P1,C,P,oxybutynin,control,improvement,Thüroff 1991 2005707,Low,Low,Low,Low,Low,Low,yes,Low,,Low,0,"1.62 (0.87, 3.02)",35/126 vs 20/104,A vs K,A1 vs K1
+176,Richter,20177294,2010,49.8,0,0,NA,54,52,146,151,T4,T5+T4,T,T,pfmt,bladder support & pfmt,improvement,Richter 2010 20177294,Adequate,Open-label,Low,Low,Low,Low,yes,Low,,Not adequate,0,"1.12 (0.69, 1.80)",54/146 vs 52/151,H vs H,H4 vs H5+H4
+177,Richter,20177294,2010,49.8,0,0,NA,51,52,149,151,T5,T5+T4,T,T,bladder support,bladder support & pfmt,improvement,Richter 2010 20177294,Adequate,Open-label,Low,Low,Low,Low,yes,Low,,Not adequate,0,"0.99 (0.62, 1.60)",51/149 vs 52/151,H vs H,H5 vs H5+H4
+178,Richter,20177294,2010,49.8,0,0,NA,54,51,146,149,T4,T5,T,T,pfmt,bladder support,improvement,Richter 2010 20177294,Adequate,Open-label,Low,Low,Low,Low,yes,Low,,Not adequate,0,"1.13 (0.70, 1.82)",54/146 vs 51/149,H vs H,H4 vs H5
+179,Richter,20177294,2010,49.8,0,0,NA,59,49,146,151,T4,T5+T4,T,T,pfmt,bladder support & pfmt,cure,Richter 2010 20177294,Adequate,Open-label,Low,Low,Low,Low,yes,Low,,Not adequate,0,"1.41 (0.88, 2.27)",59/146 vs 49/151,H vs H,H4 vs H5+H4
+180,Richter,20177294,2010,49.8,0,0,NA,52,49,149,151,T5,T5+T4,T,T,bladder support,bladder support & pfmt,cure,Richter 2010 20177294,Adequate,Open-label,Low,Low,Low,Low,yes,Low,,Not adequate,0,"1.12 (0.69, 1.80)",52/149 vs 49/151,H vs H,H5 vs H5+H4
+181,Richter,20177294,2010,49.8,0,0,NA,59,52,146,149,T4,T5,T,T,pfmt,bladder support,cure,Richter 2010 20177294,Adequate,Open-label,Low,Low,Low,Low,yes,Low,,Not adequate,0,"1.26 (0.79, 2.03)",59/146 vs 52/149,H vs H,H4 vs H5
+182,Richter,20177294,2010,49.8,0,0,NA,79,81,146,151,T4,T5+T4,T,T,pfmt,bladder support & pfmt,satisfaction,Richter 2010 20177294,Adequate,Open-label,Low,Low,Low,Low,yes,Low,,Not adequate,0,"1.02 (0.65, 1.61)",79/146 vs 81/151,H vs H,H4 vs H5+H4
+183,Richter,20177294,2010,49.8,0,0,NA,75,81,149,151,T5,T5+T4,T,T,bladder support,bladder support & pfmt,satisfaction,Richter 2010 20177294,Adequate,Open-label,Low,Low,Low,Low,yes,Low,,Not adequate,0,"0.88 (0.56, 1.38)",75/149 vs 81/151,H vs H,H5 vs H5+H4
+184,Richter,20177294,2010,49.8,0,0,NA,79,75,146,149,T4,T5,T,T,pfmt,bladder support,satisfaction,Richter 2010 20177294,Adequate,Open-label,Low,Low,Low,Low,yes,Low,,Not adequate,0,"1.16 (0.74, 1.84)",79/146 vs 75/149,H vs H,H4 vs H5
+185,Hung,20185357,2010,48.8,0,0,NA,5,1,35,35,T4,P1,T,P,pfmt,control,cure,Hung 2010 20185357,Low,Unclear,Unclear,Low,Low,Low,yes,Low,,Low,0,"5.67 (0.63, 51.27)",5/35 vs 1/35,H vs K,H4 vs K1
+186,Hung,20185357,2010,48.8,0,0,NA,34,23,35,35,T4,P1,T,P,pfmt,control,improvement,Hung 2010 20185357,Low,Unclear,Unclear,Low,Low,Low,yes,Low,,Low,0,"17.74 (2.16, 145.95)",34/35 vs 23/35,H vs K,H4 vs K1
+187,Schreiner,20458465,2010,68.3,1,0,NA,18,9,26,26,N4+T1,T1,N+T,T,bladder training & tens,bladder training,cure,Schreiner 2010 20458465,Low,Unclear,Unclear,Unclear,Low,Low,yes,Unclear,,Unclear,0,"4.25 (1.33, 13.56)",18/26 vs 9/26,G+H vs H,G4+H1 vs H1
+188,Burgio,20639023,2010,58.4,0,uui,NA,28,25,32,32,C1,C1+T4,C,C+T,oxybutynin,oxybutynin & pfmt,satisfaction,Burgio 2010 20639023,Low,High,High,Low,Low,Low,yes,Low,,Unclear,0,"1.96 (0.51, 7.50)",28/32 vs 25/32,A vs A+H,A1 vs A1+H4
+189,Burgio,20639023,2010,58.4,0,uui,NA,29,25,32,32,C1,C1+T4,C,C+T,oxybutynin,oxybutynin & pfmt,improvement,Burgio 2010 20639023,Low,High,High,Low,Low,Low,yes,Low,,Unclear,0,"2.71 (0.63, 11.59)",29/32 vs 25/32,A vs A+H,A1 vs A1+H4
+190,Wells,2071809,1991,66,1,0,6,11,22,75,82,C7,T4,C,T,phenylpropanolamine,pfmt,cure,Wells 1991 2071809,Low,Unclear,Unclear,Low,Low,Low,yes,Low,,Unclear,0,"0.47 (0.21, 1.05)",11/75 vs 22/82,A vs H,A7 vs H4
+191,Wells,2071809,1991,66,1,0,6,29,17,75,82,C7,T4,C,T,phenylpropanolamine,pfmt,improvement,Wells 1991 2071809,Low,Unclear,Unclear,Low,Low,Low,yes,Low,,Unclear,0,"2.41 (1.19, 4.89)",29/75 vs 17/82,A vs H,A7 vs H4
+192,Ahlstrom,2227611,1990,NA,1,sui,NA,0,0,29,29,C7+H2,H2,C+H,H,po estrogen & phenylpropanolamine,po estrogen,cure,Ahlstrom 1990 2227611,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,"1.00 (0.02, 52.09)",0/29 vs 0/29,A+C vs C,A7+C2 vs C2
+193,Ahlstrom,2227611,1990,NA,1,sui,NA,13,11,29,29,C7+H2,H2,C+H,H,po estrogen & phenylpropanolamine,po estrogen,improvement,Ahlstrom 1990 2227611,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,"1.33 (0.47, 3.79)",13/29 vs 11/29,A+C vs C,A7+C2 vs C2
+194,Moore,2249115,1990,46,0,uui,NA,10,1,28,25,C1,P1,C,P,oxybutynin,control,improvement,Moore 1990 2249115,Low,Low,Low,Unclear,High,Low,yes,High,,Low,0,"13.33 (1.56, 113.84)",10/28 vs 1/25,A vs K,A1 vs K1
+195,Moore,2249115,1990,46,0,uui,NA,5,0,28,25,C1,P1,C,P,oxybutynin,control,cure,Moore 1990 2249115,Low,Low,Low,Unclear,High,Low,yes,High,,Low,0,"11.94 (0.63, 227.78)",5/28 vs 0/25,A vs K,A1 vs K1
+196,Harvey,318,2002,47.2,0,0,NA,2,2,19,25,T4+T6,T4+T9,T,T,pfmt & biofeedback,pfmt & weights,cure,Harvey 2002 318,Adequate,Unclear,,,,,,,,Unclear,0,"1.35 (0.17, 10.59)",2/19 vs 2/25,H vs H,H4+H6 vs H4+H9
+197,Shepherd,6611720,1983,48,0,sui,NA,6,10,11,11,T4,T4+T6,T,T,pfmt,pfmt & biofeedback,improvement,Shepherd 1983 6611720,Unclear,High,High,Low,Low,Low,yes,Low,,Unclear,0,"0.12 (0.01, 1.29)",6/11 vs 10/11,H vs H,H4 vs H4+H6
+198,Shepherd,6611720,1983,48,0,sui,NA,3,8,11,11,T4,T4+T6,T,T,pfmt,pfmt & biofeedback,cure,Shepherd 1983 6611720,Unclear,High,High,Low,Low,Low,yes,Low,,Unclear,0,"0.14 (0.02, 0.92)",3/11 vs 8/11,H vs H,H4 vs H4+H6
+199,Szonyi G,7484484,1995,82,1,uui,NA,1,0,28,29,C1,P1,C,P,oxybutynin,control,cure,Szonyi G 1995 7484484,Low,Low,Low,Low,Low,Low,yes,Low,,Unclear,0,"3.22 (0.13, 82.38)",1/28 vs 0/29,A vs K,A1 vs K1
+200,Szonyi G,7484484,1995,82,1,uui,NA,22,16,28,29,C1,P1,C,P,oxybutynin,control,improvement,Szonyi G 1995 7484484,Low,Low,Low,Low,Low,Low,yes,Low,,Unclear,0,"2.98 (0.93, 9.52)",22/28 vs 16/29,A vs K,A1 vs K1
+201,Smith,7490809,1996,NA,0,0,NA,2,1,9,9,N4,T4,N,T,tens,pfmt,cure,Smith 1996 7490809,Low,Unclear,Unclear,Low,Low,Low,yes,Low,,Unclear,0,"2.29 (0.17, 30.96)",2/9 vs 1/9,G vs H,G4 vs H4
+202,Smith,7490809,1996,NA,0,0,NA,4,3,9,9,N4,T4,N,T,tens,pfmt,improvement,Smith 1996 7490809,Low,Unclear,Unclear,Low,Low,Low,yes,Low,,Unclear,0,"1.60 (0.24, 10.81)",4/9 vs 3/9,G vs H,G4 vs H4
+203,Smith_a,7490809_a,1996,NA,0,0,NA,3,4,18,20,C8,N4,C,N,propantheline,tens,cure,Smith_a 1996 7490809_a,Low,Unclear,Unclear,Low,Low,Low,yes,Low,,Unclear,0,"0.80 (0.15, 4.18)",3/18 vs 4/20,A vs G,A8 vs G4
+204,Smith_a,7490809_a,1996,NA,0,0,NA,10,13,18,20,C8,N4,C,N,propantheline,tens,improvement,Smith_a 1996 7490809_a,Low,Unclear,Unclear,Low,Low,Low,yes,Low,,Unclear,0,"0.67 (0.18, 2.49)",10/18 vs 13/20,A vs G,A8 vs G4
+205,Sand,7631730,1995,53.2,0,sui,NA,7,2,35,17,N4,P1,N,P,tens,control,cure,Sand 1995 7631730,Low,Low,Low,Low,Low,High,yes,Low,,Unclear,0,"1.88 (0.35, 10.18)",7/35 vs 2/17,G vs K,G4 vs K1
+206,Sand,7631730,1995,53.2,0,sui,NA,16,3,35,17,N4,P1,N,P,tens,control,improvement,Sand 1995 7631730,Low,Low,Low,Low,Low,High,yes,Low,,Unclear,0,"3.93 (0.96, 16.15)",16/35 vs 3/17,G vs K,G4 vs K1
+207,Burns,8315230,1993,62,1,0,6,9,1,40,39,T4+T6,P1,T,P,pfmt & biofeedback,control,cure,Burns 1993 8315230,Low,Unclear,Unclear,Low,Low,Low,yes,Low,,Unclear,0,"11.03 (1.32, 91.89)",9/40 vs 1/39,H vs K,H4+H6 vs K1
+208,Burns,8315230,1993,62,1,0,6,7,1,43,39,T4,P1,T,P,pfmt,control,cure,Burns 1993 8315230,Low,Unclear,Unclear,Low,Low,Low,yes,Low,,Unclear,0,"7.39 (0.87, 63.07)",7/43 vs 1/39,H vs K,H4 vs K1
+209,Burns,8315230,1993,62,1,0,6,7,9,43,40,T4,T4+T6,T,T,pfmt,pfmt & biofeedback,cure,Burns 1993 8315230,Low,Unclear,Unclear,Low,Low,Low,yes,Low,,Unclear,0,"0.67 (0.22, 2.01)",7/43 vs 9/40,H vs H,H4 vs H4+H6
+210,Burns,8315230,1993,62,1,0,6,24,2,40,39,T4+T6,P1,T,P,pfmt & biofeedback,control,improvement,Burns 1993 8315230,Low,Unclear,Unclear,Low,Low,Low,yes,Low,,Unclear,0,"27.75 (5.85, 131.68)",24/40 vs 2/39,H vs K,H4+H6 vs K1
+211,Burns,8315230,1993,62,1,0,6,23,2,43,39,T4,P1,T,P,pfmt,control,improvement,Burns 1993 8315230,Low,Unclear,Unclear,Low,Low,Low,yes,Low,,Unclear,0,"21.27 (4.54, 99.63)",23/43 vs 2/39,H vs K,H4 vs K1
+212,Burns,8315230,1993,62,1,0,6,23,24,43,40,T4,T4+T6,T,T,pfmt,pfmt & biofeedback,improvement,Burns 1993 8315230,Low,Unclear,Unclear,Low,Low,Low,yes,Low,,Unclear,0,"0.77 (0.32, 1.83)",23/43 vs 24/40,H vs H,H4 vs H4+H6
+213,Berghmans,8696355,1996,48.4,0,sui,3,3,5,20,20,T4,T4+T6,T,T,pfmt,pfmt & biofeedback,cure,Berghmans 1996 8696355,Low,High,High,Low,Low,Low,yes,Low,,Low,0,"0.53 (0.11, 2.60)",3/20 vs 5/20,H vs H,H4 vs H4+H6
+214,Berghmans,8696355,1996,48.4,0,sui,3,14,14,20,20,T4,T4+T6,T,T,pfmt,pfmt & biofeedback,improvement,Berghmans 1996 8696355,Low,High,High,Low,Low,Low,yes,Low,,Low,0,"1.00 (0.26, 3.87)",14/20 vs 14/20,H vs H,H4 vs H4+H6
+215,Glavind,9203484,1996,45,0,sui,NA,0,5,15,19,T4,T4+T6,T,T,pfmt,pfmt & biofeedback,cure,Glavind 1996 9203484,Low,Unclear,Unclear,Low,Low,Low,yes,Low,,Low,0,"0.09 (0.00, 1.68)",0/15 vs 5/19,H vs H,H4 vs H4+H6
+216,Glavind,9203484,1996,45,0,sui,NA,4,8,15,19,T4,T4+T6,T,T,pfmt,pfmt & biofeedback,improvement,Glavind 1996 9203484,Low,Unclear,Unclear,Low,Low,Low,yes,Low,,Low,0,"0.50 (0.12, 2.16)",4/15 vs 8/19,H vs H,H4 vs H4+H6
+217,Brubaker,9322620,1997,NA,0,0,NA,21,10,60,61,N4,P1,N,P,tens,control,improvement,Brubaker 1997 9322620,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,"2.75 (1.16, 6.49)",21/60 vs 10/61,G vs K,G4 vs K1
+218,Luber,9353803,1997,53.9,0,sui,NA,2,4,20,24,N4,P1,N,P,tens,control,cure,Luber 1997 9353803,Low,Low,Low,Unclear,High,Low,yes,Unclear,,Low,0,"0.56 (0.09, 3.40)",2/20 vs 4/24,G vs K,G4 vs K1
+219,Luber,9353803,1997,53.9,0,sui,NA,3,3,20,24,N4,P1,N,P,tens,control,improvement,Luber 1997 9353803,Low,Low,Low,Unclear,High,Low,yes,Unclear,,Low,0,"1.24 (0.22, 6.92)",3/20 vs 3/24,G vs K,G4 vs K1
+220,Holtedahl,9688247,1998,61,1,0,6,8,0,36,44,H1+N4+T4,P1,H+N+T,P,vaginal estrogen & tens & pfmt,control,cure,Holtedahl 1998 9688247,Low,High,High,Low,Low,Low,yes,Low,,Low,0,"26.54 (1.47, 477.93)",8/36 vs 0/44,C+G+H vs K,C1+G4+H4 vs K1
+221,Holtedahl,9688247,1998,61,1,0,6,14,4,36,44,H1+N4+T4,P1,H+N+T,P,vaginal estrogen & tens & pfmt,control,improvement,Holtedahl 1998 9688247,Low,High,High,Low,Low,Low,yes,Low,,Low,0,"6.36 (1.87, 21.71)",14/36 vs 4/44,C+G+H vs K,C1+G4+H4 vs K1
+222,Wyman,9790388,1998,61,0,0,NA,16,13,67,69,T1+T4+T6,T4+T6,T,T,bladder training & pfmt & biofeedback,pfmt & biofeedback,cure,Wyman 1998 9790388,Unclear,Unclear,Unclear,Low,Low,Low,yes,High,,Unclear,0,"1.35 (0.59, 3.08)",16/67 vs 13/69,H vs H,H1+H4+H6 vs H4+H6
+223,Wyman,9790388,1998,61,0,0,NA,10,13,68,69,T1,T4+T6,T,T,bladder training,pfmt & biofeedback,cure,Wyman 1998 9790388,Unclear,Unclear,Unclear,Low,Low,Low,yes,High,,Unclear,0,"0.74 (0.30, 1.83)",10/68 vs 13/69,H vs H,H1 vs H4+H6
+224,Wyman,9790388,1998,61,0,0,NA,10,16,68,67,T1,T1+T4+T6,T,T,bladder training,bladder training & pfmt & biofeedback,cure,Wyman 1998 9790388,Unclear,Unclear,Unclear,Low,Low,Low,yes,High,,Unclear,0,"0.55 (0.23, 1.32)",10/68 vs 16/67,H vs H,H1 vs H1+H4+H6
+225,Wyman,9790388,1998,61,0,0,NA,45,42,67,69,T1+T4+T6,T4+T6,T,T,bladder training & pfmt & biofeedback,pfmt & biofeedback,satisfaction,Wyman 1998 9790388,Unclear,Unclear,Unclear,Low,Low,Low,yes,High,,Unclear,0,"1.31 (0.65, 2.65)",45/67 vs 42/69,H vs H,H1+H4+H6 vs H4+H6
+226,Wyman,9790388,1998,61,0,0,NA,36,42,68,69,T1,T4+T6,T,T,bladder training,pfmt & biofeedback,satisfaction,Wyman 1998 9790388,Unclear,Unclear,Unclear,Low,Low,Low,yes,High,,Unclear,0,"0.72 (0.37, 1.43)",36/68 vs 42/69,H vs H,H1 vs H4+H6
+227,Wyman,9790388,1998,61,0,0,NA,36,45,68,67,T1,T1+T4+T6,T,T,bladder training,bladder training & pfmt & biofeedback,satisfaction,Wyman 1998 9790388,Unclear,Unclear,Unclear,Low,Low,Low,yes,High,,Unclear,0,"0.55 (0.27, 1.10)",36/68 vs 45/67,H vs H,H1 vs H1+H4+H6
+228,Wyman,9790388,1998,61,0,0,NA,31,24,67,69,T1+T4+T6,T4+T6,T,T,bladder training & pfmt & biofeedback,pfmt & biofeedback,improvement,Wyman 1998 9790388,Unclear,Unclear,Unclear,Low,Low,Low,yes,High,,Unclear,0,"1.61 (0.81, 3.22)",31/67 vs 24/69,H vs H,H1+H4+H6 vs H4+H6
+229,Wyman,9790388,1998,61,0,0,NA,21,24,68,69,T1,T4+T6,T,T,bladder training,pfmt & biofeedback,improvement,Wyman 1998 9790388,Unclear,Unclear,Unclear,Low,Low,Low,yes,High,,Unclear,0,"0.84 (0.41, 1.71)",21/68 vs 24/69,H vs H,H1 vs H4+H6
+230,Wyman,9790388,1998,61,0,0,NA,21,31,68,67,T1,T1+T4+T6,T,T,bladder training,bladder training & pfmt & biofeedback,improvement,Wyman 1998 9790388,Unclear,Unclear,Unclear,Low,Low,Low,yes,High,,Unclear,0,"0.52 (0.26, 1.05)",21/68 vs 31/67,H vs H,H1 vs H1+H4+H6
+231,Burgio,9863850,1998,NA,1,uui,NA,19,8,65,65,T4+T6,P1,T,P,pfmt & biofeedback,control,cure,Burgio 1998 9863850,Low,Low,Low,Low,Low,High,yes,Low,,Unclear,0,"2.94 (1.18, 7.33)",19/65 vs 8/65,H vs K,H4+H6 vs K1
+232,Burgio,9863850,1998,NA,1,uui,NA,15,8,67,65,C1,P1,C,P,oxybutynin,control,cure,Burgio 1998 9863850,Low,Low,Low,Low,Low,High,yes,Low,,Unclear,0,"2.06 (0.81, 5.24)",15/67 vs 8/65,A vs K,A1 vs K1
+233,Burgio,9863850,1998,NA,1,uui,NA,15,19,67,65,C1,T4+T6,C,T,oxybutynin,pfmt & biofeedback,cure,Burgio 1998 9863850,Low,Low,Low,Low,Low,High,yes,Low,,Unclear,0,"0.70 (0.32, 1.53)",15/67 vs 19/65,A vs H,A1 vs H4+H6
+234,Burgio,9863850,1998,NA,1,uui,NA,45,14,65,65,T4+T6,P1,T,P,pfmt & biofeedback,control,satisfaction,Burgio 1998 9863850,Low,Low,Low,Low,Low,High,yes,Low,,Unclear,0,"8.20 (3.71, 18.09)",45/65 vs 14/65,H vs K,H4+H6 vs K1
+235,Burgio,9863850,1998,NA,1,uui,NA,27,14,67,65,C1,P1,C,P,oxybutynin,control,satisfaction,Burgio 1998 9863850,Low,Low,Low,Low,Low,High,yes,Low,,Unclear,0,"2.46 (1.14, 5.29)",27/67 vs 14/65,A vs K,A1 vs K1
+236,Burgio,9863850,1998,NA,1,uui,NA,27,45,67,65,C1,T4+T6,C,T,oxybutynin,pfmt & biofeedback,satisfaction,Burgio 1998 9863850,Low,Low,Low,Low,Low,High,yes,Low,,Unclear,0,"0.30 (0.15, 0.62)",27/67 vs 45/65,A vs H,A1 vs H4+H6
+237,Burgio,9863850,1998,NA,1,uui,NA,58,34,65,65,T4+T6,P1,T,P,pfmt & biofeedback,control,improvement,Burgio 1998 9863850,Low,Low,Low,Low,Low,High,yes,Low,,Unclear,0,"7.55 (3.00, 19.01)",58/65 vs 34/65,H vs K,H4+H6 vs K1
+238,Burgio,9863850,1998,NA,1,uui,NA,45,34,67,65,C1,P1,C,P,oxybutynin,control,improvement,Burgio 1998 9863850,Low,Low,Low,Low,Low,High,yes,Low,,Unclear,0,"1.86 (0.92, 3.77)",45/67 vs 34/65,A vs K,A1 vs K1
+239,Burgio,9863850,1998,NA,1,uui,NA,45,58,67,65,C1,T4+T6,C,T,oxybutynin,pfmt & biofeedback,improvement,Burgio 1998 9863850,Low,Low,Low,Low,Low,High,yes,Low,,Unclear,0,"0.25 (0.10, 0.63)",45/67 vs 58/65,A vs H,A1 vs H4+H6
+240,Tejero,no pmid,2008,NA,0,sui,NA,12,10,18,16,T4,T4+T6,T,T,pfmt,pfmt & biofeedback,improvement,Tejero 2008 no pmid,High,High,Unclear,High,High,Low,yes,Low,,High,0,"1.20 (0.29, 4.91)",12/18 vs 10/16,H vs H,H4 vs H4+H6
+241,,,,,0,0,,,,,,NA,P,N,P,Acupuncture,Sham,QoL,,,,,,,,,,,,,,,,
+242,,,,,0,0,,,,,,T5,P,T,P,Bladder support,Sham,QoL,,,,,,,,,,,,,,,,
+243,,,,,0,0,,,,,,T1+T4 ,P,T,P,"Bladder training, PFMT",Sham,QoL,,,,,,,,,,,,,,,,
+244,,,,,0,0,,,,,,T1+T2+T4,P,T,P,"Education, bladder training, PFMT",Sham,QoL,,,,,,,,,,,,,,,,
+245,,,,,0,0,,,,,,T2+??,P,T,P,"Education, weight loss",Sham,QoL,,,,,,,,,,,,,,,,
+246,,,,,0,0,,,,,,N1,P,N,P,Electroacupuncture,Sham,QoL,,,,,,,,,,,,,,,,
+247,,,,,0,0,,,,,,T4,P,T,P,PFMT,Sham,QoL,,,,,,,,,,,,,,,,
+248,,,,,0,0,,,,,,T4+T6 ,P,T,P,"PFMT, biofeedback",Sham,QoL,,,,,,,,,,,,,,,,
+249,,,,,0,0,,,,,,T4+T9,P,T,P,"PFMT, weights",Sham,QoL,,,,,,,,,,,,,,,,
+250,,,,,0,0,,,,,,T8,P,T,P,Yoga,Sham,QoL,,,,,,,,,,,,,,,,
+251,,,,,0,0,,,,,,N3,P,N,P,Magnetic simulation,Sham,QoL,,,,,,,,,,,,,,,,
+252,,,,,0,0,,,,,,N4,P,N,P,TENS,Sham,QoL,,,,,,,,,,,,,,,,
+253,,,,,0,0,,,,,,N4+T4,P,N+T,P,"TENS, PFMT",Sham,QoL,,,,,,,,,,,,,,,,
+254,,,,,0,0,,,,,,N4+T4+T6,P,N+T,P,"TENS, PFMT, biofeedback",Sham,QoL,,,,,,,,,,,,,,,,
+255,,,,,0,0,,,,,,V,P,V,P,Intravesical pressure release device,Sham,QoL,,,,,,,,,,,,,,,,
+256,,,,,0,0,,,,,,NA,T4,N,T,Acupuncture,PFMT,QoL,,,,,,,,,,,,,,,,
+257,,,,,0,0,,,,,,T1+T4,T1,T,T,"Bladder training, PFMT",Bladder training,QoL,,,,,,,,,,,,,,,,
+258,,,,,0,0,,,,,,T1+T4+T6,T1,T,T,"Bladder training, PFMT, biofeedback",Bladder training,QoL,,,,,,,,,,,,,,,,
+259,,,,,0,0,,,,,,T1+T4+T6,T4+T6,T,T,"Bladder training, PFMT, biofeedback","PFMT, biofeedback",QoL,,,,,,,,,,,,,,,,
+260,,,,,0,0,,,,,,T1+T2+T4,T1+T2+T4 ,T,T,"Education, bladder training, PFMT (Group training)","Education, bladder training, PFMT (Individual training)",QoL,,,,,,,,,,,,,,,,
+261,,,,,0,0,,,,,,T1+T4 ,T4,T,T,"Education, PFMT",PFMT,QoL,,,,,,,,,,,,,,,,
+262,,,,,0,0,,,,,,T1+T2+T4,T2,T,T,"Education, PFMT, bladder training",Education,QoL,,,,,,,,,,,,,,,,
+263,,,,,0,0,,,,,,T1+T2+T4+N4,T2+T4,N+T,T,"Education, PFMT, bladder training, TENS","Bladder training, PFMT",QoL,,,,,,,,,,,,,,,,
+264,,,,,0,0,,,,,,T1+T2+T4+N4,T1+T4,N+T,T,"Education, PFMT, bladder training, TENS","Education, bladder training",QoL,,,,,,,,,,,,,,,,
+265,,,,,0,0,,,,,,T2+??,T2,T,T,"Education, weight loss",Education,QoL,,,,,,,,,,,,,,,,
+266,,,,,0,0,,,,,,T7,T8,T,T,MBSR,Yoga,QoL,,,,,,,,,,,,,,,,
+267,,,,,0,0,,,,,,T4,T1,T,T,PFMT,Bladder training,QoL,,,,,,,,,,,,,,,,
+268,,,,,0,0,,,,,,T4,T2,T,T,PFMT,Education,QoL,,,,,,,,,,,,,,,,
+269,,,,,0,0,,,,,,T4,T4,T,T,Group PFMT,Individual PFMT,QoL,,,,,,,,,,,,,,,,
+270,,,,,0,0,,,,,,T4,T4,T,T,"Home PFMT, supervised PFMT","Home PFMT, unsupervised PFMT",QoL,,,,,,,,,,,,,,,,
+271,,,,,0,0,,,,,,T4,??,T,T,PFMT,Physiotherapy (incl. Paula group),QoL,,,,,,,,,,,,,,,,
+272,,,,,0,0,,,,,,T4+T9,T1,T,T,"PFMT, weights",Bladder training,QoL,,,,,,,,,,,,,,,,
+273,,,,,0,0,,,,,,T4+T6 ,T1,T,T,"PFMT, biofeedback",Bladder training,QoL,,,,,,,,,,,,,,,,
+274,,,,,0,0,,,,,,T4+T6 ,T4,T,T,"PFMT, biofeedback",PFMT,QoL,,,,,,,,,,,,,,,,
+275,,,,,0,0,,,,,,T4+T6 ,T4+T9,T,T,"PFMT, biofeedback","PFMT, weights",QoL,,,,,,,,,,,,,,,,
+276,,,,,0,0,,,,,,T4+T9 ,T4,T,T,"PFMT, weights",PFMT,QoL,,,,,,,,,,,,,,,,
+277,,,,,0,0,,,,,,T4+T6 ,T4+T6 ,T,T,"PFMT, biofeedback (supervised)","PFMT, biofeedback (unsupervised,)",QoL,,,,,,,,,,,,,,,,
+278,,,,,0,0,,,,,,??,??,T,N,"PFMT, weights",TENS,QoL,,,,,,,,,,,,,,,,
+279,,,,,0,0,,,,,,??,??,N,N,InterStim (continuous),InterStim (cyclic),QoL,,,,,,,,,,,,,,,,
+280,,,,,0,0,,,,,,T1+T2+T4+N4,T4,N+T,T,"Education, PFMT, Bladder training, TENS",PFMT,QoL,,,,,,,,,,,,,,,,
+281,,,,,0,0,,,,,,N4+T9,T4,N+T,T,"TENS, weights",PFMT,QoL,,,,,,,,,,,,,,,,
+282,,,,,0,0,,,,,,N4+T4,T1,N+T,T,"TENS, PFMT",Bladder training,QoL,,,,,,,,,,,,,,,,
+283,,,,,0,0,,,,,,N4+T4,T4,N+T,T,"TENS, PFMT",PFMT,QoL,,,,,,,,,,,,,,,,
+284,,,,,0,0,,,,,,N4+T4+??,T4+T9,N+T,T,"TENS, PFMT, functional Electrical Stimulation","PFMT, weights",QoL,,,,,,,,,,,,,,,,
+285,,,,,0,0,,,,,,N4+T4+T6,N1,N+T,N,"TENS, PFMT, biofeedback",Electroacupunture,QoL,,,,,,,,,,,,,,,,
+286,,,,,0,0,,,,,,N4+T4+T6,N4+T4+T6,N+T,N+T,"TENS, PFMT, biofeedback (supine position, electrical stimulation)","TENS, PFMT, biofeedback (supine and upright, vaginal cones)",QoL,,,,,,,,,,,,,,,,
+287,,,,,0,0,,,,,,C5,P,C,P,Fesoterodine,Placebo,QoL,,,,,,,,,,,,,,,,
+288,,,,,0,0,,,,,,C1,P,C,P,Oxybutynin,Placebo,QoL,,,,,,,,,,,,,,,,
+289,,,,,0,0,,,,,,C3,P,C,P,Tolterodine,Placebo,QoL,,,,,,,,,,,,,,,,
+290,,,,,0,0,,,,,,B,P,B,P,Onabotulinum Toxin A,Placebo,QoL,,,,,,,,,,,,,,,,
+291,,,,,0,0,,,,,,A1,P,A,P,Duloxetine,Placebo,QoL,,,,,,,,,,,,,,,,
+292,,,,,0,0,,,,,,NO NODE,P,E,P,Pregabalin (antiepileptic),Placebo,QoL,,,,,,,,,,,,,,,,
+293,,,,,0,0,,,,,,U5,P,U,P,Polydimethylsiloxane (bulking agent),Sham,QoL,,,,,,,,,,,,,,,,
+294,,,,,0,0,,,,,,C1,C3,C,C,Oxybutynin,Tolterodine,QoL,,,,,,,,,,,,,,,,
+295,,,,,0,0,,,,,,C1,C4,C,C,Oxybutynin,Tropsium chloride,QoL,,,,,,,,,,,,,,,,
+296,,,,,0,0,,,,,,C1,C1,C,C,Oxybutynin 2.6 mg ,Oxybutynin 3.9 mg,QoL,,,,,,,,,,,,,,,,
+297,,,,,0,0,,,,,,C2,??,C,C,Solifenacin,Darifenacin,QoL,,,,,,,,,,,,,,,,
+298,,,,,0,0,,,,,,C2,B,C,B,Solifenacin,Onabotulinum Toxin A,QoL,,,,,,,,,,,,,,,,
+299,,,,,0,0,,,,,,C5,C5+H1,C,C+H,Fesoterodine,"Fesoterodine, vaginal estrogen",QoL,,,,,,,,,,,,,,,,
+300,,,,,0,0,,,,,,C3,E,C,E,Tolterodine,Pregabalin ,QoL,,,,,,,,,,,,,,,,
+301,,,,,0,0,,,,,,??,E,C,E,Tolterodine + pregabalin ,Pregabalin,QoL,,,,,,,,,,,,,,,,
+302,,,,,0,0,,,,,,T1+T2+T4,C1,T,C,"Education, PFMT, bladder training",Oxybutynin,QoL,,,,,,,,,,,,,,,,
+303,,,,,0,0,,,,,,T4,C3,T,C,PFMT,Tolterodine,QoL,,,,,,,,,,,,,,,,
+304,,,,,0,0,,,,,,N4,C3,N,C,TENS ,Tolterodine,QoL,,,,,,,,,,,,,,,,
+305,,,,,0,0,,,,,,N2,B,N,B,InterStimª,Onabotulinum toxin A,QoL,,,,,,,,,,,,,,,,

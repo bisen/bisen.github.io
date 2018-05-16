@@ -107,7 +107,7 @@ const request = async () => {
   var node = null;
   var ow = [ '0', '1' ];
   var type = 'all';
-  var outcome = [ 'cure', 'improvement', 'satisfaction' ];
+  var outcome = [ 'cure', 'improvement', 'satisfaction', 'QoL' ];
 
   //update cy elements from the elements dictionary
   const update_nodes = () => {

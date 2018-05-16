@@ -37,7 +37,8 @@ color_dict = {
   'N' => '#9bfdfe',
   'U' => '#dbd1d4',
   'T' => '#d2eeee',
-  'N+T' => '#a5d4ec'
+  'N+T' => '#a5d4ec',
+  'E' => '#b77597'
 }
 
 #position_hash
@@ -71,7 +72,7 @@ for type in [ 'all', 'stress', 'urge' ]
   element_dict[type] = {}
   for ow in [ 1, 0 ]
     element_dict[type][ow] = {}
-    for outcome in ['cure', 'improvement', 'satisfaction', 'ui' ]
+    for outcome in ['cure', 'improvement', 'satisfaction', 'ui', 'QoL']
       element_dict[type][ow][outcome] = { nodes: [], edges: [] }
     end
   end
@@ -123,7 +124,7 @@ end
 #deduplicate edges and nodes
 for type in [ 'all', 'stress', 'urge' ]
   for ow in [ 1, 0 ]
-    for outcome in ['cure', 'improvement', 'satisfaction', 'ui' ]
+    for outcome in ['cure', 'improvement', 'satisfaction', 'ui', 'QoL' ]
       if !element_dict[type][ow][outcome][:nodes].nil?
           element_dict[type][ow][outcome][:nodes] = element_dict[type][ow][outcome][:nodes].uniq
           element_dict[type][ow][outcome][:edges] = element_dict[type][ow][outcome][:edges].uniq 
