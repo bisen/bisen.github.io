@@ -846,15 +846,17 @@ const request = async () => {
 
     kp_content = "";
 
+    console.log(type);
+
     $.each(outcome, function() {
       switch (this.toString())  {
         case 'cure':
           switch (type) {
-            case 'stress-ui':
+            case 'stress':
               kp_content += kp_cure_stress;
               kp_content += '<br>';
               break;
-            case 'urge-ui':
+            case 'urge':
               kp_content += kp_cure_urgency;
               kp_content += '<br>';
               break;
@@ -868,11 +870,11 @@ const request = async () => {
           break;
         case 'improvement':
           switch (type) {
-            case 'stress-ui':
+            case 'stress':
               kp_content += kp_improvement_stress;
               kp_content += '<br>';
               break;
-            case 'urge-ui':
+            case 'urge':
               kp_content += kp_improvement_urgency;
               kp_content += '<br>';
               break;
