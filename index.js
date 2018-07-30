@@ -1,13 +1,13 @@
-var element_json = {};
-var graph_data = {};
-var node_info = {};
-var relative_effectiveness_dict = { 'all': {}, 'stress': {}, 'urge': {}, 'ow': {} };
-var league_dict = { 'all': {}, 'stress': {}, 'urge': {}, 'ow': {} };
+element_json = {};
+graph_data = {};
+node_info = {};
+relative_effectiveness_dict = { 'all': {}, 'stress': {}, 'urge': {}, 'ow': {} };
+league_dict = { 'all': {}, 'stress': {}, 'urge': {}, 'ow': {} };
 var guide_page_3;
 var guide_page_4;
 
 const request = async () => {
-  var response = await fetch('./data/studies.json');
+  response = await fetch('./data/studies.json');
   graph_data = await response.json();
 
   response = await fetch('./data/style.json');
@@ -108,16 +108,737 @@ const request = async () => {
   kp_satisfaction_w_stress = '<p><strong>Key Points: Satisfaction in Women with Stress UI</strong></p><ul><li>Across 4 studies, 1 of which was specifically in women with stress UI, there were no comparisons of satisfaction outcomes for first- or second-line interventions.</li><li>Across 6 studies, 4 of which were specifically in women with stress UI, there were no comparisons of satisfaction outcomes for third-line interventions.</li><li>However, there were direct comparisons between first- and third-line treatments. Comparisons of behavioral therapy and neuromodulation and among stress UI studies (and across all 12 studies) found no significant difference between the two interventions. moderate strength of evidence.&nbsp;</li></ul>';
   kp_satisfaction_w_urgency = '<p><strong>Key Points: Satisfaction in Women with Urgency UI</strong></p><ul><li><strong>First-and second-line interventions</strong> (behavioral therapy, anticholinergics, and combination anticholinergic and behavioral therapy)<ul><li>8 studies that evaluated first- or second-line interventions used for urgency UI reported on satisfaction; 3 of these were studies specifically of women with urgency UI.</li><li>Behavioral therapy was found to be significantly more likely to achieve satisfaction than anticholinergics (OR 8.2, 95% CI 1.7 to 39.4) among studies of women with urgency UI, with a smaller but more precise estimate found from the analysis of all 12 studies; moderate strength of evidence.</li></ul></li><li><strong>Third-line interventions</strong> (BTX, neuromodulation, and combinations of neuromodulation with first- or second-line interventions)<ul><li>6 studies that evaluated third-line interventions used for urgency UI reported on satisfaction; 1 of these were studies specifically of women with urgency UI.</li><li>Studies of women with only urgency UI did not report on satisfaction with third-line interventions. Across all 12 studies, no third-line intervention was found to provide statistically significantly more satisfactory control of UI symptoms than other interventions. Insufficient strength of evidence.</li></ul></li></ul>';
   kp_QoL = '<p><strong>Key Points: Quality of Life</strong></p><ul><li>Nonpharmacological vs. sham interventions (KQ 1): 36 studies compared 15 nonpharmacological interventions with sham interventions.<ul><li>Among first- and second-line interventions, none was found by <em>all</em> studies to be statistically significantly better than sham for any aspect of quality of life, but each was reported to have statistically significant improvements compared to placebo in at least one aspect of quality of life by at least one study; low strength of evidence.</li><li>Among the third-line interventions evaluated by more than one study, only transcutaneous electrical nerve stimulation (TENS) was found by all studies to be statistically significantly better than sham for various aspects of quality of life; low strength of evidence.</li><li>A combination of first- and third line interventions, TENS + PFMT (pelvic floor muscle training), had discordant results when compared to a sham intervention; but one study showed a statistically significant improvement in daily activities; low strength of evidence.</li></ul></li><li>Comparison of nonpharmacological interventions (KQ 1) with each other: 42 studies compared 19 active nonpharmacological interventions (including combinations of nonpharmacological interventions) with each other. The full results are given in Table <a href="#TABLE_17">17</a> and <a href="#TABLE_18">18</a> of the main report.<ul><li>The only comparisons of interventions evaluated by more than one study were of supervised and unsupervised PFMT (or other exercise) and of combined PFMT and biofeedback and PFMT alone. These studies mostly found discordant results or no significant differences in quality of life; insufficient strength of evidence.</li></ul></li><li>Pharmacological interventions vs. placebo (KQ 2): 16 studies compared 8 specific pharmacological interventions with placebo. The full results are given in Tables <a href="#TABLE_22">22</a> and <a href="#TABLE_23">23</a> of the main report.<ul><li>In 6 studies, anticholinergics were found to improve quality of life compared with no treatment; low strength of evidence.</li></ul></li><li>Comparison of pharmacological interventions (KQ 2): 6 studies compared 8 pharmacological interventions with each other. In most instances, no differences in quality of life were reported among interventions; low strength of evidence.</li><li>Nonpharmacological vs. pharmacological interventions (KQ 3): Sparse evidence from 4 studies suggest no significant differences in quality of life for behavioral therapy vs. anticholinergics, neuromodulation vs. anticholinergics, and neuromodulation vs. BTX; low strength of evidence. The full results are given in <a href="#TABLE_26">Table 26</a> of the main report.</li><li>Combination nonpharmacological and pharmacological interventions vs. nonpharmacological interventions (KQ 4): 1 study compared combination nonpharmacological and pharmacological interventions (PFMT, electrostimulation, biofeedback, and vaginal estrogen) and nonpharmacological interventions (without the estrogen). The arm that received estrogen reported statistically significantly better quality of life; low strength of evidence.</li></ul>';
-  var cy = cytoscape({
-    container: document.getElementById('cy'), // container to render in
+  cy = cytoscape({
+    container: document.getElementById('cy'), // container to render ins
   });
 
   //state variables
-  var prev_node = null;
-  var node = null;
-  var ow = [ '0', '1' ];
-  var type = 'all';
-  var outcome = [ 'cure', 'improvement', 'satisfaction', 'QoL' ];
+  prev_node = null;
+  node = null;
+  ow = [ '0', '1' ];
+  type = 'all';
+  outcome = [ 'cure', 'improvement', 'satisfaction', 'QoL' ];
+
+  const get_graph_nodes = () => {
+    nodes = [];
+    $.each(outcome, function() {
+      o = this;
+      $.each(ow, function() {
+        w = this;
+        nodes = nodes.concat(elements[type][w][o]['nodes']);
+      });
+    });
+    return nodes;
+  }
+
+  const get_graph_edges = () => {
+    edges = [];
+    $.each(outcome, function() {
+      o = this;
+      $.each(ow, function() {
+        w = this;
+        edges = edges.concat(elements[type][w][o]['edges']);
+      });
+    });
+    return edges;
+  }
+
+  const translate_node = ( node_text ) => {
+    node_dict = { "A": "C", "A+C": "C+H", "A+H": "C+T", "B": "B", "C": "H", "C+G+H": "H+N+T", "C+H": "H+T", "D": "A","G": "N","G+H": "N+T", "H": "T", "I": "U", "J": "V", "K": "P" }
+    return node_dict[node_text];
+  }
+
+  const get_node_name = ( node_id ) => { 
+    console.log(node_id);
+    node_name_dict = { "A": "alpha agonist", "B": "botulinum toxin A", "C": "anticholinergic", "C+T": "anticholinergic and behavioral therapy", "E": "pregabalin", "H": "hormones", "H+N+T": "hormones, neuromodulation and behavioral therapy", "H+T": "hormones and behavioral therapy", "N": "neuromodulation", "N+T": "neuromodulation and behavioral therapy", "T": "behavioral therapy", "U": "periurethal bulking", "V": "intravesical pressure release", "P": "sham/no treatment/placebo" }
+    return node_name_dict[node_id];
+  }
+
+  const get_median = ( input ) => {
+    arr = input.concat().sort(function(a, b){ return a - b; });
+    i = arr.length / 2;
+    return i % 1 == 0 ? (arr[i - 1] + arr[i]) / 2 : arr[Math.floor(i)];
+  }
+
+  const get_min = ( input ) => {
+    arr = input.concat().sort(function(a, b){ return a - b; });
+    return arr[0];
+  }
+
+  const get_max = ( input ) => {
+    arr = input.concat().sort(function(a, b){ return a - b; });
+    return arr[arr.length-1];
+  }
+
+  const counts_string_to_count = ( counts_string ) => {
+    arr = counts_string.split(" vs ");
+    if (arr.length != 2) return 0;
+    //Im adding N1 and N2, but I'm not sure if I should.
+    return parseInt(arr[0].split("/")[1]) + parseInt(arr[1].split("/")[1]);
+  }
+
+  //returns the studies for 2 nodes
+  const get_studies_2 = ( node1, node2 ) => {
+    a_dict = { "stress": ["sui"], "urge": ["uui"], "all": ["sui","uui","0"] }
+    node1_id = node1.id();
+    node2_id = node2.id();
+    study_list = [];
+    $.each(graph_data, function() {
+      if ((this['coarse_trt_code1'] == node1_id &&
+        this['coarse_trt_code2'] == node2_id) ||
+        (this['coarse_trt_code1'] == node2_id &&
+        this['coarse_trt_code2'] == node1_id) &&
+        ( a_dict[type].indexOf(this['ui_type'].toString()) >= 0 ) &&
+        ( ow.indexOf(this['older_women'].toString()) >= 0 ) &&
+        ( outcome.indexOf(this['outcome'].toString()) >= 0 )) {
+          study_list.push(this);
+      }
+    });
+    return study_list;
+  }
+
+  //returns the studies for a single node
+  const get_studies_1 = ( node ) => {
+    a_dict = { "stress": ["sui"], "urge": ["uui"], "all": ["sui","uui","0"] }
+    node_id = node.id();
+    study_list = [];
+    $.each(graph_data, function() {
+      if (( this['coarse_trt_code1'] == node_id ||
+        this['coarse_trt_code2'] == node_id ) &&
+        ( a_dict[type].indexOf(this['ui_type'].toString()) >= 0 ) &&
+        ( ow.indexOf(this['older_women'].toString()) >= 0 ) &&
+        ( outcome.indexOf(this['outcome'].toString()) >= 0 )) {
+          study_list.push(this);
+      }    
+    });
+    return study_list;
+  }
+
+  //returns the studies for the whole graph
+  const get_studies_0 = () => {
+    a_dict = { "stress": ["sui"], "urge": ["uui"], "all": ["sui","uui","0"] }
+    study_list = [];
+    $.each(graph_data, function() {
+      if (( a_dict[type].indexOf(this['ui_type'].toString()) >= 0 ) &&
+        ( ow.indexOf(this['older_women'].toString()) >= 0 ) &&
+        ( outcome.indexOf(this['outcome'].toString()) >= 0 )) {
+          study_list.push(this);
+      }else{
+        //console.log(this);
+      }
+    });
+    //console.log(graph_data.length, study_list.length);
+    return study_list;
+  }
+
+
+
+  const get_trials_people = ( node1, node2 ) => {
+    studies = [];
+    if (node1 != null && node2 != null) {
+      studies = get_studies_2(node1, node2);
+    } else if (node1 != null && node2 == null) {
+      studies = get_studies_1(node1);
+    } else if (node1 == null && node2 == null) {
+      studies = get_studies_0();
+    }
+    else {
+      //???
+      return false;
+    }
+
+    counts = [];
+    $.each(studies, function() {
+      counts.push(counts_string_to_count(this['counts_string']));
+    });
+
+    counts = counts.filter(Boolean);
+
+    if (counts.length == 0) return "";
+
+    a_sum = counts.reduce((a, b) => a + b, 0);
+
+    return studies.length.toString() + " (" + a_sum.toString() + ")";
+  }
+
+  const get_trials_per_node = () => {
+    count_dict = {};
+
+    // nodes = [];
+    // $.each(outcome, function() {
+    //   o = this;
+    //   $.each(ow, function() {
+    //     w = this;
+    //     nodes = nodes.concat(elements[type][w][o]['nodes']);
+    //   });
+    // });
+
+    $.each(studies, function() {
+      n_pair = this['coarse_comparison_string'].split(' vs ');
+      if (n_pair.length == 2) {
+        // console.log(n_pair);
+        if (n_pair[0] in count_dict) {
+          count_dict[n_pair[0]] = count_dict[n_pair[0]] + 1;
+        } else {
+          count_dict[n_pair[0]] = 1;
+        }
+        if (n_pair[1] in count_dict) {
+          count_dict[n_pair[1]] = count_dict[n_pair[1]] + 1;
+        } else {
+          count_dict[n_pair[1]] = 1;
+        }
+      }
+    });
+
+    console.log(count_dict);
+
+    counts = [];
+    $.each(Object.keys(count_dict), function() {
+      counts.push(count_dict[this]);
+    });
+
+    if (counts.length == 0) return "";
+
+    a_sum = counts.reduce((a, b) => a + b, 0);
+    a_min = get_min(counts);
+    a_max = get_max(counts);
+
+    return a_sum.toString() + " (" + a_min.toString() + ", " + a_max.toString() + ")";
+  }
+
+  const get_trials_per_edge = () => {
+    count_dict = {};
+
+    $.each(studies, function() {
+      if (this['coarse_comparison_string']) {
+        if (this['coarse_comparison_string'] in count_dict) {
+          count_dict[this['coarse_comparison_string']] = count_dict[this['coarse_comparison_string']] + 1;
+        } else {
+          count_dict[this['coarse_comparison_string']] = 1;
+        }
+      }
+    });
+
+    counts = [];
+    $.each(Object.keys(count_dict), function() {
+      counts.push(count_dict[this]);
+    });
+
+    if (counts.length == 0) return "";
+
+    a_sum = counts.reduce((a, b) => a + b, 0);
+    a_min = get_min(counts);
+    a_max = get_max(counts);
+
+    return a_sum.toString() + " (" + a_min.toString() + ", " + a_max.toString() + ")";
+  }
+
+  const get_sample_size_per_node = ( ) => {
+    count_dict = {};
+
+    $.each(studies, function() {
+      n_pair = this['coarse_comparison_string'].split(' vs ');
+      if (n_pair.length == 2) {
+        if (n_pair[0] in count_dict) {
+          count_dict[n_pair[0]] = count_dict[n_pair[0]] + counts_string_to_count(this['counts_string']);
+        } else {
+          count_dict[n_pair[0]] = counts_string_to_count(this['counts_string']);
+        }
+        if (n_pair[1] in count_dict) {
+          count_dict[n_pair[1]] = count_dict[n_pair[1]] + counts_string_to_count(this['counts_string']);
+        } else {
+          count_dict[n_pair[1]] = counts_string_to_count(this['counts_string']);
+        }
+
+      }
+    });
+
+    counts = [];
+    $.each(Object.keys(count_dict), function() {
+      counts.push(count_dict[this]);
+    });
+
+    if (counts.length == 0) return "";
+
+    a_sum = counts.reduce((a, b) => a + b, 0);
+    a_min = get_min(counts);
+    a_max = get_max(counts);
+
+    return a_sum.toString() + " (" + a_min.toString() + ", " + a_max.toString() + ")";
+  }
+
+  const get_sample_size_per_edge = ( ) => {
+    count_dict = {};
+
+    $.each(studies, function() {
+      if (this['coarse_comparison_string']) {
+        if (this['coarse_comparison_string'] in count_dict) {
+          count_dict[this['coarse_comparison_string']] = count_dict[this['coarse_comparison_string']] + counts_string_to_count(this['counts_string']);
+        } else {
+          count_dict[this['coarse_comparison_string']] = counts_string_to_count(this['counts_string']);
+        }
+      }
+    });
+
+    counts = [];
+    $.each(Object.keys(count_dict), function() {
+      counts.push(count_dict[this]);
+    });
+
+    if (counts.length == 0) return "";
+
+    a_sum = counts.reduce((a, b) => a + b, 0);
+    a_min = get_min(counts);
+    a_max = get_max(counts);
+
+    return a_sum.toString() + " (" + a_min.toString() + ", " + a_max.toString() + ")";
+  }
+
+
+  const get_sample_size = ( node1, node2 ) => {
+    studies = [];
+    if (node1 != null && node2 != null) {
+      studies = get_studies_2(node1, node2);
+    } else if (node1 != null && node2 == null) {
+      studies = get_studies_1(node1);
+    } else if (node1 == null && node2 == null) {
+      studies = get_studies_0();
+    }
+    else {
+      //???
+      return false;
+    }
+
+    counts = [];
+    $.each(studies, function() {
+      counts.push(counts_string_to_count(this['counts_string']));
+    });
+
+    counts = counts.filter(Boolean);
+
+    if (counts.length == 0) return "";
+
+    a_min = get_min(counts);
+    a_max = get_max(counts);
+    a_median = get_median(counts);
+
+    return /* a_sum.toString() + ", " + */ a_median.toString() + " (" + a_min.toString() + ", " + a_max.toString() + ")";
+  }
+
+  const get_publication_year = ( node1, node2 ) => {
+    studies = [];
+    if (node1 != null && node2 != null) {
+      studies = get_studies_2(node1, node2);
+    } else if (node1 != null && node2 == null) {
+      studies = get_studies_1(node1);
+    } else if (node1 == null && node2 == null) {
+      studies = get_studies_0();
+    }
+    else {
+      //???
+      return false;
+    }
+
+    years = [];
+    $.each(studies, function() {
+      years.push(parseInt(this['year']) || 0);
+    });
+
+    years = years.filter(Boolean);
+
+    if (years.length == 0) return "";
+
+    a_min = get_min(years);
+    a_max = get_max(years);
+    a_median = get_median(years);
+
+    return a_median.toString() + " (" + a_min.toString() + ", " + a_max.toString() + ")";
+  }
+
+
+
+  const get_total_people = ( node1, node2 ) => {
+    studies = [];
+    if (node1 != null && node2 != null) {
+      studies = get_studies_2(node1, node2);
+    } else if (node1 != null && node2 == null) {
+      studies = get_studies_1(node1);
+    } else if (node1 == null && node2 == null) {
+      studies = get_studies_0();
+    }
+    else {
+      //???
+      return false;
+    }
+
+    counts = [];
+    $.each(studies, function() {
+      counts.push(counts_string_to_count(this['counts_string']));
+    });
+
+    counts = counts.filter(Boolean);
+
+    if (counts.length == 0) return "";
+
+    a_sum = counts.reduce((a, b) => a + b, 0)
+
+    return a_sum.toString()
+  }
+
+
+  const get_all_granular_nodes = ( node1, node2 ) => {
+    studies = [];
+    if (node1 != null && node2 != null) {
+      studies = get_studies_2(node1, node2);
+    } else if (node1 != null && node2 == null) {
+      studies = get_studies_1(node1);
+    } else if (node1 == null && node2 == null) {
+      studies = get_studies_0();
+    }
+    else {
+      //???
+      return false;
+    }
+
+    unique_interventions = [];
+    $.each(studies, function() {
+      intervention_pair = this['granular_comparison_string'].split(' vs ');
+      if ( intervention_pair.length == 2 ) {
+        $.each(intervention_pair, function() {
+          if($.inArray(this, unique_interventions) === -1) unique_interventions.push(this);
+        });
+      }
+    });
+
+    return unique_interventions;
+  }
+
+  const get_all_granular_edges = ( node1, node2 ) => {
+    studies = [];
+    if (node1 != null && node2 != null) {
+      studies = get_studies_2(node1, node2);
+    } else if (node1 != null && node2 == null) {
+      studies = get_studies_1(node1);
+    } else if (node1 == null && node2 == null) {
+      studies = get_studies_0();
+    }
+    else {
+      //???
+      return false;
+    }
+
+    unique_edges = [];
+    $.each(studies, function() {
+      intervention_pair = this['granular_comparison_string'].split(' vs ');
+      if ( intervention_pair.length == 2 ) {
+        if($.inArray(this['granular_comparison_string'], unique_edges) === -1) unique_edges.push(this);
+      }
+    });
+
+    return unique_edges;
+  }
+
+
+// for individual interventions
+  const get_all_possible = () => {
+    N = get_all_granular_nodes();
+    return (N * (N-1) / 2);
+  }
+
+  const get_with_data = () => {
+    possible_N = get_all_possible();
+
+    unique_edges = [];
+    $.each(study_list, function() {
+      intervention_pair = this['granular_comparison_string'].split(' vs ');
+      if ( intervention_pair.length == 2 ) {
+        if($.inArray(this['granular_comparison_string'], unique_edges) === -1) unique_edges.push(this);
+      }
+    });
+    actual_N = unique_edges.length;
+
+    return actual_N.toString() + " (" + ((actual_N/possible_N)*100).toPrecision(3).toString() + "%)";
+  }
+
+// for intervention categories
+  const get_all_possible_ic = () => {
+    N = get_graph_nodes().length;
+    return (N * (N-1) / 2);
+  }
+
+  const get_with_data_ic = () => {
+    possible_N = get_all_possible_ic();
+    actual_N = get_graph_edges().length;
+
+    return actual_N.toString() + " (" + ((actual_N/possible_N)*100).toPrecision(3).toString() + "%)";
+  }
+
+  const update_overview = () => {
+    if (node == null) {
+      study_list = get_studies_0();
+    } else if (prev_node == null) {
+      study_list = get_studies_1(node);
+    } else {
+      study_list = get_studies_2(prev_node, node);
+    }
+
+    outcome_text = "Outcomes: ";
+    outcome_dict = { 'cure': 'Cure', 'improvement': 'Improvement', 'satisfaction': 'Satisfaction', 'QoL': 'Quality of Life' };
+
+    skip = true;
+    $.each(outcome, function() {
+      if (skip) {
+        outcome_text = outcome_text + outcome_dict[this];
+        skip = false;
+      } else {
+        outcome_text = outcome_text + ", " + outcome_dict[this];
+      }
+    });
+
+    type_dict = { "stress": "Stress UI", "urge": "Urgency UI", "all": "All" };
+    type_text = "UI Type: " + type_dict[type];
+
+    population_dict = { 2: "All", 1: "Older Women" };
+    population_text = "Population: " + population_dict[ow.length];
+
+    overview_content = "<strong>" + outcome_text + "</strong><br>" + "<strong>" + type_text + "</strong><br><strong>" + population_text + "</strong><br><br>";
+
+    if (node == null && prev_node == null) {
+  // subtitle
+      overview_content += "<strong> Total Evidence Base </strong><br>";
+
+  // headers
+      overview_content += "<table><tbody><tr>";
+      overview_content += '<th align="left">Characteristic</th>';
+      overview_content += '<th align="left">Description</th>';
+      overview_content += '<th align="left">Value</th></tr>';
+  // Trials
+      overview_content += "<tr><th align='left'> Trials (people)</th>";
+      overview_content += "<td> Total number of trials (people) in the evidence-base </td>";
+      overview_content += "<td>" + get_trials_people(null, null) + "</td></tr>";
+  // Publication Year
+      overview_content += "<tr><th align='left'> Publication year, median (range) </th>";
+      overview_content += "<td> A proxy for the years patients were enrolled in the study </td>";
+      overview_content += "<td>" + get_publication_year(null, null) + "</td></tr>";
+  // Publication Year
+      overview_content += "<tr><th align='left'> Sample size, median (range) </th>";
+      overview_content += "<td> Per study sample size </td>";
+      overview_content += "<td>" + get_sample_size(null, null) + "</td></tr>";
+  // empty row
+      overview_content += '<tr><td><br></td></tr>';
+  // subtitle
+      overview_content += '<tr><th align="left"><strong> Comparisons </strong></th></tr>';
+  // headers
+      overview_content += "<tr>";
+      overview_content += '<th align="left">Characteristic</th>';
+      overview_content += '<th align="left">Description</th>';
+      overview_content += '<th align="left">Value</th></tr>';
+  // All Possible Comparisons
+      overview_content += "<tr><th align='left'> All possible comparisons, n </th>";
+      overview_content += "<td> Number of possible comparisons across specific interverions </td>";
+      overview_content += "<td>" + get_all_possible_ic() + "</td></tr>";
+  // Comparisons With Data
+      overview_content += "<tr><th align='left'> With data, n (% of all) </th>";
+      overview_content += "<td> Pairs of intervention categories compared in at least one trials </td>";
+      overview_content += "<td>" + get_with_data_ic() + "</td></tr>";
+  // Trials Per Comparison
+      overview_content += "<tr><th align='left'> Trials, n (range) </th>";
+      overview_content += "<td> Number of trials informing each comparison with data </td>";
+      overview_content += "<td>" + get_trials_per_edge() + "</td></tr>";
+  // Sample Size Per Comparison
+      overview_content += "<tr><th align='left'> Sample size, n (range) </th>";
+      overview_content += "<td> Cumulative sample size of trials per comparison with data </td>";
+      overview_content += "<td>" + get_sample_size_per_edge() + "</td></tr>";
+  // empty row
+      overview_content += '<tr><td><br></td></tr>';
+  // subtitle
+      overview_content += '<tr><th align="left"><strong> Intervention Categories </strong></th></tr>';
+  // headers
+      overview_content += '<tr><th align="left">Characteristic</th>';
+      overview_content += '<th align="left">Description</th>';
+      overview_content += '<th align="left">Value</th></tr>';
+  // All Possible Comparisons
+      overview_content += "<tr><th align='left'> Intervention Categories </th>";
+      overview_content += "<td> The categories in which interventions are organized according to clinically. </td>";
+      overview_content += "<td>" + get_graph_nodes().length.toString() + "</td></tr>";
+  // Trials Per Comparison
+      overview_content += "<tr><th align='left'> Trials, n (range) </th>";
+      overview_content += "<td> Number of trial arms per intervention category </td>";
+      overview_content += "<td>" + get_trials_per_node() + "</td></tr>";
+  // Sample Size Per Comparison
+      overview_content += "<tr><th align='left'> Sample size, n (range) </th>";
+      overview_content += "<td> Number of patients per intervention category </td>";
+      overview_content += "<td>" + get_sample_size_per_node() + "</td></tr></tbody></table><br>";
+    } else if ( node != null && prev_node == null) {
+      overview_content += "<strong> Information on " + get_node_name(node.id()) + " (" + node.id() + ")</strong><br>";
+    // headers
+      overview_content += "<table><tbody><tr>";
+      overview_content += '<th align="left">Characteristic</th>';
+      overview_content += '<th align="left">Description</th>';
+      overview_content += '<th align="left">Value</th></tr>';
+  // Trials
+      overview_content += "<tr><th align='left'> Trials (people)</th>";
+      overview_content += "<td> Total number of trials (people) in the evidence-base </td>";
+      overview_content += "<td>" + get_trials_people(node, null) + "</td></tr>";
+  // Publication Year
+      overview_content += "<tr><th align='left'> Publication year, median (range) </th>";
+      overview_content += "<td> A proxy for the years patients were enrolled in the study </td>";
+      overview_content += "<td>" + get_publication_year(node, null) + "</td></tr>";
+  // Publication Year
+      overview_content += "<tr><th align='left'> Sample size, median (range) </th>";
+      overview_content += "<td> Per study sample size </td>";
+      overview_content += "<td>" + get_sample_size(node, null) + "</td></tr></tbody></table><br>";
+
+      study_list = get_studies_1(node);
+
+      overview_content += "<div align='left'><div style='width: 1200px;'>";
+      overview_content += "<table><thead><tr><th>Studies </th></tr></thead></table>";
+      overview_content += "<table id='studies-table' class='display nowrap'>";
+      overview_content += "<thead><tr align='left'>";
+      overview_content += "<th> PMID </th>";
+      overview_content += "<th> Study Author </th>";
+      overview_content += "<th> Year </th>";
+      overview_content += "<th> Age </th>";
+      overview_content += "<th> Older_women </th>";
+      overview_content += "<th> UI type </th>";
+      overview_content += "<th> Followup </th>";
+      overview_content += "<th> Counts </th>";
+      overview_content += "<th> Coarse trt </th>";
+      overview_content += "<th> Granular trt </th>";
+      overview_content += "<th> trt description1 </th>";
+      overview_content += "<th> trt description2 </th>";
+      overview_content += "<th> OR </th>";
+      overview_content += "<th> Outcome </th>";
+      overview_content += "<th> Combined </th>";
+      overview_content += "<th> Blinding of Patients </th>";
+      overview_content += "<th> Blinding of Assessors </th>";
+      overview_content += "<th> Intention to Treat </th>";
+      overview_content += "<th> Attrition Bias </th>";
+      overview_content += "<th> Selection Bias </th>";
+      overview_content += "<th> Intervention Described </th>";
+      overview_content += "<th> Intervention Compliance </th>";
+      overview_content += "<th> Other Issues </th>";
+      overview_content += "<th> Allocation Concealment </th>";
+      overview_content += "</tr></thead>";
+      overview_content += "<tbody>"
+
+      $.each(study_list, function() {
+        overview_content += '<tr>';
+        overview_content += '<td>' + this['pmid'] + '</td>';
+        overview_content += '<td>' + this['study_author'] + '</td>';
+        overview_content += '<td>' + this['year'] + '</td>';
+        overview_content += '<td>' + this['age'] + '</td>';
+        overview_content += '<td>' + this['older_women'] + '</td>';
+        overview_content += '<td>' + this['ui_type'] + '</td>';
+        overview_content += '<td>' + this['followup'] + '</td>';
+        overview_content += '<td>' + this['counts_string'] + '</td>';
+        overview_content += '<td>' + this['coarse_comparison_string'] + '</td>';
+        overview_content += '<td>' + this['granular_comparison_string'] + '</td>';
+        overview_content += '<td>' + this['trt_description1'] + '</td>';
+        overview_content += '<td>' + this['trt_description2'] + '</td>';
+        overview_content += '<td>' + this['or_string'] + '</td>';
+        overview_content += '<td>' + this['outcome'] + '</td>';
+        overview_content += '<td>' + this['combined'] + '</td>';
+        overview_content += '<td>' + this['randomization_sequence'] + '</td>';
+        overview_content += '<td>' + this['blinding_of_assessors'] + '</td>';
+        overview_content += '<td>' + this['intention_to_treat'] + '</td>';
+        overview_content += '<td>' + this['attrition_bias'] + '</td>';
+        overview_content += '<td>' + this['selection_bias'] + '</td>';
+        overview_content += '<td>' + this['interventions_described'] + '</td>';
+        overview_content += '<td>' + this['intervention_compliance'] + '</td>';
+        overview_content += '<td>' + this['other_issues'] + '</td>';
+        overview_content += '<td>' + this['allocation_concealment'] + '</td>';
+        overview_content += '</tr>';
+      });
+      overview_content += '</tbody>';
+      overview_content += '</table></div></div>';
+    } else if ( node != null && prev_node != null) {
+      overview_content += "<strong> Information on " + get_node_name(node.id()) + " (" + node.id() + ") vs " + get_node_name(prev_node.id()) + " (" + prev_node.id() + ")</strong><br>";
+    // headers
+      overview_content += "<table><tbody><tr>";
+      overview_content += '<th align="left">Characteristic</th>';
+      overview_content += '<th align="left">Description</th>';
+      overview_content += '<th align="left">Value</th></tr>';
+  // Trials
+      overview_content += "<tr><th align='left'> Trials (people)</th>";
+      overview_content += "<td> Total number of trials (people) in the evidence-base </td>";
+      overview_content += "<td>" + get_trials_people(node, prev_node) + "</td></tr>";
+  // Publication Year
+      overview_content += "<tr><th align='left'> Publication year, median (range) </th>";
+      overview_content += "<td> A proxy for the years patients were enrolled in the study </td>";
+      overview_content += "<td>" + get_publication_year(node, prev_node) + "</td></tr>";
+  // Publication Year
+      overview_content += "<tr><th align='left'> Sample size, median (range) </th>";
+      overview_content += "<td> Per study sample size </td>";
+      overview_content += "<td>" + get_sample_size(node, prev_node) + "</td></tr></tbody></table><br>";
+
+      study_list = get_studies_2(node, prev_node);
+
+      overview_content += "<div align='left'><div style='width: 1200px;'>";
+      overview_content += "<table><thead><tr><th>Studies </th></tr></thead></table>";
+      overview_content += "<table id='studies-table' class='display nowrap'>";
+      overview_content += "<thead><tr align='left'>";
+      overview_content += "<th> PMID </th>";
+      overview_content += "<th> Study Author </th>";
+      overview_content += "<th> Year </th>";
+      overview_content += "<th> Age </th>";
+      overview_content += "<th> Older_women </th>";
+      overview_content += "<th> UI type </th>";
+      overview_content += "<th> Followup </th>";
+      overview_content += "<th> Counts </th>";
+      overview_content += "<th> Coarse trt </th>";
+      overview_content += "<th> Granular trt </th>";
+      overview_content += "<th> trt description1 </th>";
+      overview_content += "<th> trt description2 </th>";
+      overview_content += "<th> OR </th>";
+      overview_content += "<th> Outcome </th>";
+      overview_content += "<th> Combined </th>";
+      overview_content += "<th> Blinding of Patients </th>";
+      overview_content += "<th> Blinding of Assessors </th>";
+      overview_content += "<th> Intention to Treat </th>";
+      overview_content += "<th> Attrition Bias </th>";
+      overview_content += "<th> Selection Bias </th>";
+      overview_content += "<th> Intervention Described </th>";
+      overview_content += "<th> Intervention Compliance </th>";
+      overview_content += "<th> Other Issues </th>";
+      overview_content += "<th> Allocation Concealment </th>";
+      overview_content += "</tr></thead>";
+      overview_content += "<tbody>"
+
+      $.each(study_list, function() {
+        overview_content += '<tr>';
+        overview_content += '<td>' + this['pmid'] + '</td>';
+        overview_content += '<td>' + this['study_author'] + '</td>';
+        overview_content += '<td>' + this['year'] + '</td>';
+        overview_content += '<td>' + this['age'] + '</td>';
+        overview_content += '<td>' + this['older_women'] + '</td>';
+        overview_content += '<td>' + this['ui_type'] + '</td>';
+        overview_content += '<td>' + this['followup'] + '</td>';
+        overview_content += '<td>' + this['counts_string'] + '</td>';
+        overview_content += '<td>' + this['coarse_comparison_string'] + '</td>';
+        overview_content += '<td>' + this['granular_comparison_string'] + '</td>';
+        overview_content += '<td>' + this['trt_description1'] + '</td>';
+        overview_content += '<td>' + this['trt_description2'] + '</td>';
+        overview_content += '<td>' + this['or_string'] + '</td>';
+        overview_content += '<td>' + this['outcome'] + '</td>';
+        overview_content += '<td>' + this['combined'] + '</td>';
+        overview_content += '<td>' + this['randomization_sequence'] + '</td>';
+        overview_content += '<td>' + this['blinding_of_assessors'] + '</td>';
+        overview_content += '<td>' + this['intention_to_treat'] + '</td>';
+        overview_content += '<td>' + this['attrition_bias'] + '</td>';
+        overview_content += '<td>' + this['selection_bias'] + '</td>';
+        overview_content += '<td>' + this['interventions_described'] + '</td>';
+        overview_content += '<td>' + this['intervention_compliance'] + '</td>';
+        overview_content += '<td>' + this['other_issues'] + '</td>';
+        overview_content += '<td>' + this['allocation_concealment'] + '</td>';
+        overview_content += '</tr>';
+      });
+      overview_content += '</tbody>';
+      overview_content += '</table></div></div>';
+    }
+    return overview_content;
+  }
+
 
   const update_kps = () => {
     // hide everything except empty modal
@@ -125,7 +846,7 @@ const request = async () => {
 
     kp_content = "";
 
-    jQuery.each(outcome, function() {
+    $.each(outcome, function() {
       switch (this.toString())  {
         case 'cure':
           switch (type) {
@@ -183,75 +904,139 @@ const request = async () => {
     return kp_content;
   }
 
+  const update_screen_reader_nodes = (new_nodes) => {
+    new_node_ids = [];
+    $.each(new_nodes, function() {
+      new_node_ids.push(this["data"]["id"]);
+    });
+
+    new_node_ids = Array.from(new Set(new_node_ids));
+
+    $("#screen-reader-nodes").empty();
+    $.each(new_node_ids, function() {
+      // if ( (node && node.id() == this["data"]["id"]) || (prev_node && prev_node.id() == this["data"]["id"])) {
+      //   $("#screen-reader-content").append("<input type='checkbox' value='" + this["data"]["id"] + "' name='node-checkbox'" + this["data"]["id"] + "' checked=true>" + this["data"]["id"] + "</input><br>");
+      // } else {
+      //   $("#screen-reader-content").append("<input type='checkbox' value='" + this["data"]["id"] + "' name='node-checkbox'" + this["data"]["id"] + "'>" + this["data"]["id"] + "</input><br>");
+      // }
+      $("#screen-reader-nodes").append("<input type='checkbox' value='" + this + "' name='node-checkbox'>" + this + "</input><br>");
+    });
+
+    $("[name='node-checkbox']").change(function() {
+      if (node && prev_node) {
+        $("[name='edge-checkbox'][value='" + node.id() + "-" + prev_node.id() + "']").prop('checked', false);
+        $("[name='edge-checkbox'][value='" + prev_node.id() + "-" + node.id() + "']").prop('checked', false);
+      }
+      
+      if ( prev_node && this.value == prev_node.id() ) {
+        prev_node.removeClass('highlight');
+        $("[name='node-checkbox'][value='" + this.value + "']").prop('checked', false); 
+        prev_node = null;
+        return;
+      }
+
+      if ( node && this.value == node.id() ) {
+        node.removeClass('highlight');
+        $("[name='node-checkbox'][value='" + this.value + "']").prop('checked', false); 
+        node = prev_node;
+        prev_node = null;
+        return;
+      }
+
+      if ( prev_node ) {
+        prev_node.removeClass('highlight');
+        $("[name='node-checkbox'][value='" + prev_node.id() + "']").prop('checked', false); 
+      }
+
+      prev_node = node;
+      node = cy.getElementById(this.value);
+
+      if ( node ) node.addClass('highlight');
+
+      if ( node && prev_node ) {
+        $("[name='edge-checkbox'][value='" + node.id() + "-" + prev_node.id() + "']").prop('checked', true);
+        $("[name='edge-checkbox'][value='" + prev_node.id() + "-" + node.id() + "']").prop('checked', true);
+      }
+    });
+  }
+
+  const update_screen_reader_edges = (new_edges) => {
+    new_edge_ids = [];
+    $.each(new_edges, function() {
+      new_edge_ids.push(this["data"]["id"]);
+    });
+
+    new_edge_ids = Array.from(new Set(new_edge_ids));
+
+    $("#screen-reader-edges").empty();
+    $.each(new_edge_ids, function() {
+      $("#screen-reader-edges").append("<input type='checkbox' value='" + this + "' name='edge-checkbox'>" + this + "</input><br>");
+    });
+
+    $("[name='edge-checkbox']").change(function() {
+      if (node && prev_node) {
+        $("[name='edge-checkbox'][value='" + node.id() + "-" + prev_node.id() + "']").prop('checked', false);
+        $("[name='edge-checkbox'][value='" + prev_node.id() + "-" + node.id() + "']").prop('checked', false);
+      }
+
+      n_pair = this.value.split("-");
+      if (this.checked) {
+        if ( prev_node ) {
+          prev_node.removeClass('highlight');
+          $("[name='node-checkbox'][value='" + prev_node.id() + "']").prop('checked', false); 
+        }
+
+        if ( node ) {
+          node.removeClass('highlight');
+          $("[name='node-checkbox'][value='" + node.id() + "']").prop('checked', false); 
+        }
+
+        node = cy.getElementById(n_pair[0]);
+        prev_node = cy.getElementById(n_pair[1]);
+
+        if ( node ) {
+          node.addClass('highlight');
+          $("[name='node-checkbox'][value='" + node.id() + "']").prop('checked', true); 
+        }
+        if ( prev_node ) {
+          prev_node.addClass('highlight');
+          $("[name='node-checkbox'][value='" + prev_node.id() + "']").prop('checked', true); 
+        }
+      } else {
+        node_a = cy.getElementById(n_pair[0]);
+        node_b = cy.getElementById(n_pair[1]);
+
+        if ( node_a ) {
+          node_a.removeClass('highlight');
+          $("[name='node-checkbox'][value='" + node_a.id() + "']").prop('checked', false).change();
+        }
+        if ( node_b ) {
+          node_b.removeClass('highlight');
+          $("[name='node-checkbox'][value='" + node_b.id() + "']").prop('checked', false).change(); 
+        }
+      }
+    });
+  }
+
   //update cy elements from the elements dictionary
   const update_nodes = () => {
-    var new_nodes = [];
-    var new_edges = [];
-    jQuery.each(outcome, function() {
-      var o = this;
-      jQuery.each(ow, function() {
-        var w = this;
+    new_nodes = [];
+    new_edges = [];
+    $.each(outcome, function() {
+      o = this;
+      $.each(ow, function() {
+        w = this;
         new_nodes = new_nodes.concat(elements[type][w][o]['nodes']);
         new_edges = new_edges.concat(elements[type][w][o]['edges']);
       });
     });
     cy.json( { elements: { nodes: new_nodes, edges: new_edges } } );
+    update_screen_reader_nodes(new_nodes);
+    update_screen_reader_edges(new_edges);
   }
   cy.json(node_info);
+
   update_nodes();
-
-  //returns the studies for 2 nodes
-  const get_studies_2 = ( node1, node2 ) => {
-    a_dict = { "stress": ["sui"], "urge": ["uui"], "all": ["sui","uui","0"] }
-    node1_id = node1.id();
-    node2_id = node2.id();
-    var study_list = [];
-    jQuery.each(graph_data, function() {
-      if ((this['coarse_trt_code1'] == node1_id &&
-        this['coarse_trt_code2'] == node2_id) ||
-        (this['coarse_trt_code1'] == node2_id &&
-        this['coarse_trt_code2'] == node1_id) &&
-        ( a_dict[type].indexOf(this['ui_type'].toString()) >= 0 ) &&
-        ( ow.indexOf(this['older_women'].toString()) >= 0 ) &&
-        ( outcome.indexOf(this['outcome'].toString()) >= 0 )) {
-          study_list.push(this);
-      }
-    });
-    return study_list;
-  }
-
-  //returns the studies for a single node
-  const get_studies_1 = ( node ) => {
-    a_dict = { "stress": ["sui"], "urge": ["uui"], "all": ["sui","uui","0"] }
-    node_id = node.id();
-    var study_list = [];
-    jQuery.each(graph_data, function() {
-      if (( this['coarse_trt_code1'] == node_id ||
-        this['coarse_trt_code2'] == node_id ) &&
-        ( a_dict[type].indexOf(this['ui_type'].toString()) >= 0 ) &&
-        ( ow.indexOf(this['older_women'].toString()) >= 0 ) &&
-        ( outcome.indexOf(this['outcome'].toString()) >= 0 )) {
-          study_list.push(this);
-      }    });
-    return study_list;
-  }
-
-  //returns the studies for the whole graph
-  const get_studies_0 = () => {
-    a_dict = { "stress": ["sui"], "urge": ["uui"], "all": ["sui","uui","0"] }
-    var study_list = [];
-    jQuery.each(graph_data, function() {
-      if (( a_dict[type].indexOf(this['ui_type'].toString()) >= 0 ) &&
-        ( ow.indexOf(this['older_women'].toString()) >= 0 ) &&
-        ( outcome.indexOf(this['outcome'].toString()) >= 0 )) {
-          study_list.push(this);
-      }else{
-        console.log(this);
-      }
-    });
-    console.log(graph_data.length, study_list.length);
-    return study_list;
-  }
 
   //get guide working
   const guide_1 = () => {
@@ -330,6 +1115,28 @@ const request = async () => {
     if ( node !== null ) {
       node.addClass('highlight');
     }
+  });
+
+  cy.on('tap', 'edge', function(e) {
+    if (prev_node) prev_node.removeClass('highlight');
+    if (node) node.removeClass('highlight');
+
+    n_pair = e.target.id().split('-');
+    
+    new_node_2 = cy.getElementById(n_pair[0]);
+    new_node_1 = cy.getElementById(n_pair[1]);
+
+    if ((new_node_1 == prev_node && new_node_2 == node) || (new_node_1 == node && new_node_2 == prev_node))  {
+      node = null;
+      prev_node = null;
+      return;
+    }
+
+    prev_node = cy.getElementById(n_pair[0]);
+    node = cy.getElementById(n_pair[1]);
+
+    node.addClass('highlight');
+    prev_node.addClass('highlight');
   });
 
 
@@ -421,7 +1228,7 @@ const request = async () => {
   //button that pulls the studies for nodes
   $('#get-studies-button').on('click', function() {
     window.location.hash = '#studies';
-    var study_list;
+    study_list;
     if (node == null) {
       study_list = get_studies_0();
     } else if (prev_node == null) {
@@ -459,7 +1266,7 @@ const request = async () => {
     content += "<th> Allocation Concealment </th>";
     content += "</tr></thead>";
     content += "<tbody>"
-    jQuery.each(study_list, function() {
+    $.each(study_list, function() {
       content += '<tr>';
       content += '<td>' + this['pmid'] + '</td>';
       content += '<td>' + this['study_author'] + '</td>';
@@ -553,6 +1360,17 @@ const request = async () => {
     $('#navbar').hide();
     $('#sidebar').hide();
     $('#legend').hide();
+    $('#overview-content').empty();
+    $('#overview-content').html(update_overview());
+
+    $('#studies-table').DataTable({
+        autoWidth: true,
+        pageLength: 15,
+        scrollX: true,
+        dom: 'Bfrtip',
+        buttons: [ 'colvis' ]
+      });
+
     $('#overview-dummy').show();
   });
   $('#close-overview').on('click', function() {
@@ -625,7 +1443,7 @@ const request = async () => {
     $('#welcome-modal').show();
   }
 
-  var hash = window.location.hash;
+  hash = window.location.hash;
   setInterval(function(){
     if (window.location.hash != hash) {
       hash = window.location.hash;

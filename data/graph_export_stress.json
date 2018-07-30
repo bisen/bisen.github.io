@@ -1,0 +1,292 @@
+{
+  "elements": {
+    "nodes": [
+      {
+        "data": {
+          "id": "N",
+          "color": "#9bfdfe"
+        },
+        "position": {
+          "x": -400,
+          "y": 120
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "T",
+          "color": "#d2eeee"
+        },
+        "position": {
+          "x": -160,
+          "y": 200
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "P",
+          "color": "#fdaeba"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "H",
+          "color": "#ffeb91"
+        },
+        "position": {
+          "x": -280,
+          "y": -300
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "C+T",
+          "color": "#ccb28d"
+        },
+        "position": {
+          "x": 410,
+          "y": -280
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "C",
+          "color": "#fff595"
+        },
+        "position": {
+          "x": 200,
+          "y": -320
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "N+T",
+          "color": "#a5d4ec"
+        },
+        "position": {
+          "x": -360,
+          "y": 28
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "C+U",
+          "color": "#808000"
+        },
+        "position": {
+          "x": -300,
+          "y": -300
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      }
+    ],
+    "edges": [
+      {
+        "data": {
+          "id": "T-N",
+          "source": "T",
+          "target": "N"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "T-P",
+          "source": "T",
+          "target": "P"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "H-P",
+          "source": "H",
+          "target": "P"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "C-C+T",
+          "source": "C",
+          "target": "C+T"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "N+T-T",
+          "source": "N+T",
+          "target": "T"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "P-C",
+          "source": "P",
+          "target": "C"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "P-C+U",
+          "source": "P",
+          "target": "C+U"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      }
+    ]
+  },
+  "style": [
+    {
+      "selector": "node",
+      "style": {
+        "background-color": "data(color)",
+        "label": "data(id)"
+      }
+    },
+    {
+      "selector": "node.highlight",
+      "style": {
+        "border-color": "#DC143C",
+        "border-width": "5px"
+      }
+    },
+    {
+      "selector": "edge",
+      "style": {
+        "width": "1px",
+        "line-color": "black",
+        "target-arrow-color": "#ccc",
+        "target-arrow-shape": "none",
+        "curve-style": "unbundled-bezier",
+        "control-point-distances": "30",
+        "control-point-weights": "0.5"
+      }
+    }
+  ],
+  "zoomingEnabled": true,
+  "userZoomingEnabled": true,
+  "zoom": 0.8,
+  "minZoom": 1e-50,
+  "maxZoom": 1e+50,
+  "panningEnabled": true,
+  "userPanningEnabled": true,
+  "pan": {
+    "x": 400,
+    "y": 350
+  },
+  "boxSelectionEnabled": true,
+  "renderer": {
+    "name": "canvas"
+  }
+}

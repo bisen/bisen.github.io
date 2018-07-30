@@ -60,7 +60,7 @@
   <div id='navbar'>
     <div data-step="2" data-intro="Use this panel to filter the graph by UI type, population or outcome.">
       <b> UI Type: </b>
-      <form id="type-form" style="display: inline;">
+      <form id="type-form" style="display: inline;" autocomplete="off">
         <input type="radio" name="type-radio" value="all" checked>
         <label>All</label>
 
@@ -72,7 +72,7 @@
       </form>
       <br>
       <b> Population: </b>
-      <form id="ow-form" style="display: inline;">
+      <form id="ow-form" style="display: inline;" autocomplete="off">
         <input type="radio" name="ow-radio" value="all" checked>
         <label>All</label>
 
@@ -81,7 +81,7 @@
       </form>
       <br>
       <b> Outcome: </b>
-      <form id="outcome-form" style="display: inline;">
+      <form id="outcome-form" style="display: inline;" autocomplete="off">
         <input type="checkbox" name="outcome-checkbox" value="cure" checked>
         <label>Cure</label>
 
@@ -100,6 +100,7 @@
       <br>
       <button id='get-studies-button' type="button" data-step='3' data-intro='Click here to get a list of studies based on the current filters and selected nodes.'> Get Studies </button>
     </div>
+
   </div>
   <div id="studies-modal" class="modal" style="display: none;">
     
@@ -112,6 +113,7 @@
     <span>A: alpha agonist</span><br>
     <span>B: botulinum toxin A</span><br>
     <span>C: anticholinergic</span><br>
+    <span>E: pregabalin</span><br>
     <span>H: hormones</span><br>
     <span>N: neuromodulation</span><br>
     <span>T: behavioral therapy</span><br>
@@ -133,6 +135,22 @@
       <button id='league-button' disabled>Predicted Outcome Rates (League Tables)</button><br>
       <button id='relative-button' disabled>Relative Effects</button><br>
     </div>
+
+    <br><br>
+
+    <table id='screen-reader-div'>
+      <tr>
+        <td valign="top">>
+          <strong> Nodes: </strong><br>
+          <div id='screen-reader-nodes' ></div>
+        </td>
+        <td valign="top">>
+          <strong> Edges: </strong><br>
+          <div id='screen-reader-edges'></div>
+        </td>
+      </tr>
+    </table>
+
   </div>
   <div id='key-messages' style="display: none; max-width: 600px;">
     <span id="close-key-messages" class="close">&times;</span><br><br>
@@ -141,69 +159,8 @@
 </div>
   <div id='overview-dummy' style="display: none;">
     <span id="close-overview" class="close">&times;</span><br><br>
-    <span style="color: red;"> NOT REAL DATA </span>
-    <br><br>
-    <table>
-      <tbody>
-        <tr>
-          <th align="left">Characteristic</th>
-          <th align="left">Description</th>
-          <th align="left">Number </th>
-        </tr>
-        <tr>
-          <th align="left">Trials (people)</th>
-          <td>Total number of trials (people) in the evidence-base </td>
-          <td>136 (13246)</td>
-        </tr>
-        <tr>
-          <th align="left">Publication year, median (range)</th>
-          <td>A proxy for the years patients were enrolled in the study</td>
-          <td>2008(1990-2017)</td>
-        </tr>
-        <tr>
-          <th align="left">Sample size, median (range)</th>
-          <td>A description of the size, proxy of information, per study </td>
-          <td>133(30-1133)</td>
-        </tr>
-        <tr><td><br></td></tr>
-        <tr>
-          <th align="left">All possible, n </th>
-          <td>Number of possible comparisons among the intervention categories</td>
-          <td>91</td>
-        </tr>
-        <tr>
-          <th align="left">With data, n (% of all)</th>
-          <td>Pairs of interventions categories compared in at least one trial</td>
-          <td>87  (88%)</td>
-        </tr>
-        <tr>
-          <th align="left">Trials, n (range)</th>
-          <td>Number of trials informing each comparison with data</td>
-          <td>136 (1, 10)</td>
-        </tr>
-        <tr>
-          <th align="left">Sample size, n (range)</th>
-          <td>Cumulative sample size of trials per comparison with data</td>
-          <td>13246 (18, 5539)</td>
-        </tr>
-        <tr><td><br></td></tr>
-        <tr>
-          <th align="left">Intervention categories</th>
-          <td>The categories in which interventions are organized according to clinically.</td>
-          <td>14</td>
-        </tr>
-        <tr>
-          <th align="left">Trials, n (range)</th>
-          <td>Number of trial arms per intervention category</td>
-          <td>136 (1, 17)</td>
-        </tr>
-        <tr>
-          <th align="left">Sample size, n (range)</th>
-          <td>Number of patients per intervention category</td>
-          <td>13246 (42, 4875)</td>
-        </tr>
-      </tbody>
-    </table>
+    <div id='overview-content'>
+    </div>
   </div>
 
   <div id="table-div" style='display: none;'>
